@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class JumpState :  IState
 {
-    public void OnEnterState(CharacterStateAction action)
+    public void OnEnterState(object action)
     {
-        action.SetAnimatorState(action.jumpUpState , true);
+        /*
+         * action.SetAnimatorState(action.jumpUpState , true);
         action.characterActor().Jump();
+         */
     }
 
-    public void OnStayState(CharacterStateAction action)
+    public void OnStayState(object action)
     {
-        Debug.Log("jumpState!!!!!");
+        /*
+         * Debug.Log("jumpState!!!!!");
 
         if (action.GetIsClimb())
         {
@@ -23,11 +26,12 @@ public class JumpState :  IState
         {
             action.ChangeState(new FallingState());
         }
+         */
     }
 
-    public void OnExitState(CharacterStateAction action)
+    public void OnExitState(object action)
     {
-        action.SetAnimatorState(action.jumpUpState , false);
+        //action.SetAnimatorState(action.jumpUpState , false);
 
     }
 }

@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class RunState :  IState
 {
-    public void OnEnterState(CharacterStateAction action)
+    public void OnEnterState(object action)
     {
-        action.SetAnimatorState(action.runState , true);
+        /*
+         * action.SetAnimatorState(action.runState , true);
         action.characterActor().SetSpeed(40f);
+         */
     }
 
-    public void OnStayState(CharacterStateAction action)
+    public void OnStayState(object action)
     {
-        Debug.Log("runState!!!!!");
+        /*
+         * Debug.Log("runState!!!!!");
 
         if (action.GetInputVector2() == Vector2.zero)
         {
@@ -31,11 +34,12 @@ public class RunState :  IState
         
         action.characterActor().Movement(action.GetInputVector2());
         action.SetAnimatorState(action.landingState , true);
+         */
 
     }
 
-    public void OnExitState(CharacterStateAction action)
+    public void OnExitState(object action)
     {
-        action.SetAnimatorState(action.runState , false);
+        //action.SetAnimatorState(action.runState , false);
     }
 }

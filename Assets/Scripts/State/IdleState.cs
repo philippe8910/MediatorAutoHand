@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class IdleState :  IState
 {
-    public void OnEnterState(CharacterStateAction action)
+    public void OnEnterState(object action)
     {
        // action.SetAnimatorState(action.walkState , false);
        // action.SetAnimatorState(action.runState , false);
        // action.SetAnimatorState(action.jumpUpState , false);
     }
 
-    public void OnStayState(CharacterStateAction action)
+    public void OnStayState(object action)
     {
-        Debug.Log("idleState!!!!!");
+        /*
+         Debug.Log("idleState!!!!!");
 
         if (action.GetInputVector2() != Vector2.zero)
         {
@@ -31,9 +32,10 @@ public class IdleState :  IState
         }
         
         action.SetAnimatorState(action.landingState , true);
+         */
     }
 
-    public void OnExitState(CharacterStateAction action)
+    public void OnExitState(object action)
     {
         
     }

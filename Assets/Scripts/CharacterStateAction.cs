@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Events;
 using Project;
 using Sirenix.OdinInspector;
 using State;
@@ -40,20 +39,14 @@ public class CharacterStateAction : MonoBehaviour
 
     private CharacterActor actor;
 
-    private Vector2 inputVector2;
 
-    public Volume stopTimeCameraEffect;
-
-    private PlayerControllerAction playerControllerAction;
     void Start()
     {
         animator = GetComponent<Animator>();
         actor = GetComponent<CharacterActor>();
-        playerControllerAction = GameObject.FindObjectOfType<PlayerControllerAction>();
-        
+
         if(rightRay == null) rightRay = GameObject.Find("RightRay");
         if(leftRay == null) leftRay = GameObject.Find("LeftRay");
-        if (stopTimeCameraEffect == null) FindObjectOfType<Volume>();
     }
     
 
@@ -114,11 +107,6 @@ public class CharacterStateAction : MonoBehaviour
         animator.SetFloat(stateName , value);
     }
 
-    public void ResetAnimatorState()
-    {
-        
-    }
-
     public bool GetRightSideClimbWallCheck()
     {
         return Physics.Raycast(rightRay.transform.position, rightRay.transform.forward, wallCheckRayDistance , climbLayer);
@@ -135,22 +123,7 @@ public class CharacterStateAction : MonoBehaviour
         newState.OnEnterState(this);
         currentState = newState;
     }
-
-    public Vector2 GetInputVector2()
-    {
-        return playerControllerAction.GetInput();
-    }
-
-    public CharacterActor characterActor()
-    {
-        return actor;
-    }
-
-    public PlayerControllerAction ControllerAction()
-    {
-        return playerControllerAction;
-    }
-
+    
     public bool GetIsGround()
     {
         return Physics.CheckSphere(transform.position + groundOffset, groundTriggerValue , groundLayer);
@@ -186,41 +159,8 @@ public class CharacterStateAction : MonoBehaviour
             return null;
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if ((1 << collision.gameObject.layer | groundLayer) == groundLayer)
-        {
-            //transform.SetParent(collision.transform);
-            //Debug.Log("Ground");
-        }
-    }
     
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == groundLayer)
-        {
-            //transform.SetParent(null);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("DeadZone"))
-        {
-            ChangeState(new DeadState());
-            EventBus.Post(new ChangeLevelDetected(Dead, true));
-        }
-    }
-
-    private void Dead()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        Destroy(playerControllerAction.gameObject);
-        EventBus.ClearAllAction();
-    }
-
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

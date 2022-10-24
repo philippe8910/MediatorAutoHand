@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ClimbState : IState
 {
-    public void OnEnterState(CharacterStateAction action)
+    public void OnEnterState(object action)
     {
-        action.SetAnimatorState(action.climbState , true);
+        /*
+         * action.SetAnimatorState(action.climbState , true);
         action.characterActor().SetGravity(false);
 
         var climbingObject = action.GetClimbingObject();
@@ -16,11 +17,13 @@ public class ClimbState : IState
             action.transform.position.z);
 
         action.characterActor().SetRigidbodyVector(Vector3.zero);
+         */
     }
 
-    public void OnStayState(CharacterStateAction action)
+    public void OnStayState(object action)
     {
-       // action.characterActor().SetRigidbodyVector2(new Vector3(action.transform.position.x, 0, 0) + action.transform.right);
+       /*
+        * // action.characterActor().SetRigidbodyVector2(new Vector3(action.transform.position.x, 0, 0) + action.transform.right);
 
        if (action.GetInputVector2().x > 0.2f && action.GetRightSideClimbWallCheck())
        {
@@ -43,13 +46,16 @@ public class ClimbState : IState
            action.ChangeState(new JumpState());
        }
        
+        */
        
     }
 
-    public void OnExitState(CharacterStateAction action)
+    public void OnExitState(object action)
     {
-        action.SetAnimatorState(action.climbState , false);
+        /*
+         * action.SetAnimatorState(action.climbState , false);
         action.characterActor().SetGravity(true);
         action.DelayClimb();
+         */
     }
 }

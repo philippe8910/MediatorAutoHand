@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class WalkState : IState
 {
-    public void OnEnterState(CharacterStateAction action)
+    public void OnEnterState(object action)
     {
-        action.SetAnimatorState(action.walkState , true);
+       /*
+        *  action.SetAnimatorState(action.walkState , true);
         action.characterActor().SetSpeed(15f);
+        */
     }
 
-    public void OnStayState(CharacterStateAction action)
+    public void OnStayState(object action)
     {
-        Debug.Log("walkState!!!!!");
+        /*
+         * Debug.Log("walkState!!!!!");
         
         if (action.GetInputVector2() == Vector2.zero)
         {
@@ -36,11 +39,12 @@ public class WalkState : IState
 
         action.characterActor().Movement(action.GetInputVector2());
         action.SetAnimatorState(action.landingState , true);
+         */
 
     }
 
-    public void OnExitState(CharacterStateAction action)
+    public void OnExitState(object action)
     {
-        action.SetAnimatorState(action.walkState , false);
+       // action.SetAnimatorState(action.walkState , false);
     }
 }
