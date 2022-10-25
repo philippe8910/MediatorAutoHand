@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class AamonAction : MonoBehaviour
@@ -16,6 +17,8 @@ public class AamonAction : MonoBehaviour
     void Start()
     {
         TryGetComponent<AamonActor>(out actor);
+        
+        playerInputAction = FindObjectOfType<PlayerInputAction>();
     }
 
     // Update is called once per frame
@@ -33,7 +36,7 @@ public class AamonAction : MonoBehaviour
     {
         return playerInputAction;
     }
-
+    
     public void ChangeState(IState newState)
     {
         currentState.OnExitState(this);
@@ -53,18 +56,28 @@ public class AamonAction : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(input.x , input.y) * Mathf.Rad2Deg, 0));
         }
     }
-
-    public bool GetGroundDetected()
+    
+    public void SetAnimatorState(string name , object type)
     {
-        var ground = LayerMask.NameToLayer("Ground");
+        if (type is bool)
+        {
+            var value = (bool) type;
+            
+            actor.Animator().SetBool(name , value);
+        }
         
-        return Physics.CheckSphere(actor.GroundOffset(), actor.GroundTriggerRange(), ground);
-    }
-
-    public bool GetClimbDetected()
-    {
-        var climb = LayerMask.NameToLayer("Climb");
+        if (type is int)
+        {
+            var value = (int) type;
+            
+            actor.Animator().SetInteger(name , value);
+        }
         
-        return Physics.CheckSphere(actor.GroundOffset(), actor.GroundTriggerRange(), climb); 
+        if (type is float)
+        {
+            var value = (float) type;
+            
+            actor.Animator().SetFloat(name , value);
+        }
     }
 }

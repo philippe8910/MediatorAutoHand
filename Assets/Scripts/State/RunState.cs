@@ -6,36 +6,22 @@ public class RunState :  IState
 {
     public void OnEnterState(object action)
     {
-        /*
-         * action.SetAnimatorState(action.runState , true);
-        action.characterActor().SetSpeed(40f);
-         */
+        var actions = (AamonAction) action;
+        
+        actions.SetAnimatorState("IsRunning" , true);
     }
 
     public void OnStayState(object action)
     {
-        /*
-         * Debug.Log("runState!!!!!");
-
-        if (action.GetInputVector2() == Vector2.zero)
-        {
-            action.ChangeState(new IdleState());
-        }
-
-        if (action.ControllerAction().GetJumpButton())
-        {
-            action.ChangeState(new JumpState());
-        }
+        var actions = (AamonAction) action;
+        var joystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
         
-        if (action.characterActor().GetFallAction())
-        {
-            action.ChangeState(new FallingState());
-        }
+        actions.Movement(actions.PlayerInputAction().JoystickActionInput());
         
-        action.characterActor().Movement(action.GetInputVector2());
-        action.SetAnimatorState(action.landingState , true);
-         */
-
+        if (joystickInput)
+        {
+            actions.ChangeState(new IdleState());
+        }
     }
 
     public void OnExitState(object action)
