@@ -8,7 +8,9 @@ public class IdleState :  IState
     {
         var actions = (AamonAction) action;
         
-        actions.SetAnimatorState("IsRunning" , false);
+        actions.SetAnimatorCrossState("Idle" , 0.1f);
+        
+        if(actions.isStateLog) Debug.Log("Idle Enter!!");
     }
 
     public void OnStayState(object action)
@@ -17,13 +19,18 @@ public class IdleState :  IState
         
         var joystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
         var jumpActionBoolean = actions.PlayerInputAction().GetJumpActionBoolean();
-        
-        actions.StateListener(new JumpState() , jumpActionBoolean);
+
+        actions.StateListener(new JumpState(), jumpActionBoolean);
         actions.StateListener(new RunState() , joystickInput);
+        
+        if(actions.isStateLog) Debug.Log("Idle Stay!!");
+
     }
 
     public void OnExitState(object action)
     {
+        var actions = (AamonAction) action;
         
+        if(actions.isStateLog) Debug.Log("Idle Exit!!");
     }
 }

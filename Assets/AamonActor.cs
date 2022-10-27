@@ -15,8 +15,9 @@ public class AamonActor : MonoBehaviour
 
     private Animator animator;
 
-    private Vector3 groundOffset;
-    
+    [SerializeField] private Vector3 groundOffset;
+
+    [SerializeField] private LayerMask groundLayerMask;
 
     void Start()
     {
@@ -53,19 +54,12 @@ public class AamonActor : MonoBehaviour
     {
         return animator;
     }
-
-    public bool GetClimbDetected()
-    {
-        var climb = LayerMask.NameToLayer("Climb");
-        
-        return Physics.CheckSphere(GroundOffset(), GroundTriggerRange(), climb); 
-    }
     
     public bool GetGroundDetected()
     {
-        var ground = LayerMask.NameToLayer("Ground");
+        LayerMask ground = LayerMask.NameToLayer("Ground");
         
-        return Physics.CheckSphere(GroundOffset(), GroundTriggerRange(), ground);
+        return Physics.CheckSphere(GroundOffset(), GroundTriggerRange(), groundLayerMask);
     }
 
     private void OnDrawGizmos()

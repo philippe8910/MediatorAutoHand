@@ -8,7 +8,9 @@ public class RunState :  IState
     {
         var actions = (AamonAction) action;
         
-        actions.SetAnimatorState("IsRunning" , true);
+        actions.SetAnimatorCrossState("Run" , 0.1f);
+        
+        if(actions.isStateLog) Debug.Log("Run Enter!!");
     }
 
     public void OnStayState(object action)
@@ -19,10 +21,14 @@ public class RunState :  IState
         actions.Movement(actions.PlayerInputAction().JoystickActionInput());
         
         actions.StateListener(new IdleState() , joystickInput);
+        
+        if(actions.isStateLog) Debug.Log("Run Stay!!");
     }
 
     public void OnExitState(object action)
     {
-        //action.SetAnimatorState(action.runState , false);
+        var actions = (AamonAction) action;
+        
+        if(actions.isStateLog) Debug.Log("Run Exit!!");
     }
 }

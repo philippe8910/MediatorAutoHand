@@ -6,27 +6,24 @@ public class FallingState :  IState
 {
     public void OnEnterState(object action)
     {
-        //action.SetAnimatorState(action.fallingState , true);
+        var actions = (AamonAction) action;
+        
+        actions.SetAnimatorCrossState("OnAir" , 0.1f);
+        
+        if(actions.isStateLog) Debug.Log("Falling Enter!!");
     }
 
     public void OnStayState(object action)
     {
-        /*
-         * if (action.GetIsClimb())
-        {
-            action.ChangeState(new ClimbState());
-        }
+        var actions = (AamonAction) action;
         
-        if (action.GetIsGround())
-        {
-            action.ChangeState(new JumpDownState());
-        }
-         */
+        if(actions.isStateLog) Debug.Log("Falling Stay!!");
     }
 
     public void OnExitState(object action)
     {
-        //action.SetAnimatorState(action.fallingState , false);
-
+        var actions = (AamonAction) action;
+        
+        if(actions.isStateLog) Debug.Log("Falling Exit!!");
     }
 }
