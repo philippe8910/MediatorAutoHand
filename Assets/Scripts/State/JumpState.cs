@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,27 +7,15 @@ public class JumpState :  IState
 {
     public void OnEnterState(object action)
     {
-        /*
-         * action.SetAnimatorState(action.jumpUpState , true);
-        action.characterActor().Jump();
-         */
+        var actions = (AamonAction) action;
+        
+        actions.SetAnimatorState("IsJump" , true);
     }
 
     public void OnStayState(object action)
     {
-        /*
-         * Debug.Log("jumpState!!!!!");
-
-        if (action.GetIsClimb())
-        {
-            action.ChangeState(new ClimbState());
-        }
+        var actions = (AamonAction) action;
         
-        if (action.characterActor().GetFallAction())
-        {
-            action.ChangeState(new FallingState());
-        }
-         */
     }
 
     public void OnExitState(object action)

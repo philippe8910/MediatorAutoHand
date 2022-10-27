@@ -18,10 +18,7 @@ public class RunState :  IState
         
         actions.Movement(actions.PlayerInputAction().JoystickActionInput());
         
-        if (joystickInput)
-        {
-            actions.ChangeState(new IdleState());
-        }
+        actions.StateListener(new IdleState() , joystickInput);
     }
 
     public void OnExitState(object action)

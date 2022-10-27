@@ -11,14 +11,21 @@ public class AamonAction : MonoBehaviour
     [SerializeField] protected AamonActor actor;
 
     [SerializeField] protected PlayerInputAction playerInputAction;
+    
+    [SerializeField] private Action<bool, Action> stateListener;
 
-    public Action runAction, jumpAction, climbAction;
+    public bool isJump, isRunning;
+
+
+    //public Action runAction, jumpAction, climbAction;
     // Start is called before the first frame update
     void Start()
     {
         TryGetComponent<AamonActor>(out actor);
         
         playerInputAction = FindObjectOfType<PlayerInputAction>();
+        
+        //judgeListenr += delegate(bool b, Action action) { if(b) action.Invoke(); };
     }
 
     // Update is called once per frame
@@ -78,6 +85,14 @@ public class AamonAction : MonoBehaviour
             var value = (float) type;
             
             actor.Animator().SetFloat(name , value);
+        }
+    }
+
+    public void StateListener(IState state , bool value)
+    {
+        if(value)
+        {
+            ChangeState(state);
         }
     }
 }

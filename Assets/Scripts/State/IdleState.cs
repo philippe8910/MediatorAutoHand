@@ -14,12 +14,12 @@ public class IdleState :  IState
     public void OnStayState(object action)
     {
         var actions = (AamonAction) action;
-        var joystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
         
-        if (joystickInput)
-        {
-            actions.ChangeState(new RunState());
-        }
+        var joystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
+        var jumpActionBoolean = actions.PlayerInputAction().GetJumpActionBoolean();
+        
+        actions.StateListener(new JumpState() , jumpActionBoolean);
+        actions.StateListener(new RunState() , joystickInput);
     }
 
     public void OnExitState(object action)
