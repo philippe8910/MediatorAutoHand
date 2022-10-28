@@ -15,7 +15,7 @@ public class PlayerInputAction : MonoBehaviour
 
     private void Start()
     {
-        jumpActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Jump");
+        jumpActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Brake");
         interactiveActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Brake");
         joystickActionVector2 = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("Move");
             
