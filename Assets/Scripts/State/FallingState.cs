@@ -9,7 +9,7 @@ public class FallingState :  IState
     {
         var actions = (AamonAction) action;
         
-        actions.SetAnimatorCrossState("OnAir" , 0.1f);
+        actions.SetAnimatorCrossState("OnAir" , 0.01f);
         
         if(actions.isStateLog) Debug.Log("Falling Enter!!");
     }

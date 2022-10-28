@@ -87,6 +87,11 @@ public class AamonAction : MonoBehaviour
         actor.Animator().CrossFade(stateName , setFixedTime);
     }
 
+    public void SetAnimatorPlayState(string stateName)
+    {
+        actor.Animator().Play(stateName);
+    }
+
     public void StateListener(IState state , bool value)
     {
         if(value)

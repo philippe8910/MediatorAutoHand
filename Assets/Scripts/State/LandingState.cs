@@ -8,7 +8,7 @@ namespace State
         {
             var actions = (AamonAction) action;
             
-            actions.SetAnimatorCrossState("OnLanding" , 0.1f);
+            actions.SetAnimatorCrossState("OnLanding" , 0.01f);
             
             if(actions.isStateLog) Debug.Log(this.ToString() + " Enter!!");
         }

@@ -18,11 +18,14 @@ public class RunState :  IState
         var actions = (AamonAction) action;
         var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
         var isJump = actions.PlayerInputAction().GetJumpActionBoolean();
+        var isFalling = actions.Actor().GetFallingDetected() && !actions.Actor().GetGroundDetected();
+
 
         actions.Movement(actions.PlayerInputAction().JoystickActionInput());
         
         actions.StateListener(new IdleState() , isJoystickInput);
         actions.StateListener(new JumpState() , isJump);
+        actions.StateListener(new FallingState() , isFalling);
         
         if(actions.isStateLog) Debug.Log("Run Stay!!");
     }

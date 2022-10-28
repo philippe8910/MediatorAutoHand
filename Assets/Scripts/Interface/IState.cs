@@ -9,5 +9,6 @@ public interface IState
     public void OnStayState(object action);
 
     public void OnExitState(object action);
+    
 
 }
