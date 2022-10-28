@@ -26,8 +26,6 @@ public class AamonAction : MonoBehaviour
     void Update()
     {
         currentState.OnStayState(this);
-
-        Debug.Log(actor.GetGroundDetected());
     }
 
     public AamonActor Actor()

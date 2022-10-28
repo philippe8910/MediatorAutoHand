@@ -62,6 +62,11 @@ public class AamonActor : MonoBehaviour
         return Physics.CheckSphere(GroundOffset(), GroundTriggerRange(), groundLayerMask);
     }
 
+    public bool GetFallingDetected()
+    {
+        return Rigidbody().velocity.y < 0.1;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

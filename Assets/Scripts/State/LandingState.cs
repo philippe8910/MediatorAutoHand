@@ -2,29 +2,29 @@
 
 namespace State
 {
-    public class LandingState : IState
+    public class LandingState : IdleState
     {
-        public void OnEnterState(object action)
+        public override void OnEnterState(object action)
         {
             var actions = (AamonAction) action;
             
             actions.SetAnimatorCrossState("OnLanding" , 0.1f);
             
-            if(actions.isStateLog) Debug.Log("Landing Enter!!");
+            if(actions.isStateLog) Debug.Log(this.ToString() + " Enter!!");
         }
 
-        public void OnStayState(object action)
+        public override void OnStayState(object action)
         {
             var actions = (AamonAction) action;
             
-            if(actions.isStateLog) Debug.Log("Landing Stay!!");
+            base.OnStayState(action);
         }
 
-        public void OnExitState(object action)
+        public override void OnExitState(object action)
         {
             var actions = (AamonAction) action;
             
-            if(actions.isStateLog) Debug.Log("Landing Exit!!");
+            if(actions.isStateLog) Debug.Log(this.ToString() + " Exit!!");
         }
     }
 }

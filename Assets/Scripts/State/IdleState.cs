@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdleState :  IState
 {
-    public void OnEnterState(object action)
+    public virtual void OnEnterState(object action)
     {
         var actions = (AamonAction) action;
         
@@ -13,21 +13,21 @@ public class IdleState :  IState
         if(actions.isStateLog) Debug.Log("Idle Enter!!");
     }
 
-    public void OnStayState(object action)
+    public virtual void OnStayState(object action)
     {
         var actions = (AamonAction) action;
         
-        var joystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
-        var jumpActionBoolean = actions.PlayerInputAction().GetJumpActionBoolean();
+        var isJump = actions.PlayerInputAction().GetJumpActionBoolean();
+        var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
 
-        actions.StateListener(new JumpState(), jumpActionBoolean);
-        actions.StateListener(new RunState() , joystickInput);
-        
+        actions.StateListener(new JumpState(), isJump);
+        actions.StateListener(new RunState() , isJoystickInput);
+
         if(actions.isStateLog) Debug.Log("Idle Stay!!");
 
     }
 
-    public void OnExitState(object action)
+    public virtual void OnExitState(object action)
     {
         var actions = (AamonAction) action;
         
