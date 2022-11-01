@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TimeDial : PhysicsGadgetHingeAngleReader
 {
+    private Grabbable grabbable;
+    
     [SerializeField] private TimeControl targetTimeController;
     
     // Start is called before the first frame update

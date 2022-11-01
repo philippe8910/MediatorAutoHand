@@ -22,7 +22,7 @@ public class JumpState :  IState
     public void OnStayState(object action)
     {
         var actions = (AamonAction) action;
-        var isLanding = actions.Actor().GetGroundDetected();
+        var isLanding = actions.Actor().GetGroundDetected(actions.transform);
         
         var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.Actor().Speed() * Time.deltaTime;
         

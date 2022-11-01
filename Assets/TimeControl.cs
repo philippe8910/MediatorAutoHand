@@ -6,7 +6,7 @@ public class TimeControl : MonoBehaviour
 {
     private Animation animation;
 
-    [Range(0 , 1)] public float time;
+    [Range(0 , 2)] public float time;
     
     // Start is called before the first frame update
     void Start()

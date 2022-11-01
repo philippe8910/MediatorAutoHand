@@ -1,18 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enum;
+using Event;
+using Project;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class TimeCrack : MonoBehaviour
 {
+    private bool isEnable;
+    
+    private GameObject cracks;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventBus.Subscribe<PlayerActionDetected>(OnPlayerActionDetected);
+
+        cracks = transform.GetChild(0).gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnPlayerActionDetected(PlayerActionDetected obj)
     {
-        
+        var input = obj.inputActionEnum;
+
+        if (input != PlayerInputActionEnum.Trigger)
+            return;
+
+        isEnable = !isEnable;
+        cracks.SetActive(isEnable);
     }
+
+    [Button]
+    public void TriggerTest()
+    {
+        EventBus.Post(new PlayerActionDetected(PlayerInputActionEnum.Trigger));
+    }
+        
 }

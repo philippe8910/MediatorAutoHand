@@ -14,6 +14,7 @@ public class GrabbableNormalCube : MonoBehaviour
     [SerializeField] private LayerMask onGrabLayerMask;
     
     [SerializeField] private LayerMask onReleaseLayerMask;
+    
 
     private void OnEnable()
     {

@@ -3,24 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AamonActor : MonoBehaviour
+public class AamonActor
 {
     private float speed = 45;
     
-    private float groundTriggerRange = 0.03f;
+    private float groundTriggerRange = 0.02f;
 
-    private float climbTirggerRange = 0.03f;
+    private float climbTirggerRange = 0.02f;
 
     private Rigidbody rigidbody;
 
     private Animator animator;
 
-    [SerializeField] private Vector3 groundOffset;
+    public Vector3 groundOffset = new Vector3(0,0.01f ,0);
 
-    void Start()
+    public void Start(Rigidbody _rigidbody , Animator _animator)
     {
-        TryGetComponent<Rigidbody>(out rigidbody);
-        TryGetComponent<Animator>(out animator);
+        rigidbody = _rigidbody;
+        animator = _animator;
     }
 
     public Rigidbody Rigidbody()
@@ -42,20 +42,15 @@ public class AamonActor : MonoBehaviour
     {
         return climbTirggerRange;
     }
-
-    public Vector3 GroundOffset()
-    {
-        return transform.position + groundOffset;
-    }
-
+    
     public Animator Animator()
     {
         return animator;
     }
     
-    public bool GetGroundDetected()
+    public bool GetGroundDetected(Transform player)
     {
-        return Physics.CheckSphere(GroundOffset(), GroundTriggerRange(), 128);
+        return Physics.CheckSphere(player.position + groundOffset, GroundTriggerRange(), 128);
     }
 
     public bool GetFallingDetected()
@@ -63,11 +58,4 @@ public class AamonActor : MonoBehaviour
         return Rigidbody().velocity.y < 0.1;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        
-        Gizmos.DrawSphere(transform.position + groundOffset , groundTriggerRange);
-    }
-    
 }

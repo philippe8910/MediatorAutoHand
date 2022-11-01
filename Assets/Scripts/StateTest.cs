@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
@@ -7,7 +8,12 @@ using UnityEngine;
 public class StateTest : MonoBehaviour
 {
     public AamonAction action;
-    
+
+    private void Start()
+    {
+        TryGetComponent<AamonAction>(out action);
+    }
+
     [Button]
     public void RunState()
     {

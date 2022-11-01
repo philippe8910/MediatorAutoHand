@@ -17,7 +17,7 @@ public class FallingState :  IState
     public void OnStayState(object action)
     {
         var actions = (AamonAction) action;
-        var isGround = actions.Actor().GetGroundDetected();
+        var isGround = actions.Actor().GetGroundDetected(actions.transform);
         
         actions.StateListener(new LandingState() , isGround);
         

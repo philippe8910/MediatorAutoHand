@@ -8,7 +8,7 @@ public class AamonAction : MonoBehaviour
 {
     [SerializeField] protected IState currentState = new IdleState();
 
-    [SerializeField] protected AamonActor actor;
+    [SerializeField] protected AamonActor actor = new AamonActor();
 
     [SerializeField] protected PlayerInputAction playerInputAction = new PlayerInputAction();
 
@@ -18,7 +18,10 @@ public class AamonAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TryGetComponent<AamonActor>(out actor);
+        TryGetComponent<Rigidbody>(out var rigidbody);
+        TryGetComponent<Animator>(out var animator);
+        
+        actor.Start(rigidbody , animator);
     }
 
     // Update is called once per frame
@@ -57,45 +60,24 @@ public class AamonAction : MonoBehaviour
         }
     }
     
-    public void SetAnimatorState(string name , object type)
-    {
-        if (type is bool)
-        {
-            var value = (bool) type;
-            
-            actor.Animator().SetBool(name , value);
-        }
-        
-        if (type is int)
-        {
-            var value = (int) type;
-            
-            actor.Animator().SetInteger(name , value);
-        }
-        
-        if (type is float)
-        {
-            var value = (float) type;
-            
-            actor.Animator().SetFloat(name , value);
-        }
-    }
 
     public void SetAnimatorCrossState(string stateName , float setFixedTime)
     {
         actor.Animator().CrossFade(stateName , setFixedTime);
     }
-
-    public void SetAnimatorPlayState(string stateName)
-    {
-        actor.Animator().Play(stateName);
-    }
-
+    
     public void StateListener(IState state , bool value)
     {
         if(value)
         {
             ChangeState(state);
         }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        
+        Gizmos.DrawSphere(transform.position + actor.groundOffset , actor.GroundTriggerRange());
     }
 }
