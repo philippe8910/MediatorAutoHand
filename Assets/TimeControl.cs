@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,14 @@ public class TimeControl : MonoBehaviour
     {
         TryGetComponent<Animation>(out animation);
     }
-    
+
+    private void Update()
+    {
+        animation[animation.name].time = time;
+    }
+
     public void SetAnimationTime(float value)
     {
         time = value;
-        animation[animation.name].time = time;
     }
 }
