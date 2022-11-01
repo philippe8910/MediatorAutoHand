@@ -17,8 +17,6 @@ public class AamonActor : MonoBehaviour
 
     [SerializeField] private Vector3 groundOffset;
 
-    [SerializeField] private LayerMask groundLayerMask;
-
     void Start()
     {
         TryGetComponent<Rigidbody>(out rigidbody);
@@ -57,9 +55,7 @@ public class AamonActor : MonoBehaviour
     
     public bool GetGroundDetected()
     {
-        LayerMask ground = LayerMask.NameToLayer("Ground");
-        
-        return Physics.CheckSphere(GroundOffset(), GroundTriggerRange(), groundLayerMask);
+        return Physics.CheckSphere(GroundOffset(), GroundTriggerRange(), 128);
     }
 
     public bool GetFallingDetected()

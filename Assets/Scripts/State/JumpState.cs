@@ -24,6 +24,10 @@ public class JumpState :  IState
         var actions = (AamonAction) action;
         var isLanding = actions.Actor().GetGroundDetected();
         
+        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.Actor().Speed() * Time.deltaTime;
+        
+        actions.Movement(runVector);
+        
         actions.StateListener(new LandingState() , isLanding);
 
         if(actions.isStateLog) Debug.Log("Jump Stay!!");

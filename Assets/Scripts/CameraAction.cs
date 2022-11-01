@@ -19,18 +19,6 @@ public class CameraAction : MonoBehaviour
     [SerializeField] private Transform createPhotoPos;
 
     [SerializeField] private AudioSource shutterClickSound;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     [Button]
     public void TakePhoto()

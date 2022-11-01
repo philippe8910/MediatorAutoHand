@@ -16,12 +16,15 @@ public class RunState :  IState
     public void OnStayState(object action)
     {
         var actions = (AamonAction) action;
+        
         var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
         var isJump = actions.PlayerInputAction().GetJumpActionBoolean();
         var isFalling = actions.Actor().GetFallingDetected() && !actions.Actor().GetGroundDetected();
 
+        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.Actor().Speed() * Time.deltaTime;
 
-        actions.Movement(actions.PlayerInputAction().JoystickActionInput());
+
+        actions.Movement(runVector);
         
         actions.StateListener(new IdleState() , isJoystickInput);
         actions.StateListener(new JumpState() , isJump);
