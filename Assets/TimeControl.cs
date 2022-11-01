@@ -13,10 +13,10 @@ public class TimeControl : MonoBehaviour
     {
         TryGetComponent<Animation>(out animation);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void SetAnimationTime(float value)
     {
+        time = value;
         animation[animation.name].time = time;
     }
 }

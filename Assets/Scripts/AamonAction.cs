@@ -10,7 +10,7 @@ public class AamonAction : MonoBehaviour
 
     [SerializeField] protected AamonActor actor;
 
-    [SerializeField] protected PlayerInputAction playerInputAction;
+    [SerializeField] protected PlayerInputAction playerInputAction = new PlayerInputAction();
 
     public bool isStateLog;
     
@@ -19,7 +19,6 @@ public class AamonAction : MonoBehaviour
     void Start()
     {
         TryGetComponent<AamonActor>(out actor);
-        playerInputAction = FindObjectOfType<PlayerInputAction>();
     }
 
     // Update is called once per frame
