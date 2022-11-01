@@ -8,7 +8,7 @@ public class IdleState :  IState
     {
         var actions = (AamonAction) action;
         
-        actions.SetAnimatorCrossState("Idle" , 0.1f);
+        actions.SetAnimatorCrossState("Idle" , 0.5f);
 
         if(actions.isStateLog) Debug.Log("Idle Enter!!");
     }

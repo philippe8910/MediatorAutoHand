@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AamonActor : MonoBehaviour
 {
-    private float speed = 40;
+    private float speed = 45;
     
     private float groundTriggerRange = 0.03f;
 
