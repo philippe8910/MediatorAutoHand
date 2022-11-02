@@ -19,9 +19,9 @@ public class RunState :  IState
         
         var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
         var isJump = actions.PlayerInputAction().GetJumpActionBoolean();
-        var isFalling = actions.Actor().GetFallingDetected() && !actions.Actor().GetGroundDetected(actions.transform);
+        var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
 
-        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.Actor().Speed() * Time.deltaTime;
+        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
 
 
         actions.Movement(runVector);
@@ -39,4 +39,6 @@ public class RunState :  IState
         
         if(actions.isStateLog) Debug.Log("Run Exit!!");
     }
+
+    public Rigidbody rigidbody { get; set; }
 }

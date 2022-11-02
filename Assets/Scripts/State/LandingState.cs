@@ -17,7 +17,7 @@ namespace State
         {
             var actions = (AamonAction) action;
             
-            var info = actions.Actor().Animator().GetCurrentAnimatorStateInfo(0);
+            var info = actions.Animator().GetCurrentAnimatorStateInfo(0);
             var isPlayEnding = info.normalizedTime >= 1;
             
             actions.StateListener(new IdleState() , isPlayEnding);

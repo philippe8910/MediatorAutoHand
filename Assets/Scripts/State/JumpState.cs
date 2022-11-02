@@ -9,12 +9,12 @@ public class JumpState :  IState
     public void OnEnterState(object action)
     {
         var actions = (AamonAction) action;
-        var jumpVector = actions.Actor().Rigidbody().velocity;
+        var jumpVector = actions.Rigidbody().velocity;
 
         jumpVector = new Vector3(jumpVector.x, 1.5f, jumpVector.z);
         
         actions.SetAnimatorCrossState("Jump" , 0.01f);
-        actions.Actor().Rigidbody().AddForce(jumpVector , ForceMode.Impulse);
+        actions.Rigidbody().AddForce(jumpVector , ForceMode.Impulse);
         
         if(actions.isStateLog) Debug.Log("Jump Enter!!");
     }
@@ -22,9 +22,9 @@ public class JumpState :  IState
     public void OnStayState(object action)
     {
         var actions = (AamonAction) action;
-        var isLanding = actions.Actor().GetGroundDetected(actions.transform);
+        var isLanding = actions.GetGroundDetected();
         
-        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.Actor().Speed() * Time.deltaTime;
+        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
         
         actions.Movement(runVector);
         

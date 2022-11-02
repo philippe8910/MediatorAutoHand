@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState :  IState
+public class IdleState : IState
 {
     public virtual void OnEnterState(object action)
     {
@@ -19,7 +19,7 @@ public class IdleState :  IState
         
         var isJump = actions.PlayerInputAction().GetJumpActionBoolean();
         var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
-        var isFalling = actions.Actor().GetFallingDetected() && !actions.Actor().GetGroundDetected(actions.transform);
+        var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
 
         actions.StateListener(new JumpState(), isJump);
         actions.StateListener(new RunState() , isJoystickInput);

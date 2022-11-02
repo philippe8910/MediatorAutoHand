@@ -8,9 +8,13 @@ public class AamonAction : MonoBehaviour
 {
     [SerializeField] protected IState currentState = new IdleState();
 
-    [SerializeField] protected AamonActor actor = new AamonActor();
-
     [SerializeField] protected PlayerInputAction playerInputAction = new PlayerInputAction();
+    
+    [InlineEditor] [SerializeField] private ActorData actorData;
+
+    private Rigidbody rigidbody;
+
+    private Animator animator;
 
     public bool isStateLog;
     
@@ -18,10 +22,8 @@ public class AamonAction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TryGetComponent<Rigidbody>(out var rigidbody);
-        TryGetComponent<Animator>(out var animator);
-        
-        actor.Start(rigidbody , animator);
+        TryGetComponent<Rigidbody>(out rigidbody);
+        TryGetComponent<Animator>(out animator);
     }
 
     // Update is called once per frame
@@ -30,16 +32,36 @@ public class AamonAction : MonoBehaviour
         currentState.OnStayState(this);
     }
 
-    public AamonActor Actor()
+    public Rigidbody Rigidbody()
     {
-        return actor;
+        return rigidbody;
     }
 
+    public Animator Animator()
+    {
+        return animator;
+    }
+
+    public ActorData ActorData()
+    {
+        return actorData;
+    }
+    
     public PlayerInputAction PlayerInputAction()
     {
         return playerInputAction;
     }
+
+    public bool GetGroundDetected()
+    {
+        return Physics.CheckSphere(transform.position + actorData.groundOffset, actorData.groundTriggerRange, actorData.groundLayerMask);
+    }
     
+    public bool GetFallingDetected()
+    {
+        return rigidbody.velocity.y < 0.1;
+    }
+
     public void ChangeState(IState newState)
     {
         currentState.OnExitState(this);
@@ -51,19 +73,18 @@ public class AamonAction : MonoBehaviour
     {
         Vector3 move = new Vector3(input.x, 0, input.y);
 
-        actor.Rigidbody().velocity = new Vector3(input.x * actor.Speed() * Time.deltaTime, actor.Rigidbody().velocity.y,
-            input.y * actor.Speed() * Time.deltaTime);
+        rigidbody.velocity = new Vector3(input.x * actorData.speed * Time.deltaTime, rigidbody.velocity.y,
+            input.y * actorData.speed * Time.deltaTime);
 
         if (input != Vector2.zero)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(input.x , input.y) * Mathf.Rad2Deg, 0));
         }
     }
-    
 
     public void SetAnimatorCrossState(string stateName , float setFixedTime)
     {
-        actor.Animator().CrossFade(stateName , setFixedTime);
+        animator.CrossFade(stateName , setFixedTime);
     }
     
     public void StateListener(IState state , bool value)
@@ -78,6 +99,6 @@ public class AamonAction : MonoBehaviour
     {
         Gizmos.color = Color.red;
         
-        Gizmos.DrawSphere(transform.position + actor.groundOffset , actor.GroundTriggerRange());
+        Gizmos.DrawSphere(transform.position + actorData.groundOffset , actorData.groundTriggerRange);
     }
 }
