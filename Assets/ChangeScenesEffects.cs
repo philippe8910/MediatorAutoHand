@@ -6,7 +6,7 @@ using Project;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class ScenesSystem : MonoBehaviour
+public class ChangeScenesEffects : MonoBehaviour
 {
     private Animator animator;
 
@@ -41,14 +41,15 @@ public class ScenesSystem : MonoBehaviour
     {
         var info = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (info.normalizedTime >= 1)
+        if (info.normalizedTime >= 1 && info.IsName("FadeOut"))
         {
             endAction?.Invoke();
+            animator.Play("FadeIn");
             yield return null;
         }
         else
         {
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds(0.01f);
             StartCoroutine(StartDetected());
         }
     }
