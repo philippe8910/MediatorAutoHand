@@ -8,18 +8,19 @@ public class WalkState : IState
     {
         var actions = (AamonAction) action;
         
-        actions.SetAnimatorCrossState("Run" , 0.2f);
+        actions.SetAnimatorCrossState("Walk" , 0.15f);
         
-        if(actions.isStateLog) Debug.Log("Run Enter!!");
+        if(actions.isStateLog) Debug.Log("Walk Enter!!");
     }
 
     public void OnStayState(object action)
     {
         var actions = (AamonAction) action;
         
-        var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
+        var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
         var isJump = actions.PlayerInputAction().GetJumpActionBoolean() && !actions.GetOverHeadDetected();
         var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
+        var isRun = actions.PlayerInputAction().JoystickActionInput().magnitude > 0.3f;
 
         var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
 
@@ -27,10 +28,11 @@ public class WalkState : IState
         actions.Movement(runVector);
         
         actions.StateListener(new IdleState() , isJoystickInput);
+        actions.StateListener(new RunState() , isRun && isJoystickInput);
         actions.StateListener(new JumpState() , isJump);
         actions.StateListener(new FallingState() , isFalling);
         
-        if(actions.isStateLog) Debug.Log("Run Stay!!");
+        if(actions.isStateLog) Debug.Log("Walk Stay!!");
 
     }
 
