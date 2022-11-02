@@ -6,40 +6,31 @@ public class WalkState : IState
 {
     public void OnEnterState(object action)
     {
-       /*
-        *  action.SetAnimatorState(action.walkState , true);
-        action.characterActor().SetSpeed(15f);
-        */
+        var actions = (AamonAction) action;
+        
+        actions.SetAnimatorCrossState("Run" , 0.2f);
+        
+        if(actions.isStateLog) Debug.Log("Run Enter!!");
     }
 
     public void OnStayState(object action)
     {
-        /*
-         * Debug.Log("walkState!!!!!");
+        var actions = (AamonAction) action;
         
-        if (action.GetInputVector2() == Vector2.zero)
-        {
-            action.ChangeState(new IdleState());
-        }
+        var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
+        var isJump = actions.PlayerInputAction().GetJumpActionBoolean() && !actions.GetOverHeadDetected();
+        var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
 
-        if (action.ControllerAction().GetRunButton())
-        {
-            action.ChangeState(new RunState());
-        }
+        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
+
+
+        actions.Movement(runVector);
         
-        if (action.ControllerAction().GetJumpButton())
-        {
-            action.ChangeState(new JumpState());
-        }
-
-        if (action.characterActor().GetFallAction())
-        {
-            action.ChangeState(new FallingState());
-        }
-
-        action.characterActor().Movement(action.GetInputVector2());
-        action.SetAnimatorState(action.landingState , true);
-         */
+        actions.StateListener(new IdleState() , isJoystickInput);
+        actions.StateListener(new JumpState() , isJump);
+        actions.StateListener(new FallingState() , isFalling);
+        
+        if(actions.isStateLog) Debug.Log("Run Stay!!");
 
     }
 

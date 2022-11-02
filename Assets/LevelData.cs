@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class LevelData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] public Transform playerStartPos;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] public Transform playerEndPos;
 }

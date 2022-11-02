@@ -41,5 +41,8 @@ public class LevelSystem : MonoBehaviour
         
         levelLists.ForEach(level => level.SetActive(false));
         levelLists[levelIndex].SetActive(true);
+        
+        levelLists[levelIndex].TryGetComponent<LevelData>(out var levelData);
+        player.transform.position = levelData.playerStartPos.position;
     }
 }

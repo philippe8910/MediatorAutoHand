@@ -1846,13 +1846,13 @@ GameObject:
   - component: {fileID: 3775607874298754153}
   - component: {fileID: 4364107170709931259}
   - component: {fileID: 4364107170709931256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aamon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4552708176395300562
 Transform:
   m_ObjectHideFlags: 0
@@ -1906,6 +1906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42de66b4d7198c74286ddfa9664ccd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actorData: {fileID: 11400000, guid: f7de9ed50be35d44aa6842ae4e990266, type: 2}
   isStateLog: 0
 --- !u!114 &3775607874298754159
 MonoBehaviour:
@@ -1957,7 +1958,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775607874298754152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d975bb4661eb244a698f2a75d13fe3, type: 3}
   m_Name: 
@@ -1980,7 +1981,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775607874298754152}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
   m_Name: 
