@@ -16,7 +16,7 @@ public class GrabbableNormalCube : MonoBehaviour
     [SerializeField] private LayerMask onReleaseLayerMask;
     
 
-    private void OnEnable()
+    private void Start()
     {
         TryGetComponent<Animator>(out animator);
 

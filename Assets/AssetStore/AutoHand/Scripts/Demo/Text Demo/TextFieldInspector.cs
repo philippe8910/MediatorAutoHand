@@ -8,13 +8,4 @@ public class TextFieldInspector : MonoBehaviour
 {
     [TextArea]
     public string text;
-
-    public GameObject owo, wow;
-
-    private async void Start()
-    {
-        await Task.Delay(100);
-        owo.SetActive(true);
-        wow.SetActive(true);
-    }
 }
