@@ -18,7 +18,7 @@ public class RunState :  IState
         var actions = (AamonAction) action;
         
         var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
-        var isJump = actions.PlayerInputAction().GetJumpActionBoolean();
+        var isJump = actions.PlayerInputAction().GetJumpActionBoolean() && !actions.GetOverHeadDetected();
         var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
 
         var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;

@@ -56,6 +56,11 @@ public class AamonAction : MonoBehaviour
     {
         return Physics.CheckSphere(transform.position + actorData.groundOffset, actorData.groundTriggerRange, actorData.groundLayerMask);
     }
+
+    public bool GetOverHeadDetected()
+    {
+        return Physics.CheckSphere(transform.position + actorData.overHeadOffset, actorData.overHeadTriggerRange);
+    }
     
     public bool GetFallingDetected()
     {
@@ -100,5 +105,6 @@ public class AamonAction : MonoBehaviour
         Gizmos.color = Color.red;
         
         Gizmos.DrawSphere(transform.position + actorData.groundOffset , actorData.groundTriggerRange);
+        Gizmos.DrawSphere(transform.position + actorData.overHeadOffset , actorData.overHeadTriggerRange);
     }
 }
