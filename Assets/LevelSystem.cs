@@ -7,6 +7,10 @@ using UnityEngine;
 
 public class LevelSystem : MonoBehaviour
 {
+    [SerializeField] private AamonAction player;
+
+    [SerializeField] private GameObject beginMenu;
+
     [SerializeField] private List<GameObject> levelLists = new List<GameObject>();
 
     [SerializeField] private int levelIndex = 0;
@@ -14,7 +18,7 @@ public class LevelSystem : MonoBehaviour
     void Start()
     {
         levelIndex = -1;
-        
+
         EventBus.Post(new ChangeScenesDetected(ChangeLevel));
     }
     
@@ -26,6 +30,12 @@ public class LevelSystem : MonoBehaviour
     
     public void ChangeLevel()
     {
+        if (levelIndex == -1)
+        {
+            player.gameObject.SetActive(true);
+            beginMenu.SetActive(false);
+        }
+        
         levelIndex++;
         levelIndex = Mathf.Clamp(levelIndex , 0 , levelLists.Count);
         
