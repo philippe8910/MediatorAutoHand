@@ -8,7 +8,7 @@ public class RunState :  IState
     {
         var actions = (AamonAction) action;
         
-        actions.SetAnimatorCrossState("Run" , 0.1f);
+        actions.SetAnimatorCrossState("Run" , 0.2f);
         
         if(actions.isStateLog) Debug.Log("Run Enter!!");
     }
