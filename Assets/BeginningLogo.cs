@@ -14,14 +14,11 @@ public class BeginningLogo : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position , target.transform.position , 0.1f);
         transform.LookAt(Camera.main.transform);
 
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
-        {
-            ChangeScenes();
-        }
+       
     }
 
     public void ChangeScenes()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

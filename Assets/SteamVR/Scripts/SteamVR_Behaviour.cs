@@ -35,7 +35,7 @@ namespace Valve.VR
 
         public bool initializeSteamVROnAwake = true;
 
-        public bool doNotDestroy = true;
+        public bool doNotDestroy = false;
 
         [HideInInspector]
         public SteamVR_Render steamvr_render;
