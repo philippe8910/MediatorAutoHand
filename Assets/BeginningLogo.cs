@@ -19,6 +19,6 @@ public class BeginningLogo : MonoBehaviour
 
     public void ChangeScenes()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }
