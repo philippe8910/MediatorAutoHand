@@ -13,7 +13,7 @@ namespace VolumetricFogAndMist2
         private void OnSceneGUI()
         {
 
-            Event e = Event.current;
+            UnityEngine.Event e = UnityEngine.Event.current;
             if (fog == null || !fog.enableFogOfWar || !maskEditorEnabled.boolValue || e == null || fog.fogOfWarTexture == null)
             {
                 return;
@@ -24,7 +24,7 @@ namespace VolumetricFogAndMist2
             if (sceneView != null) sceneCamera = sceneView.camera;
             if (sceneCamera == null) return;
 
-            Vector2 mousePos = Event.current.mousePosition;
+            Vector2 mousePos = UnityEngine.Event.current.mousePosition;
             if (mousePos.x < 0 || mousePos.x > sceneCamera.pixelWidth || mousePos.y < 0 || mousePos.y > sceneCamera.pixelHeight) return;
 
             Selection.activeGameObject = fog.gameObject;

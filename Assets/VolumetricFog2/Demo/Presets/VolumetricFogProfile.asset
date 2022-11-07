@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 612e70f49e5124da0a95111a57250300, type: 3}
-  m_Name: FogOfWarScenePresets
+  m_Name: VolumetricFogProfile
   m_EditorClassIdentifier: 
-  raymarchQuality: 6
-  raymarchMinStep: 0.1
-  jittering: 0.5
-  dithering: 1
-  renderQueue: 3100
+  raymarchQuality: 4
+  raymarchMinStep: 4.52
+  jittering: 1.68
+  dithering: 1.233
+  renderQueue: 2631
   sortingLayerID: 0
   sortingOrder: 0
   noiseTexture: {fileID: 2800000, guid: 9c79340e1a1054275ba04070a27de306, type: 3}
-  noiseStrength: 0.8
+  noiseStrength: 1.54
   noiseScale: 15
   noiseFinalMultiplier: 1
   useDetailNoise: 0
-  detailTexture: {fileID: 11700000, guid: 950add8d241c6479bbab1f10e1035d60, type: 2}
+  detailTexture: {fileID: 11700000, guid: 8d85e65c85da6594e83ede201a92c68e, type: 2}
   detailScale: 0.35
   detailStrength: 0.5
   detailOffset: -0.5
-  density: 1.3
+  density: 0.2
   shape: 0
-  border: 0.05
+  border: 0.118
   verticalOffset: 0
   distance: 0
   distanceFallOff: 0
@@ -107,12 +107,12 @@ MonoBehaviour:
   brightness: 1
   deepObscurance: 1
   specularColor: {r: 1, g: 1, b: 0.8, a: 1}
-  specularThreshold: 0.637
+  specularThreshold: 0.415
   specularIntensity: 0.428
-  turbulence: 1.2
+  turbulence: 0.73
   windDirection: {x: 0.02, y: 0, z: 0}
-  dayNightCycle: 1
-  lightDiffusionPower: 32
-  lightDiffusionIntensity: 0.4
-  receiveShadows: 0
-  shadowIntensity: 0.5
+  dayNightCycle: 0
+  lightDiffusionPower: 40.9
+  lightDiffusionIntensity: 0.76
+  receiveShadows: 1
+  shadowIntensity: 1
