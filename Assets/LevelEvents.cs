@@ -32,17 +32,11 @@ public class LevelEvents : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == enterLayer)
-        {
-            isEnter = true;
-        }
+        isEnter = true;
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == enterLayer)
-        {
-            isEnter = false;
-        }
+        isEnter = false;
     }
 }

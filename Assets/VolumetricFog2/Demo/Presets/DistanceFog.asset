@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612e70f49e5124da0a95111a57250300, type: 3}
   m_Name: DistanceFog
   m_EditorClassIdentifier: 
-  raymarchQuality: 16
+  raymarchQuality: 10
   raymarchMinStep: 0.1
   jittering: 0
   dithering: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
   verticalOffset: -0.04
   distance: 0
   distanceFallOff: 1
-  terrainFit: 1
+  terrainFit: 0
   terrainFitResolution: 128
   terrainLayerMask:
     serializedVersion: 2
@@ -112,7 +112,7 @@ MonoBehaviour:
   turbulence: 0.73
   windDirection: {x: -0.02, y: 0, z: 0}
   dayNightCycle: 1
-  lightDiffusionPower: 18.6
+  lightDiffusionPower: 26.1
   lightDiffusionIntensity: 0
   receiveShadows: 1
   shadowIntensity: 0.415
