@@ -15,17 +15,17 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5566038, g: 0.4662371, b: 0.4016999, a: 1}
+  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.03
   m_LinearFogStart: -7.65
   m_LinearFogEnd: 77.51
-  m_AmbientSkyColor: {r: 0.1254902, g: 0.19215687, b: 0.2509804, a: 1}
+  m_AmbientSkyColor: {r: 0.13063627, g: 0.11486983, b: 0.08333694, a: 1}
   m_AmbientEquatorColor: {r: 0.2509804, g: 0.18431373, b: 0.1254902, a: 1}
   m_AmbientGroundColor: {r: 0.14117648, g: 0.10980392, b: 0.10980392, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.4022339, g: 0.47262332, b: 0.6509434, a: 1}
+  m_SubtractiveShadowColor: {r: 0.6415094, g: 0.52878845, b: 0.46297613, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: f14e791cab3ea0c4397ab4827d05bebc, type: 2}
   m_HaloStrength: 0.687
   m_FlareStrength: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 777081161}
-  m_IndirectSpecularColor: {r: 0.6013938, g: 0.55713654, b: 0.5195156, a: 1}
+  m_IndirectSpecularColor: {r: 0.4393324, g: 0.36488536, b: 0.3172956, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -302,6 +302,53 @@ Transform:
   m_Father: {fileID: 696471399}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!28 &229374042
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 32
+  m_Height: 1
+  m_CompleteImageSize: 128
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMasterTextureLimit: 0
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 0
+  m_PlatformBlob: 
+  image data: 128
+  _typelessdata: fae0cafff9dec6fff9dcc3fff8d9bffff7d7bbfff6d5b8fff5d3b4fff5d0b0fff4ceadfff3cca9fff2caa6fff1c7a2fff1c59efff1c7a2fff2caa7fff3cdacfff3d0b1fff4d3b6fff5d6bafff6d9bffff6dcc4fff7dfc9fff8e2cefff8e5d3fff9e8d8fffaeaddfffbede2fffbf0e7fffcf3ebfffdf6f0fffef9f5fffefcfaff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!21 &331087656
 Material:
   serializedVersion: 6
@@ -311,11 +358,12 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: VolumetricFog2/VolumetricFog2DURP
   m_Shader: {fileID: 4800000, guid: cd79ad756ee3e4d3f8fe6b417ef8c835, type: 3}
-  m_ShaderKeywords: VF2_DEPTH_GRADIENT VF2_RECEIVE_SHADOWS VF2_SHAPE_BOX
+  m_ShaderKeywords: VF2_DEPTH_GRADIENT VF2_HEIGHT_GRADIENT VF2_RECEIVE_SHADOWS VF2_SHAPE_BOX
+    VF2_SURFACE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2015
+  m_CustomRenderQueue: 3071
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -338,7 +386,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightGradientTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 229374042}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -346,34 +394,34 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _DeepObscurance: 1.2
+    - _DeepObscurance: 0.96720004
     - _Density: 0.18
     - _DetailOffset: -0.5
-    - _LightDiffusionIntensity: 0.89
-    - _LightDiffusionPower: 16
+    - _LightDiffusionIntensity: 0.269
+    - _LightDiffusionPower: 2
     - _NoiseFinalMultiplier: 1
     - _NoiseScale: 0.006666667
     - _NoiseStrength: 1
-    - _ShadowIntensity: 0.501
+    - _ShadowIntensity: 0.624
     - _SpecularIntensity: 0
     - _SpecularThreshold: 0.5
     m_Colors:
     - _BoundsBorder: {r: 112.5001, g: 0, b: 112.5001, a: 0}
     - _BoundsCenter: {r: 0, g: 0, b: 0, a: 0}
-    - _BoundsData: {r: -2.37, g: -12.4, b: 24.8, a: 0}
-    - _BoundsExtents: {r: 112.5, g: 12.4, b: 112.5, a: 0}
+    - _BoundsData: {r: -0.04, g: -43.3, b: 86.6, a: 0}
+    - _BoundsExtents: {r: 112.5, g: 43.3, b: 112.5, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DetailColor: {r: 0.45023584, g: 0.37590447, b: 0.37590447, a: 0}
+    - _DetailColor: {r: 0.5695754, g: 0.5695754, b: 0.5695754, a: 0}
     - _DetailData: {r: 0.5, g: 4, b: -0.5, a: 0}
     - _DistanceData: {r: 0, g: 0, b: 0.000004, a: 10000}
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
     - _FogOfWarCenterAdjusted: {r: 0, g: 0, b: 0, a: 1}
     - _FogOfWarSize: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 1.9628204, g: 1.487594, b: 0.8054971, a: 1}
-    - _RayMarchSettings: {r: 16, g: 0.01, b: 0, a: 0.2}
+    - _LightColor: {r: 1.4808973, g: 1.2539294, b: 0.92905354, a: 1}
+    - _RayMarchSettings: {r: 16, g: 0.01, b: 0, a: 0.1}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
-    - _SunDir: {r: -0.51012254, g: 0.23904184, b: 0.8262168, a: 0}
-    - _WindDirection: {r: -16.61611, g: 0, b: 0, a: 0}
+    - _SunDir: {r: -0.512475, g: 0.23904301, b: 0.8247593, a: 0}
+    - _WindDirection: {r: -62.17463, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!1 &369252070
 GameObject:
@@ -1033,8 +1081,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8773585, g: 0.6649377, b: 0.3600481, a: 1}
-  m_Intensity: 1.89
+  m_Color: {r: 0.8867924, g: 0.7508792, b: 0.55633676, a: 1}
+  m_Intensity: 1.72
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1044,8 +1092,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 1
-    m_NormalBias: 1
+    m_Bias: 5.44
+    m_NormalBias: 0
     m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
@@ -1124,13 +1172,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777081160}
-  m_LocalRotation: {x: 0.15081039, y: 0.94359136, z: -0.081384666, w: 0.2833164}
+  m_LocalRotation: {x: 0.15092696, y: 0.94318646, z: -0.08117007, w: 0.28466085}
   m_LocalPosition: {x: 0.436203, y: 1.35, z: 4.150482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 13.83, y: 148.308, z: 14.218}
+  m_LocalEulerAnglesHint: {x: 13.83, y: 148.145, z: 14.218}
 --- !u!114 &777081164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,7 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UsePipelineSettings: 1
+  m_UsePipelineSettings: 0
 --- !u!1 &807570343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,7 +2653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8910161c34a13d6468288da3488ef73c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3139,7 +3187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8910161c34a13d6468288da3488ef73c, type: 2}
   m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3283,7 +3331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8910161c34a13d6468288da3488ef73c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3358,7 +3406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8910161c34a13d6468288da3488ef73c, type: 2}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -4707,7 +4755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8910161c34a13d6468288da3488ef73c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -5529,8 +5577,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.49056602, g: 0.3090755, b: 0.21520111, a: 0.4627451}
-      maxColor: {r: 0.3301887, g: 0.22721887, b: 0.12927198, a: 0.3764706}
+      minColor: {r: 0.49056602, g: 0.3090755, b: 0.21520111, a: 0.70980394}
+      maxColor: {r: 0.3301887, g: 0.22721887, b: 0.12927198, a: 0.4627451}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5908,7 +5956,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -10054,7 +10102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003632930}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 75.6, y: 1.4, z: 32.9}
+  m_LocalPosition: {x: 75.6, y: -5.7, z: 32.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10179,7 +10227,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078932694}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -10205,7 +10253,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4026540021
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 2137101133}
   m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 0
@@ -10227,9 +10275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
+  m_RenderShadows: 0
+  m_RequiresDepthTextureOption: 0
+  m_RequiresOpaqueTextureOption: 0
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
@@ -10248,6 +10296,42 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!84 &2137101133
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 3
+  m_Width: 128
+  m_Height: 128
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 142
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!23 &321819751361818
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24084,13 +24168,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5108114736029280809}
-  m_LocalRotation: {x: -0, y: -0.36959618, z: -0, w: 0.9291925}
+  m_LocalRotation: {x: -0, y: -0.10777768, z: -0, w: 0.994175}
   m_LocalPosition: {x: 18.3, y: 0, z: 1.6}
   m_LocalScale: {x: 4550.174, y: 4550.174, z: 4550.174}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: -43.381, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -12.374, z: 0}
 --- !u!1 &5599376117488400585
 GameObject:
   m_ObjectHideFlags: 0
