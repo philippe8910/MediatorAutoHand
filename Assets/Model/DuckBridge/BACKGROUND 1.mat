@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: BACKGROUND 1
   m_Shader: {fileID: 4800000, guid: 51b2dee0ab07bd84d8147601ff89e511, type: 3}
-  m_ShaderKeywords: EFFECT_HUE_VARIATION _NORMALMAP _REQUIRE_UV2 _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ShaderKeywords: EFFECT_HUE_VARIATION _EMISSION _NORMALMAP _REQUIRE_UV2 _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -565,7 +565,7 @@ Material:
     - _UseBump2ndMap: 0
     - _UseBumpMap: 1
     - _UseClippingCanceller: 0
-    - _UseEmission: 0
+    - _UseEmission: 1
     - _UseEmission2nd: 0
     - _UseGlitter: 0
     - _UseMain2ndTex: 0
