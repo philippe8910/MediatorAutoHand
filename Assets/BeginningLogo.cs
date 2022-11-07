@@ -1,24 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BeginningLogo : MonoBehaviour
 {
-    public GameObject target;
-
-    public Animator animator;
+    public UnityEvent OnStart;
+    
+    PlayerInputAction playerInputAction = new PlayerInputAction();
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position , target.transform.position , 0.1f);
-        transform.LookAt(Camera.main.transform);
-
-       
-    }
-
-    public void ChangeScenes()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        if (playerInputAction.GetTriggerBoolean())
+        {
+            
+            OnStart.Invoke();
+        }
     }
 }
