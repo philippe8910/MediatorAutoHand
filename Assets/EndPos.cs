@@ -22,6 +22,8 @@ public class EndPos : MonoBehaviour
             
             isEnter = true;
             levelSystem.LevelChangeTest();
+            
+            Destroy(gameObject);
         }
     }
 }

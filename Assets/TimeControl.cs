@@ -22,7 +22,7 @@ public class TimeControl : MonoBehaviour
 
     private void Update()
     {
-        //animation[animation.name].time = time;
+        animation[animation.name].time = time;
         
         if(!isControl && !isStop) time = Mathf.Lerp(time , 2 , 0.05f);
         if(isControl && !isStop) animation[animation.name].time = Mathf.Lerp(animation[animation.name].time , time , 0.5f);

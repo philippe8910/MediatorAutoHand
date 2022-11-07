@@ -33,6 +33,11 @@ public class LevelSystem : MonoBehaviour
     {
         EventBus.Post(new ChangeScenesDetected(ChangeLevel));
     }
+
+    public void ResetLevelTest()
+    {
+        EventBus.Post(new ChangeScenesDetected(ResetLevel));
+    }
     
     public void ChangeLevel()
     {
@@ -44,6 +49,14 @@ public class LevelSystem : MonoBehaviour
         }
         
         levelIndex++;
+        levelIndex = Mathf.Clamp(levelIndex , 0 , playerPosition.Count);
+
+        steamPlayer.position = playerPosition[levelIndex].position;
+        player.transform.position = aamonPosition[levelIndex].position;
+    }
+
+    public void ResetLevel()
+    {
         levelIndex = Mathf.Clamp(levelIndex , 0 , playerPosition.Count);
 
         steamPlayer.position = playerPosition[levelIndex].position;
