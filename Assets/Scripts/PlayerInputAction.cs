@@ -8,7 +8,7 @@ public class PlayerInputAction
 {
     private SteamVR_Action_Vector2 joystickActionVector2 = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("Move");
 
-    private SteamVR_Action_Boolean triggerActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Trigger");
+    private SteamVR_Action_Boolean triggerActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
     private SteamVR_Action_Boolean jumpActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Brake");
     private SteamVR_Action_Boolean interactiveActionBoolean =  SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Brake");
 

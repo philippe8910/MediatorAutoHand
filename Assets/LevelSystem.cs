@@ -9,9 +9,15 @@ public class LevelSystem : MonoBehaviour
 {
     [SerializeField] private AamonAction player;
 
+    [SerializeField] private Transform steamPlayer;
+
     [SerializeField] private GameObject beginMenu;
 
-    [SerializeField] private List<GameObject> levelLists = new List<GameObject>();
+    [SerializeField] private GameObject levelGround;
+
+    [SerializeField] private List<Transform> playerPosition = new List<Transform>();
+
+    [SerializeField] private List<Transform> aamonPosition = new List<Transform>();
 
     [SerializeField] private int levelIndex = 0;
     // Start is called before the first frame update
@@ -33,16 +39,14 @@ public class LevelSystem : MonoBehaviour
         if (levelIndex == -1)
         {
             player.gameObject.SetActive(true);
+            //levelGround.SetActive(true);
             beginMenu.SetActive(false);
         }
         
         levelIndex++;
-        levelIndex = Mathf.Clamp(levelIndex , 0 , levelLists.Count);
-        
-        levelLists.ForEach(level => level.SetActive(false));
-        levelLists[levelIndex].SetActive(true);
-        
-        levelLists[levelIndex].TryGetComponent<LevelData>(out var levelData);
-        player.transform.position = levelData.playerStartPos.position;
+        levelIndex = Mathf.Clamp(levelIndex , 0 , playerPosition.Count);
+
+        steamPlayer.position = playerPosition[levelIndex].position;
+        player.transform.position = aamonPosition[levelIndex].position;
     }
 }

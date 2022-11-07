@@ -12,13 +12,24 @@ public class TimeCrack : MonoBehaviour
     private bool isEnable;
     
     private GameObject cracks;
+
+    private PlayerInputAction _playerInputAction = new PlayerInputAction();
     
     // Start is called before the first frame update
     void Start()
     {
-        EventBus.Subscribe<PlayerActionDetected>(OnPlayerActionDetected);
+        //EventBus.Subscribe<PlayerActionDetected>(OnPlayerActionDetected);
 
         cracks = transform.GetChild(0).gameObject;
+    }
+
+    private void Update()
+    {
+        if (_playerInputAction.GetTriggerBoolean())
+        {
+            isEnable = !isEnable;
+            cracks.SetActive(isEnable);
+        }
     }
 
     private void OnPlayerActionDetected(PlayerActionDetected obj)
