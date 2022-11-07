@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class TimeControl : MonoBehaviour
@@ -22,11 +23,24 @@ public class TimeControl : MonoBehaviour
     private void Update()
     {
         animation[animation.name].time = time;
+        
+        if(!isControl && !isStop) time = Mathf.Lerp(time , 2 , 0.05f);
+        if(isControl && !isStop) animation[animation.name].time = Mathf.Lerp(animation[animation.name].time , time , 0.5f);
+        if(!isControl && isStop) time = time;
+        if(isControl && isStop) time = time;
     }
 
-    public void StopTime()
+    public async void StopTime()
     {
+        if (isStop)
+        {
+            return;
+        }
         isStop = true;
+
+        await Task.Delay(5000);
+
+        isStop = false;
     }
     public void SetAnimationTime(float value)
     {
