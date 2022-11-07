@@ -30,12 +30,12 @@ public class LevelEvents : MonoBehaviour
     {
     }
 
-    public void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         isEnter = true;
     }
 
-    public void OnTriggerExit(Collider other)
+    public virtual void OnTriggerExit(Collider other)
     {
         isEnter = false;
     }
