@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using Event;
-using Interface;
 using Project;
 using Sirenix.OdinInspector;
-using UnityEditor.EditorTools;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StartButton : ButtonEvent.ButtonEvent
 {
