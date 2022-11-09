@@ -25,24 +25,9 @@ public class TimeCrack : MonoBehaviour
 
     private void Update()
     {
-        if (_playerInputAction.GetTriggerBoolean())
-        {
-            isEnable = !isEnable;
-            cracks.SetActive(isEnable);
-        }
+
     }
-
-    private void OnPlayerActionDetected(PlayerActionDetected obj)
-    {
-        var input = obj.inputActionEnum;
-
-        if (input != PlayerInputActionEnum.Trigger)
-            return;
-
-        isEnable = !isEnable;
-        cracks.SetActive(isEnable);
-    }
-
+    
     [Button]
     public void TriggerTest()
     {
