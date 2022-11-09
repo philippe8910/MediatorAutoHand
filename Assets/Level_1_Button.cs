@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Level_1_Button : LevelEvents
@@ -15,6 +16,11 @@ public class Level_1_Button : LevelEvents
         
         //doorAnimator.CrossFade("Open" , 0.1f);
         doorAnimator.Play("Open");
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        isEnter = true;
     }
 
     public override void OnRelease()
