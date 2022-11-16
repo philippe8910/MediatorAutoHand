@@ -19,6 +19,7 @@ namespace Autohand {
         public LineRenderer line;
         [Space]
         public float maxRange = 5;
+        public float pointRange = 0.09f;
         [Tooltip("Defaults to grabbable on start if none")]
         public LayerMask layers;
         [Space]
@@ -103,7 +104,7 @@ namespace Autohand {
             }
         }
 
-        void Start() {
+        public virtual void Start() {
             catchAssisted = new List<CatchAssistData>();
             if(layers == 0)
                 layers = LayerMask.GetMask(Hand.grabbableLayerNameDefault);
@@ -167,7 +168,7 @@ namespace Autohand {
 
         void CheckDistanceGrabbable() {
             if(!pulling && pointing && primaryHand.holdingObj == null) {
-                bool didHit = Physics.SphereCast(forwardPointer.position, 0.03f, forwardPointer.forward, out hit, maxRange, layers);
+                bool didHit = Physics.SphereCast(forwardPointer.position, pointRange, forwardPointer.forward, out hit, maxRange, layers);
                 DistanceGrabbable hitGrabbable;
                 GrabbableChild hitGrabbableChild;
                 if(didHit) {
