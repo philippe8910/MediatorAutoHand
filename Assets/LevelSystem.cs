@@ -25,7 +25,7 @@ public class LevelSystem : MonoBehaviour
     {
         levelIndex = -1;
 
-        EventBus.Post(new ChangeScenesDetected(ChangeLevel));
+        //EventBus.Post(new ChangeScenesDetected(ChangeLevel));
     }
     
     [Button]
