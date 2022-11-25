@@ -39,7 +39,6 @@ public class LevelSystem : MonoBehaviour
     
     public void ChangeLevel()
     {
-        /*
         if (levelIndex == -1)
         {
             player.gameObject.SetActive(true);
@@ -52,7 +51,6 @@ public class LevelSystem : MonoBehaviour
 
         steamPlayer.position = playerPosition[levelIndex].position;
         player.transform.position = aamonPosition[levelIndex].position;
-        */
     }
 
     public void ResetLevel()

@@ -43,7 +43,7 @@ public class ChangeScenesEffects : MonoBehaviour
             if (info.normalizedTime >= 1 && info.IsName("FadeOut"))
             {
                 endAction?.Invoke();
-                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
+                //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
                 animator.Play("FadeIn");
                 yield return null;
             }

@@ -678,7 +678,7 @@ Shader "Hidden/ltspass_transparent"
             #define LIL_OPTIMIZE_USE_VERTEXLIGHT
             #define LIL_OPTIMIZE_USE_LIGHTMAP
             #define LIL_SRP_VERSION_MAJOR 10
-            #define LIL_SRP_VERSION_MINOR 7
+            #define LIL_SRP_VERSION_MINOR 10
             #define LIL_SRP_VERSION_PATCH 0
 
             #pragma target 4.5
@@ -1133,7 +1133,7 @@ Shader "Hidden/ltspass_transparent"
             #define LIL_OPTIMIZE_USE_VERTEXLIGHT
             #define LIL_OPTIMIZE_USE_LIGHTMAP
             #define LIL_SRP_VERSION_MAJOR 10
-            #define LIL_SRP_VERSION_MINOR 7
+            #define LIL_SRP_VERSION_MINOR 10
             #define LIL_SRP_VERSION_PATCH 0
 
             #pragma target 3.5

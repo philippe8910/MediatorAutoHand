@@ -9,6 +9,8 @@ public class GrabRobot : MonoBehaviour
     [SerializeField] private Transform ringPos;
 
     [SerializeField] private Transform target;
+
+    [SerializeField] private int index;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,16 @@ public class GrabRobot : MonoBehaviour
 
     private void OnPlayerSelectGrabbableObjectDetected(PlayerSelectGrabbableObjectDetected obj)
     {
-        target = obj.grabbableTransform;
+        var grabbableCustom = obj.grabbableTransform;
+
+        if (grabbableCustom != null)
+        {
+            target = grabbableCustom.GetIndexVector(index);
+        }
+        else
+        {
+            target = null;
+        }
     }
 
     // Update is called once per frame

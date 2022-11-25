@@ -4,9 +4,9 @@ namespace Event
 {
     public class PlayerSelectGrabbableObjectDetected
     {
-        public Transform grabbableTransform;
+        public GrabbableCustom grabbableTransform;
 
-        public PlayerSelectGrabbableObjectDetected(Transform _transform)
+        public PlayerSelectGrabbableObjectDetected(GrabbableCustom _transform)
         {
             grabbableTransform = _transform;
         }
