@@ -12,9 +12,7 @@ public class LevelSystem : MonoBehaviour
     [SerializeField] private Transform steamPlayer;
 
     [SerializeField] private GameObject beginMenu;
-
-    [SerializeField] private GameObject levelGround;
-
+    
     [SerializeField] private List<Transform> playerPosition = new List<Transform>();
 
     [SerializeField] private List<Transform> aamonPosition = new List<Transform>();
@@ -41,6 +39,7 @@ public class LevelSystem : MonoBehaviour
     
     public void ChangeLevel()
     {
+        /*
         if (levelIndex == -1)
         {
             player.gameObject.SetActive(true);
@@ -53,6 +52,7 @@ public class LevelSystem : MonoBehaviour
 
         steamPlayer.position = playerPosition[levelIndex].position;
         player.transform.position = aamonPosition[levelIndex].position;
+        */
     }
 
     public void ResetLevel()
