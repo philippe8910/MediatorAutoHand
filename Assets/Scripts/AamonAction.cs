@@ -17,6 +17,8 @@ public class AamonAction : MonoBehaviour
     private Animator animator;
 
     public bool isStateLog;
+
+    public Vector3 moveVector;
     
     //public Action runAction, jumpAction, climbAction;
     // Start is called before the first frame update
@@ -30,6 +32,11 @@ public class AamonAction : MonoBehaviour
     void Update()
     {
         currentState.OnStayState(this);
+    }
+
+    private void FixedUpdate()
+    {
+        Movement(moveVector);
     }
 
     public Rigidbody Rigidbody()

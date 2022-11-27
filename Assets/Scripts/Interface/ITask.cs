@@ -1,7 +1,4 @@
-﻿namespace Interface
+﻿public interface ITask
 {
-    public class ITask
-    {
-        public bool taskComplete;
-    }
+    public bool taskComplete { get; set; }
 }

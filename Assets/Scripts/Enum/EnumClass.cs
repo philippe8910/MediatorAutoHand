@@ -6,5 +6,11 @@
         Trigger,
         InputJoystick
     }
+
+    public enum Level_1_Event
+    {
+        StoneSeatGroove,
+        BridgeTieRod
+    }
     
 }

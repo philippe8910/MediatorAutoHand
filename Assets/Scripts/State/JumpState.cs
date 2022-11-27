@@ -26,7 +26,7 @@ public class JumpState :  IState
         
         var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
         
-        actions.Movement(runVector);
+        actions.moveVector = runVector;
         
         actions.StateListener(new LandingState() , isLanding);
 

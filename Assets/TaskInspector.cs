@@ -7,9 +7,9 @@ using UnityEngine.Events;
 
 public class TaskInspector : MonoBehaviour
 {
-    private List<ITask> taskList = new List<ITask>();
+    [SerializeField] private List<ITask> taskList = new List<ITask>();
 
-    private UnityEvent OnFinishAllTask;
+    [SerializeField] public UnityEvent OnFinishAllTask;
 
     // Start is called before the first frame update
     void Start()
