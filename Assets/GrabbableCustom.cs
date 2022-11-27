@@ -6,6 +6,7 @@ using Event;
 using Project;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody) , typeof(Grabbable) , typeof(DistanceGrabbable))]
 public class GrabbableCustom : MonoBehaviour
 {
     private Grabbable _grabbable;
