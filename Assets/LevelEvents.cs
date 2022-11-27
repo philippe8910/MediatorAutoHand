@@ -36,28 +36,44 @@ public class LevelEvents : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.transform.GetComponent<Rigidbody>())
+        if (useTriggerArea)
         {
-            isEnter = true;
-            OnTriggerEnterEvent?.Invoke();
+            if (other.transform.GetComponent<Rigidbody>())
+            {
+                isEnter = true;
+                OnTriggerEnterEvent?.Invoke();
+            }
         }
+        
+        
+        
     }
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.transform.GetComponent<Rigidbody>())
+        if (useTriggerArea)
         {
-            isEnter = true;
-            OnTriggerStayEvent?.Invoke();
+            if (other.transform.GetComponent<Rigidbody>())
+            {
+                isEnter = true;
+                OnTriggerStayEvent?.Invoke();
+            }
         }
+        
+        
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.transform.GetComponent<Rigidbody>())
+        if (useTriggerArea)
         {
-            isEnter = true;
-            OnTriggerExitEvent?.Invoke();
+            if (other.transform.GetComponent<Rigidbody>())
+            {
+                isEnter = true;
+                OnTriggerExitEvent?.Invoke();
+            }
         }
+        
+        
     }
 }
