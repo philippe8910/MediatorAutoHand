@@ -9,29 +9,23 @@ using UnityEngine;
 
 public class TimeCrack : MonoBehaviour
 {
-    private bool isEnable;
+    public Animator turnTableAnimator;
     
-    private GameObject cracks;
-
-    private PlayerInputAction _playerInputAction = new PlayerInputAction();
-    
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        //EventBus.Subscribe<PlayerActionDetected>(OnPlayerActionDetected);
-
-        cracks = transform.GetChild(0).gameObject;
+        if (other.GetComponent<Rigidbody>())
+        {
+            turnTableAnimator.CrossFade("Open" , 0.5f);
+            turnTableAnimator.GetComponent<TrunTableAnimatorController>().isEnterArea = true;
+        }
     }
 
-    private void Update()
+    private void OnTriggerExit(Collider other)
     {
-
+        if (other.GetComponent<Rigidbody>())
+        {
+            turnTableAnimator.CrossFade("Close" , 0.5f);
+            turnTableAnimator.GetComponent<TrunTableAnimatorController>().isEnterArea = false;
+        }
     }
-    
-    [Button]
-    public void TriggerTest()
-    {
-        EventBus.Post(new PlayerActionDetected(PlayerInputActionEnum.Trigger));
-    }
-        
 }

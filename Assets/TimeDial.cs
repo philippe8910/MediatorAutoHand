@@ -8,6 +8,8 @@ public class TimeDial : PhysicsGadgetHingeAngleReader
     private Grabbable grabbable;
     
     [SerializeField] private TimeControl targetTimeController;
+
+    [SerializeField] private TrunTableAnimatorController timeController;
     
     // Start is called before the first frame update
     new protected void Start()
@@ -34,5 +36,6 @@ public class TimeDial : PhysicsGadgetHingeAngleReader
     void Update()
     {
         targetTimeController.SetAnimationTime(GetValue() + 1);
+        timeController.SetAnimationTime(GetValue() + 1);
     }
 }
