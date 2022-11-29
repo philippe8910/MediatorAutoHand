@@ -17,11 +17,11 @@ public class RunState :  IState
     {
         var actions = (AamonAction) action;
         
-        var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() == Vector2.zero;
-        var isJump = actions.PlayerInputAction().GetJumpActionBoolean();
+        var isJoystickInput = PlayerInputAction.JoystickActionInput() == Vector2.zero;
+        var isJump = PlayerInputAction.GetJumpActionBoolean();
         var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
 
-        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
+        var runVector = PlayerInputAction.JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
 
 
         actions.moveVector = runVector;

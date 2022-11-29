@@ -17,12 +17,12 @@ public class WalkState : IState
     {
         var actions = (AamonAction) action;
         
-        var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
-        var isJump = actions.PlayerInputAction().GetJumpActionBoolean() && !actions.GetOverHeadDetected();
+        var isJoystickInput = PlayerInputAction.JoystickActionInput() != Vector2.zero;
+        var isJump = PlayerInputAction.GetJumpActionBoolean() && !actions.GetOverHeadDetected();
         var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
-        var isRun = actions.PlayerInputAction().JoystickActionInput().magnitude > 0.3f;
+        var isRun = PlayerInputAction.JoystickActionInput().magnitude > 0.3f;
 
-        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
+        var runVector = PlayerInputAction.JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
 
 
         actions.Movement(runVector);

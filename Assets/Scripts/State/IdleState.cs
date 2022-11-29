@@ -17,8 +17,8 @@ public class IdleState : IState
     {
         var actions = (AamonAction) action;
         
-        var isJump = actions.PlayerInputAction().GetJumpActionBoolean() && !actions.GetOverHeadDetected();
-        var isJoystickInput = actions.PlayerInputAction().JoystickActionInput() != Vector2.zero;
+        var isJump = PlayerInputAction.GetJumpActionBoolean() && !actions.GetOverHeadDetected();
+        var isJoystickInput = PlayerInputAction.JoystickActionInput() != Vector2.zero;
         var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
 
         actions.StateListener(new JumpState(), isJump);

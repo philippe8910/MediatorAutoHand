@@ -29,10 +29,36 @@ public class LevelEvents : MonoBehaviour
     [AutoToggleHeader("TieRod")]
     public bool useTieRod = true;
 
+    [EnableIf("useTieRod")]
     public UnityEvent OnTieRodTrigger;
 
-    
-    
+    [EnableIf("useTieRod")]
+    public UnityEvent OnTieRodRelease;
+
+    [EnableIf("useTieRod")]
+    public bool isTrigger;
+
+    private void Update()
+    {
+        OnTick();
+    }
+
+    private void OnTick()
+    {
+        if (isEnter && PlayerInputAction.GetInteractiveActionBoolean())
+        {
+            isTrigger = !isTrigger;
+
+            if (isTrigger)
+            {
+                OnTieRodTrigger?.Invoke();
+            }
+            else
+            {
+                OnTieRodRelease?.Invoke();
+            }
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -40,12 +66,14 @@ public class LevelEvents : MonoBehaviour
         {
             if (other.transform.GetComponent<Rigidbody>())
             {
-                isEnter = true;
                 OnTriggerEnterEvent?.Invoke();
             }
         }
-        
-        
+
+        if (useTieRod && other.CompareTag("Player"))
+        {
+            isEnter = true;
+        }
         
     }
 
@@ -55,7 +83,6 @@ public class LevelEvents : MonoBehaviour
         {
             if (other.transform.GetComponent<Rigidbody>())
             {
-                isEnter = true;
                 OnTriggerStayEvent?.Invoke();
             }
         }
@@ -69,11 +96,13 @@ public class LevelEvents : MonoBehaviour
         {
             if (other.transform.GetComponent<Rigidbody>())
             {
-                isEnter = true;
                 OnTriggerExitEvent?.Invoke();
             }
         }
         
-        
+        if (useTieRod && other.CompareTag("Player"))
+        {
+            isEnter = false;
+        }
     }
 }

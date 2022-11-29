@@ -24,7 +24,7 @@ public class JumpState :  IState
         var actions = (AamonAction) action;
         var isLanding = actions.GetGroundDetected();
         
-        var runVector = actions.PlayerInputAction().JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
+        var runVector = PlayerInputAction.JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
         
         actions.moveVector = runVector;
         
