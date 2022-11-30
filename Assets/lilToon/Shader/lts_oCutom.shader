@@ -12,7 +12,7 @@ Shader "Hidden/lilToonOutlineCustom"
         [lilToggle]     _ShiftBackfaceUV            ("Shift Backface UV", Int) = 0
                         _BackfaceForceShadow        ("Backface Force Shadow", Range(0,1)) = 0
         [lilHDR]        _BackfaceColor              ("Color", Color) = (0,0,0,0)
-                        _VertexLightStrength        ("Vertex Light Strength", Range(0,1)) = 0
+                        _VertexLightStrength        ("Vertex Light Strength", Range(0,1)) = 0 
                         _LightMinLimit              ("Light Min Limit", Range(0,1)) = 0.05
                         _LightMaxLimit              ("Light Max Limit", Range(0,10)) = 1
                         _BeforeExposureLimit        ("Before Exposure Limit", Float) = 10000
@@ -541,6 +541,13 @@ Shader "Hidden/lilToonOutlineCustom"
     SubShader
     {
         Tags {"RenderType" = "Opaque" "Queue" = "Geometry"}
+        
+        stencil
+        {
+            Ref 1
+            Comp NotEqual
+        }
+        
         UsePass "Hidden/ltspass_opaque/FORWARD"
         UsePass "Hidden/ltspass_opaque/FORWARD_OUTLINE"
         UsePass "Hidden/ltspass_opaque/SHADOW_CASTER"
