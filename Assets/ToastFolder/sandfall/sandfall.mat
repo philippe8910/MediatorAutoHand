@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sandfall
-  m_Shader: {fileID: -6465566751694194690, guid: 599a86ce4b1a52f45b3ab79a60bcafe9, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6212b4e1992f1ad47853084e662fcce8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -103,13 +103,13 @@ Material:
     m_Floats:
     - Vector1_1173424957ff48cc95b08165450dea7b: 1
     - Vector1_2490faefb419497f9a60d5dff43fe505: 0
-    - Vector1_2e2d9cf18dcf47b2ac77a41ded4e35f5: 1
+    - Vector1_2e2d9cf18dcf47b2ac77a41ded4e35f5: 0.02
     - Vector1_3a828f1c3b1b4ecb8c570c8ca630bcef: 1
     - Vector1_3c1999c77ba84ed480087ec24704b678: 0.1
     - Vector1_679b3ba35a1840ac8a277f7e44c1de05: -0.38
     - Vector1_88ac40b18a504cfe92da9d0fd5213a93: 4
     - Vector1_a2ff1350e3d543f6bc04fa56d7d428e3: 0
-    - Vector1_aa1028440b5d40eda6d2b562715bba85: 0
+    - Vector1_aa1028440b5d40eda6d2b562715bba85: -0.4
     - Vector1_b978c7ab17904bb0ac7d51e26a1322a0: 100
     - Vector1_d0263769db984acc806cdb426db15ff7: 1
     - Vector1_d319340836e2450386dbb0fc4dc42667: 0
@@ -119,7 +119,7 @@ Material:
     - Vector1_e133317606c2435fb879244917fd727b: 0
     - Vector1_e476d06139644b32a44857e18a3c56bf: 0.1
     - Vector1_ee86767e809f4bb8bd1ad80c8e37222d: 6
-    - Vector1_f4f5b159c194496f9f0dcc960a2dd17e: 0
+    - Vector1_f4f5b159c194496f9f0dcc960a2dd17e: 0.2
     - Vector1_fb432aa567a04f69adc60e18e2294c8b: 0
     - _AlphaClip: 0
     - _Blend: 0
@@ -131,7 +131,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Emission_Reduction: 4.98
+    - _Emission_Reduction: -0.08
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -141,7 +141,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Sand_Grains_Dispersion: 0.52
+    - _Sand_Grains_Dispersion: 0.71
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -150,19 +150,19 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_1af4ef7fbc624949a431b2d3735be4d2: {r: 0, g: 0, b: 0, a: 0}
+    - Color_1af4ef7fbc624949a431b2d3735be4d2: {r: 0.6981132, g: 0.26989233, b: 0.1284265, a: 1}
     - Color_61a58d91ccab4c8fb0df591c4f923fa1: {r: 0, g: 0, b: 0, a: 1}
     - Color_7713af8a9abb4c4d8c8c7c856e03e79d: {r: 2.4024742, g: 1.2728621, b: 0.62328345, a: 1}
     - Color_8fcb2356f1494bbfa9fc95d1388a105c: {r: 0.2297397, g: 0.17230478, b: 0.09685105, a: 1}
     - Color_b97f0d0b58be4e228d8f505fc7a48082: {r: 0.6418177, g: 0.5720235, b: 0.358462, a: 0}
     - Color_f621ff31c11a45f6ac3e1bc0e188cfd3: {r: 0.6509434, g: 0.5882795, b: 0.45750266, a: 0}
-    - Vector2_0bb19c2140ff45d9b1d6ac2d4368e988: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_0bb19c2140ff45d9b1d6ac2d4368e988: {r: 0.8, g: 2, b: 0, a: 0}
     - Vector2_324a777e910e4169a7c9ab7570f1466d: {r: 2, g: 2, b: 0, a: 0}
-    - Vector2_e33b81b3481444d7977f0cb6fda63d39: {r: 0, g: 0.5, b: 0, a: 0}
+    - Vector2_e33b81b3481444d7977f0cb6fda63d39: {r: 0, g: -0.15, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emission_Color: {r: 0.68, g: 0.42499998, b: 0.06799999, a: 1}
-    - _Sand_Grains_Color: {r: 0.61817455, g: 0.095103785, b: 0, a: 0}
+    - _Emission_Color: {r: 0.23584908, g: 0.16576186, b: 0.18373142, a: 1}
+    - _Sand_Grains_Color: {r: 36.99501, g: 26.873734, b: 21.813095, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
