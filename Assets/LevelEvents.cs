@@ -64,7 +64,7 @@ public class LevelEvents : MonoBehaviour
     {
         if (useTriggerArea)
         {
-            if (other.transform.GetComponent<Rigidbody>())
+            if (other.CompareTag("Player"))
             {
                 OnTriggerEnterEvent?.Invoke();
             }
@@ -81,7 +81,7 @@ public class LevelEvents : MonoBehaviour
     {
         if (useTriggerArea)
         {
-            if (other.transform.GetComponent<Rigidbody>())
+            if (other.CompareTag("Player"))
             {
                 OnTriggerStayEvent?.Invoke();
             }
@@ -94,7 +94,7 @@ public class LevelEvents : MonoBehaviour
     {
         if (useTriggerArea)
         {
-            if (other.transform.GetComponent<Rigidbody>())
+            if (other.CompareTag("Player"))
             {
                 OnTriggerExitEvent?.Invoke();
             }
