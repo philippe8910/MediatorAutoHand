@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612e70f49e5124da0a95111a57250300, type: 3}
   m_Name: DistanceFog
   m_EditorClassIdentifier: 
-  raymarchQuality: 2
+  raymarchQuality: 3
   raymarchMinStep: 0.1
   jittering: 0
   dithering: 1
@@ -20,7 +20,7 @@ MonoBehaviour:
   sortingLayerID: 0
   sortingOrder: 0
   noiseTexture: {fileID: 2800000, guid: 9c79340e1a1054275ba04070a27de306, type: 3}
-  noiseStrength: 3
+  noiseStrength: 2.38
   noiseScale: 15
   noiseFinalMultiplier: 1
   useDetailNoise: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
   verticalOffset: -0.88
   distance: 0
   distanceFallOff: 1
-  terrainFit: 0
+  terrainFit: 1
   terrainFitResolution: 128
   terrainLayerMask:
     serializedVersion: 2
@@ -106,7 +106,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 4
   brightness: 0.85
   deepObscurance: 0.806
-  specularColor: {r: 0.9716981, g: 0.8539151, b: 0.70127267, a: 1}
+  specularColor: {r: 0.972549, g: 0.8348432, b: 0.7019608, a: 1}
   specularThreshold: 0.875
   specularIntensity: 0.383
   turbulence: 0.73
