@@ -15,7 +15,7 @@ public class PlayerInputAction
     public static Vector2 JoystickActionInput()
     {
         EventBus.Post(new PlayerTriggerDetected(PlayerInputActionEnum.InputJoystick));
-        return joystickActionVector2.axis;
+        return new Vector2(joystickActionVector2.axis.x , joystickActionVector2.axis.y);
     }
     
     public static bool GetJumpActionBoolean()

@@ -1,17 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Event;
+using Project;
 using UnityEngine;
 
 public class EndPos : MonoBehaviour
 {
     [SerializeField] private bool isEnter;
 
-    [SerializeField] private LevelSystem levelSystem;
+    //[SerializeField] private LevelSystem levelSystem;
 
     private void Start()
     {
-        levelSystem = FindObjectOfType<LevelSystem>();
+        //levelSystem = FindObjectOfType<LevelSystem>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +23,7 @@ public class EndPos : MonoBehaviour
             Debug.Log("Level Pass");
             
             isEnter = true;
-            levelSystem.LevelChangeTest();
+            EventBus.Post(new ChangeScenesDetected(delegate { UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1); }));
             
             Destroy(gameObject);
         }

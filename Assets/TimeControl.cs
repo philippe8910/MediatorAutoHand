@@ -6,13 +6,15 @@ using UnityEngine;
 
 public class TimeControl : MonoBehaviour
 {
-    private Animation animation;
+    [SerializeField] private Animation animation;
 
     [Range(0 , 2)] public float time;
 
     [SerializeField] public bool isControl;
 
     [SerializeField] public bool isStop;
+
+    [SerializeField] public string name;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class TimeControl : MonoBehaviour
 
     private void Update()
     {
-        animation[animation.name].time = time;
+        animation[name].time = time;
         
         //if(!isControl && !isStop) time = Mathf.Lerp(time , 2 , 0.05f);
         //if(isControl && !isStop) animation[animation.name].time = Mathf.Lerp(animation[animation.name].time , time , 1f);

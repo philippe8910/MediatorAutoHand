@@ -16,6 +16,9 @@ public class LevelEvents : MonoBehaviour
     
     [EnableIf("useTriggerArea")]
     public bool isEnter;
+    
+    [EnableIf("useTriggerArea")]
+    public bool isOnlyPlayer;
 
     [EnableIf("useTriggerArea")]
     [SerializeField] public UnityEvent OnTriggerEnterEvent;
@@ -62,9 +65,16 @@ public class LevelEvents : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (useTriggerArea)
+        if (isOnlyPlayer)
         {
             if (other.CompareTag("Player"))
+            {
+                OnTriggerEnterEvent?.Invoke();
+            }
+        }
+        else
+        {
+            if (other.GetComponent<Rigidbody>())
             {
                 OnTriggerEnterEvent?.Invoke();
             }
@@ -94,10 +104,22 @@ public class LevelEvents : MonoBehaviour
     {
         if (useTriggerArea)
         {
-            if (other.CompareTag("Player"))
+            if (isOnlyPlayer)
             {
-                OnTriggerExitEvent?.Invoke();
+                if (other.CompareTag("Player"))
+                {
+                    OnTriggerExitEvent?.Invoke();
+                }
             }
+            else
+            {
+                if (other.GetComponent<Rigidbody>())
+                {
+                    OnTriggerExitEvent?.Invoke();
+                }
+            }
+            
+            
         }
         
         if (useTieRod && other.CompareTag("Player"))

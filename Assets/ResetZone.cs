@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Event;
+using Project;
 using UnityEngine;
 
 public class ResetZone : MonoBehaviour
@@ -17,7 +19,8 @@ public class ResetZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            _levelSystem.ResetLevelTest();
+            EventBus.Post(new ChangeScenesDetected(delegate { UnityEngine.SceneManagement.SceneManager.LoadScene(
+                UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex); }));
         }
     }
 }

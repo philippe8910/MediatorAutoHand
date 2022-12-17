@@ -25,6 +25,12 @@ public class ChangeScenesEffects : MonoBehaviour
     {
         EventBus.Post(new ChangeScenesDetected(delegate { Debug.Log("Change Test"); }));
     }
+    
+    [Button]
+    public void NextLevel()
+    {
+        EventBus.Post(new ChangeScenesDetected(delegate { UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1); }));
+    }
 
     private void OnChangeScenesDetected(ChangeScenesDetected obj)
     {
@@ -43,7 +49,6 @@ public class ChangeScenesEffects : MonoBehaviour
             if (info.normalizedTime >= 1 && info.IsName("FadeOut"))
             {
                 endAction?.Invoke();
-                //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
                 animator.Play("FadeIn");
                 yield return null;
             }
