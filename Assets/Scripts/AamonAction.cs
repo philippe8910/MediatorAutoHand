@@ -16,6 +16,8 @@ public class AamonAction : MonoBehaviour
 
     private Animator animator;
 
+    private Transform mainCamera;
+
     public bool isStateLog;
 
     public Vector3 moveVector;
@@ -26,6 +28,8 @@ public class AamonAction : MonoBehaviour
     {
         TryGetComponent<Rigidbody>(out rigidbody);
         TryGetComponent<Animator>(out animator);
+
+        mainCamera = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -84,6 +88,9 @@ public class AamonAction : MonoBehaviour
     public void Movement(Vector2 input)
     {
         Vector3 move = new Vector3(input.x, 0, input.y);
+        
+        move = Quaternion.AngleAxis(mainCamera.transform.rotation.eulerAngles.y, Vector3.up) * move;
+        move.Normalize();
 
         rigidbody.velocity = new Vector3(input.x * actorData.speed * Time.deltaTime, rigidbody.velocity.y,
             input.y * actorData.speed * Time.deltaTime);

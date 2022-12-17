@@ -11,6 +11,8 @@ public class LevelEvents : MonoBehaviour
 {
     public LayerMask enterLayer;
     
+    public List<GameObject> enterObject = new List<GameObject>();
+
     [AutoToggleHeader("TriggerArea")]
     public bool useTriggerArea = true;
     
@@ -77,6 +79,8 @@ public class LevelEvents : MonoBehaviour
             if (other.GetComponent<Rigidbody>())
             {
                 OnTriggerEnterEvent?.Invoke();
+                
+                enterObject.Add(other.gameObject);
             }
         }
 
@@ -91,9 +95,24 @@ public class LevelEvents : MonoBehaviour
     {
         if (useTriggerArea)
         {
-            if (other.CompareTag("Player"))
+            if (isOnlyPlayer)
             {
-                OnTriggerStayEvent?.Invoke();
+                if (other.CompareTag("Player"))
+                {
+                    OnTriggerStayEvent?.Invoke();
+                }
+            }
+            else
+            {
+                if (other.GetComponent<Rigidbody>())
+                {
+                    OnTriggerStayEvent?.Invoke();
+                }
+            }
+
+            if (useTieRod && other.CompareTag("Player"))
+            {
+                isEnter = true;
             }
         }
         
@@ -115,7 +134,13 @@ public class LevelEvents : MonoBehaviour
             {
                 if (other.GetComponent<Rigidbody>())
                 {
-                    OnTriggerExitEvent?.Invoke();
+
+                    enterObject.Remove(other.gameObject);
+
+                    if (enterObject.Count == 0)
+                    {
+                        OnTriggerExitEvent?.Invoke();
+                    }
                 }
             }
             
