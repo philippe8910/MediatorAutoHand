@@ -1,38 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Event;
+using Project;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Level_4_Task : MonoBehaviour
 {
-    [SerializeField] private List<Firelamp> task = new List<Firelamp>();
+    [SerializeField] private List<Lamp> taskGroup = new List<Lamp>();
 
-    [SerializeField] private UnityEvent OnTaskEnd;
-    // Start is called before the first frame update
+    [SerializeField] private UnityEvent OnLevelPass;
+
     void Start()
     {
-        
+        EventBus.Subscribe<PlayerLightTheFireDetected>(OnPlayerLightTheFireDetected);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnPlayerLightTheFireDetected(PlayerLightTheFireDetected obj)
     {
-        if (task.Count == 3)
+        var isLight = obj.isLight;
+        var task = obj.lamp;
+
+        if (isLight)
         {
-            if (task[0].isRight && task[1].isRight && task[2].isRight)
-            {
-                OnTaskEnd?.Invoke();
-            }
+            taskGroup.Add(task);
+        }
+        else
+        {
+            taskGroup.Remove(task);
+        }
+
+        if (taskGroup.Count == 3 && taskGroup.All(_ => _.correctAnswer == true))
+        {
+            OnLevelPass?.Invoke();
         }
     }
-
-    public void TaskAdd(Firelamp value)
-    {
-        task.Add(value);
-    }
-
-    public void TaskRemove(Firelamp value)
-    {
-        task.Remove(value);
-    }
+    
 }

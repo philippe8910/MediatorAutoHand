@@ -256,6 +256,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0.13, z: -0.0000009536743}
 --- !u!73398921 &39864620
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -272,10 +273,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11583,8 +11580,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 324684223}
-  - component: {fileID: 324684222}
   - component: {fileID: 324684221}
+  - component: {fileID: 324684224}
   m_Layer: 0
   m_Name: Lamp (1)
   m_TagString: Untagged
@@ -11606,89 +11603,6 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &324684222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 324684220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b5b91e701c6534d83b9887b8541641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enterLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  useTriggerArea: 1
-  isEnter: 0
-  isOnlyPlayer: 0
-  OnTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1570276328}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: PlayInFixedTime
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FadeIn
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnTriggerStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1570276328}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: PlayInFixedTime
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FadeOut
-          m_BoolArgument: 0
-        m_CallState: 2
-  useTieRod: 1
-  OnTieRodTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1777821567}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FireOff
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1777821562}
-        m_TargetAssemblyTypeName: Firelamp, Assembly-CSharp
-        m_MethodName: SetIsFire
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTieRodRelease:
-    m_PersistentCalls:
-      m_Calls: []
-  isTrigger: 0
 --- !u!4 &324684223
 Transform:
   m_ObjectHideFlags: 0
@@ -11705,6 +11619,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324684224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324684220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79395ea5a1feb474bb1cfab5d5125219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintCanvasAnimator: {fileID: 1570276328}
+  fireEffect: {fileID: 1777821565}
+  fireLight: {fileID: 1018085384}
+  OnPlayerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerInteractive:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerLightTheTorch:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &325071713
 GameObject:
   m_ObjectHideFlags: 0
@@ -12339,6 +12280,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!73398921 &390022150
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12355,10 +12297,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12574,6 +12512,7 @@ MonoBehaviour:
   enterLayer:
     serializedVersion: 2
     m_Bits: 0
+  enterObject: []
   useTriggerArea: 1
   isEnter: 0
   isOnlyPlayer: 0
@@ -12933,6 +12872,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0.13, z: -0.0000009536743}
 --- !u!73398921 &501688017
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12949,10 +12889,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18442,87 +18378,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645395339}
   m_CullTransparentMesh: 1
---- !u!1 &691482213
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 691482214}
-  - component: {fileID: 691482216}
-  - component: {fileID: 691482215}
-  m_Layer: 0
-  m_Name: 1-4fireLamp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &691482214
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691482213}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.02590352, y: -0.7185688, z: 0.16608332}
-  m_LocalScale: {x: 97.76087, y: 97.76089, z: 24.74056}
-  m_Children: []
-  m_Father: {fileID: 1777821566}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &691482215
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691482213}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2413751341462511734, guid: dee6cd9a42c9b5a48af4c68f2375f952, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &691482216
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691482213}
-  m_Mesh: {fileID: 6113912581363944171, guid: dee6cd9a42c9b5a48af4c68f2375f952, type: 3}
 --- !u!114 &715004381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19241,6 +19096,7 @@ MonoBehaviour:
   enterLayer:
     serializedVersion: 2
     m_Bits: 0
+  enterObject: []
   useTriggerArea: 1
   isEnter: 0
   isOnlyPlayer: 0
@@ -19596,6 +19452,7 @@ MonoBehaviour:
   enterLayer:
     serializedVersion: 2
     m_Bits: 0
+  enterObject: []
   useTriggerArea: 1
   isEnter: 0
   isOnlyPlayer: 0
@@ -19710,7 +19567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1777821566}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1018085383
 ParticleSystemRenderer:
@@ -24665,6 +24522,7 @@ MonoBehaviour:
   enterLayer:
     serializedVersion: 2
     m_Bits: 0
+  enterObject: []
   useTriggerArea: 1
   isEnter: 0
   isOnlyPlayer: 0
@@ -34940,6 +34798,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0.13, z: -0.0000009536743}
 --- !u!73398921 &1395055340
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -34956,10 +34815,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -40670,6 +40525,7 @@ GameObject:
   m_IsActive: 0
 --- !u!73398921 &1582915066
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -40686,10 +40542,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46204,6 +46056,7 @@ GameObject:
   m_IsActive: 0
 --- !u!73398921 &1772201558
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46220,10 +46073,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46337,9 +46186,6 @@ GameObject:
   - component: {fileID: 1777821566}
   - component: {fileID: 1777821565}
   - component: {fileID: 1777821564}
-  - component: {fileID: 1777821562}
-  - component: {fileID: 1777821567}
-  - component: {fileID: 1777821563}
   m_Layer: 0
   m_Name: Fire (4)
   m_TagString: Untagged
@@ -46347,37 +46193,9 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1777821562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777821561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8fe625cbad2a204c868ba5469477474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnter: 0
-  isFire: 0
-  isRight: 1
---- !u!136 &1777821563
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777821561}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.95
-  m_Height: 0.86
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.13, z: -0.0000009536743}
 --- !u!73398921 &1777821564
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46394,10 +46212,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46496,30 +46310,10 @@ Transform:
   m_LocalPosition: {x: 0.0017000437, y: 0.047159553, z: -0.010900021}
   m_LocalScale: {x: 0.06562983, y: 0.06562983, z: 0.06562983}
   m_Children:
-  - {fileID: 691482214}
   - {fileID: 1018085382}
   m_Father: {fileID: 324684223}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1777821567
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777821561}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 43d78098e8989d747b5ba237a34d8c08, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1807908514
 GameObject:
   m_ObjectHideFlags: 0
@@ -46681,6 +46475,7 @@ MonoBehaviour:
   enterLayer:
     serializedVersion: 2
     m_Bits: 0
+  enterObject: []
   useTriggerArea: 1
   isEnter: 0
   isOnlyPlayer: 0
@@ -47164,6 +46959,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0.13, z: -0.0000009536743}
 --- !u!73398921 &1956427929
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -47180,10 +46976,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -50228,6 +50020,7 @@ MonoBehaviour:
   enterLayer:
     serializedVersion: 2
     m_Bits: 0
+  enterObject: []
   useTriggerArea: 1
   isEnter: 0
   isOnlyPlayer: 0
@@ -50602,8 +50395,8 @@ GameObject:
   - component: {fileID: 4657202161163716792}
   - component: {fileID: 4657202161163716798}
   m_Layer: 0
-  m_Name: Trocuh
-  m_TagString: Troch
+  m_Name: Torch
+  m_TagString: Torch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51616,6 +51409,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!73398921 &7166953595679609897
 VFXRenderer:
+  serializedVersion: 1
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -51632,10 +51426,6 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -57333,6 +57123,7 @@ MonoBehaviour:
   enterLayer:
     serializedVersion: 2
     m_Bits: 0
+  enterObject: []
   useTriggerArea: 1
   isEnter: 0
   isOnlyPlayer: 0
