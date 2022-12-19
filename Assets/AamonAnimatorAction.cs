@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AamonAnimatorAction : MonoBehaviour
 {
+    public Vector3 targetPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class AamonAnimatorAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

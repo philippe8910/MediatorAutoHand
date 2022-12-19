@@ -215,7 +215,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a091f99cd36e9c4f8a2a4ad7e5c0201, type: 2}
+  - {fileID: 2100000, guid: 32c57e1259a63714eb9d9503149f5f44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1176,9 +1176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 6028725851047536607}
+  ignoreMask:
+    serializedVersion: 2
+    m_Bits: 0
   buffer: 0
   alwaysRun: 0
-  strict: 1
+  ignoreMaxHandDistance: 1
 --- !u!135 &4851142168149722747
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1273,28 +1276,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9413d460e98076241a1f46c91201217d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoreMe: 0
   fingers:
   - {fileID: 2905887402575348334}
   - {fileID: 2752618460104054940}
   - {fileID: 6101410539257012522}
   - {fileID: 5565803314443082351}
   - {fileID: 353388618218209453}
-  follow: {fileID: 0}
-  followPosition: {fileID: 0}
-  followRotation: {fileID: 0}
-  followPositionStrength: 80
-  followRotationStrength: 100
-  maxVelocity: 10
-  maxFollowDistance: 0.5
-  left: 0
   palmTransform: {fileID: 4735214901217228548}
+  left: 0
   reachDistance: 0.25
+  enableMovement: 1
+  follow: {fileID: 0}
+  maxFollowDistance: 0.5
   throwPower: 2
-  throwVelocityExpireTime: 0.2
-  disableIK: 0
+  advancedFollowSettings: 1
+  enableIK: 1
   swayStrength: 1
   gripOffset: 0.1
-  grabTime: 0.04
+  usingPoseAreas: 1
+  queryTriggerInteraction: 1
+  usingHighlight: 1
+  highlightLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  defaultHighlight: {fileID: 0}
+  showAdvanced: 0
+  grabType: 0
+  minGrabTime: 0.1
+  maxGrabTime: 0.25
   grabCurve:
     serializedVersion: 2
     m_Curve:
@@ -1319,19 +1329,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  grabReturnTime: 0.04
+  smoothReturnSpeed: 1
   poseIndex: 1
-  grabLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  highlightLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  lookAssistSpeed: 1
-  grabSpreadOffset: 0
-  fingerBendSteps: 50
-  showGizmos: 0
-  editorAutoGrab: 0
+  ignoreMe1: 0
 --- !u!114 &7343979848931318701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1345,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 9201711370266972039, guid: 386242486c5972145be957989b61c7df, type: 3}
+  OnBeforeGrab:
+    m_PersistentCalls:
+      m_Calls: []
   OnGrab:
     m_PersistentCalls:
       m_Calls:
@@ -1382,6 +1385,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnsqueeze:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
 --- !u!135 &2956864006241173425
