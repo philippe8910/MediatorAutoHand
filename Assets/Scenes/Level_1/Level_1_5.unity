@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnter: 0
+  buttonIcon: {fileID: 0}
   isFire: 0
   isRight: 0
 --- !u!136 &39864619
@@ -11864,7 +11865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &342787298
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11875,7 +11876,8 @@ RectTransform:
   m_LocalRotation: {x: -4.6629353e-14, y: -1, z: 0.000000104308114, w: 0.00000044703478}
   m_LocalPosition: {x: 0, y: 0, z: -0.3}
   m_LocalScale: {x: 1.3491001, y: 0.7919486, z: 1.3491}
-  m_Children: []
+  m_Children:
+  - {fileID: 2093091330}
   m_Father: {fileID: 1570276334}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -12854,6 +12856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnter: 0
+  buttonIcon: {fileID: 0}
   isFire: 0
   isRight: 1
 --- !u!136 &501688016
@@ -34780,6 +34783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnter: 0
+  buttonIcon: {fileID: 0}
   isFire: 0
   isRight: 0
 --- !u!136 &1395055339
@@ -40382,7 +40386,6 @@ RectTransform:
   m_Children:
   - {fileID: 645395340}
   - {fileID: 342787298}
-  - {fileID: 2093091330}
   m_Father: {fileID: 324684223}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46941,6 +46944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnter: 0
+  buttonIcon: {fileID: 0}
   isFire: 0
   isRight: 0
 --- !u!136 &1956427928
@@ -48572,16 +48576,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093091329}
-  m_LocalRotation: {x: -4.6629353e-14, y: -1, z: 0.000000104308114, w: 0.00000044703478}
-  m_LocalPosition: {x: 0, y: 0, z: -0.3}
-  m_LocalScale: {x: 0.18415, y: 0.18414998, z: 0.18414998}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000047273556}
+  m_LocalScale: {x: 0.1364984, y: 0.23252767, z: 0.13649839}
   m_Children: []
-  m_Father: {fileID: 1570276334}
-  m_RootOrder: 2
+  m_Father: {fileID: 342787298}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37, y: 92.7}
+  m_AnchoredPosition: {x: -64.48713, y: -0.000015258789}
   m_SizeDelta: {x: 663.52, y: 543.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093091331
@@ -51499,6 +51503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnter: 0
+  buttonIcon: {fileID: 0}
   isFire: 0
   isRight: 1
 --- !u!136 &7166953595679609902
