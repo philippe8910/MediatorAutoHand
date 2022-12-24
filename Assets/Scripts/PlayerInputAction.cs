@@ -14,19 +14,19 @@ public class PlayerInputAction
 
     public static Vector2 JoystickActionInput()
     {
-        EventBus.Post(new PlayerTriggerDetected(PlayerInputActionEnum.InputJoystick));
+        //EventBus.Post(new PlayerTriggerDetected(PlayerInputActionEnum.InputJoystick));
         return new Vector2(joystickActionVector2.axis.x , joystickActionVector2.axis.y);
     }
     
     public static bool GetJumpActionBoolean()
     {
-        EventBus.Post(new PlayerTriggerDetected(PlayerInputActionEnum.Jump));
+        //EventBus.Post(new PlayerTriggerDetected(PlayerInputActionEnum.Jump));
         return jumpActionBoolean.stateDown;
     }
 
     public static bool GetTriggerBoolean()
     {
-        EventBus.Post(new PlayerTriggerDetected(PlayerInputActionEnum.Trigger));
+        //EventBus.Post(new PlayerTriggerDetected(PlayerInputActionEnum.Trigger));
         return triggerActionBoolean.stateDown;
     }
 

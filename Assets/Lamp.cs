@@ -10,7 +10,7 @@ using UnityEngine.VFX;
 
 public class Lamp : MonoBehaviour
 {
-    public bool correctAnswer;
+    public int correctAnswerIndex;
     
     [SerializeField] private Animator hintCanvasAnimator; // 提示顯現動畫
 
@@ -28,8 +28,13 @@ public class Lamp : MonoBehaviour
     
     [SerializeField] private UnityEvent OnPlayerLightTheTorch; //當玩家點燃提示區域
 
+    [SerializeField] private bool isEnter;
     private void Start()
     {
+        fireEffect.Stop();
+        fireLight.Stop();
+        
+        
         OnPlayerEnter.AddListener(delegate
         {
             hintCanvasAnimator.Play("FadeIn");
@@ -40,25 +45,36 @@ public class Lamp : MonoBehaviour
             hintCanvasAnimator.Play("FadeOut");
         });
         
-        OnPlayerInteractive.AddListener(delegate
+        OnPlayerLightTheTorch.AddListener(delegate
         {
             fireEffect.Play();
             fireLight.Play();
             
-            hintText.gameObject.SetActive(false);
+            hintText.gameObject.SetActive(true);
 
             EventBus.Post(new PlayerLightTheFireDetected(this , true));
         });
         
-        OnPlayerLightTheTorch.AddListener(delegate
+        OnPlayerInteractive.AddListener(delegate
         {
             fireEffect.Stop();
             fireLight.Stop();
             
-            hintText.gameObject.SetActive(true);
+            hintText.gameObject.SetActive(false);
             
-            EventBus.Post(new PlayerLightTheFireDetected(this , true));
+            EventBus.Post(new PlayerLightTheFireDetected(this , false));
         });
+    }
+
+    private void Update()
+    {
+        if (isEnter)
+        {
+            if (PlayerInputAction.GetInteractiveActionBoolean())
+            {
+                OnPlayerInteractive?.Invoke();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,11 +82,7 @@ public class Lamp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             OnPlayerEnter?.Invoke();
-
-            if (PlayerInputAction.GetInteractiveActionBoolean())
-            {
-                OnPlayerInteractive?.Invoke();
-            }
+            isEnter = true;
         }
 
         if (other.gameObject.CompareTag("Torch"))
@@ -84,6 +96,7 @@ public class Lamp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             OnPlayerExit?.Invoke();
+            isEnter = false;
         }
     }
 }

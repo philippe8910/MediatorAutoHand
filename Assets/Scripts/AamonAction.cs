@@ -8,8 +8,6 @@ public class AamonAction : MonoBehaviour
 {
     [SerializeField] protected IState currentState = new IdleState();
 
-    [SerializeField] protected PlayerInputAction playerInputAction = new PlayerInputAction();
-    
     [InlineEditor] [SerializeField] private ActorData actorData;
 
     private Rigidbody rigidbody;
@@ -57,11 +55,6 @@ public class AamonAction : MonoBehaviour
     {
         return actorData;
     }
-    
-    public PlayerInputAction PlayerInputAction()
-    {
-        return playerInputAction;
-    }
 
     public bool GetGroundDetected()
     {
@@ -89,8 +82,8 @@ public class AamonAction : MonoBehaviour
     {
         Vector3 move = new Vector3(input.x, 0, input.y);
         
-        move = Quaternion.AngleAxis(mainCamera.transform.rotation.eulerAngles.y, Vector3.up) * move;
-        move.Normalize();
+        //move = Quaternion.AngleAxis(mainCamera.transform.rotation.eulerAngles.y, Vector3.up) * move;
+        //move.Normalize();
 
         rigidbody.velocity = new Vector3(input.x * actorData.speed * Time.deltaTime, rigidbody.velocity.y,
             input.y * actorData.speed * Time.deltaTime);

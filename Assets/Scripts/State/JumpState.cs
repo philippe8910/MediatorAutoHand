@@ -25,6 +25,8 @@ public class JumpState :  IState
         var isLanding = actions.GetGroundDetected();
         
         var runVector = PlayerInputAction.JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
+
+        var collider = actions.GetComponent<CapsuleCollider>().material;
         
         actions.moveVector = runVector;
         
