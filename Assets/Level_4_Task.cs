@@ -26,7 +26,10 @@ public class Level_4_Task : MonoBehaviour
 
         if (isLight)
         {
-            taskGroup.Add(task);
+            if (!taskGroup.Contains(task))
+            {
+                taskGroup.Add(task);   
+            }
         }
         else
         {
