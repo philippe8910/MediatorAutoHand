@@ -18,6 +18,8 @@ public class Lamp : MonoBehaviour
 
     [SerializeField] private ParticleSystem fireLight; //火焰的光線ParticleSystem
 
+    [SerializeField] private AudioSource fireAudioSource;
+
     [SerializeField] private GameObject hintText; //點火後才顯示的熄滅提示按鈕
 
     [SerializeField] private UnityEvent OnPlayerEnter; //當玩家進入提示區域
@@ -47,6 +49,10 @@ public class Lamp : MonoBehaviour
         
         OnPlayerLightTheTorch.AddListener(delegate
         {
+            fireAudioSource.Play();
+            
+            fireLight.gameObject.SetActive(true);
+            
             fireEffect.Play();
             fireLight.Play();
             
@@ -57,6 +63,10 @@ public class Lamp : MonoBehaviour
         
         OnPlayerInteractive.AddListener(delegate
         {
+            fireAudioSource.Stop();
+            
+            fireLight.gameObject.SetActive(false);
+            
             fireEffect.Stop();
             fireLight.Stop();
             
