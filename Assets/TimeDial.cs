@@ -35,7 +35,7 @@ public class TimeDial : PhysicsGadgetHingeAngleReader
     // Update is called once per frame
     void Update()
     {
-        targetTimeController.SetAnimationTime(GetValue() + 1);
-        timeController.SetAnimationTime(GetValue() + 1);
+        targetTimeController?.SetAnimationTime(GetValue() + 1);
+        timeController?.SetAnimationTime(GetValue() + 1);
     }
 }

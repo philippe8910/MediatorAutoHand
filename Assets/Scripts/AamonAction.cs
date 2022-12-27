@@ -27,7 +27,7 @@ public class AamonAction : MonoBehaviour
         TryGetComponent<Rigidbody>(out rigidbody);
         TryGetComponent<Animator>(out animator);
 
-        mainCamera = Camera.main.transform;
+        //mainCamera = Camera.main.transform;
     }
 
     // Update is called once per frame
