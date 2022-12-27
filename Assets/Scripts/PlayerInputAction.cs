@@ -11,6 +11,8 @@ public class PlayerInputAction
     public static SteamVR_Action_Boolean triggerActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
     public static SteamVR_Action_Boolean jumpActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Brake");
     public static SteamVR_Action_Boolean interactiveActionBoolean =  SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Reset");
+    
+    public static SteamVR_Action_Boolean resetPositionBoolean =  SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Jump");
 
     public static Vector2 JoystickActionInput()
     {
@@ -33,6 +35,11 @@ public class PlayerInputAction
     public static bool GetInteractiveActionBoolean()
     {
         return interactiveActionBoolean.stateDown;
+    }
+
+    public static bool GetResetPositionBoolean()
+    {
+        return resetPositionBoolean.stateDown;
     }
     
 }
