@@ -18,6 +18,8 @@ public class TimeControlSphere : MonoBehaviour
         OnPlayerTriggerOn.AddListener(delegate
         {
             targetArmillary.SetActive(true);
+            
+            Destroy(gameObject);
         });
     }
 
