@@ -19,6 +19,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Base_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - NoiseTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_2febbca3d4d14872a86bfef337bdebf3:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -36,15 +44,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_d41de7c71fd645e1818e55783d66881c:
-        m_Texture: {fileID: 2800000, guid: 8a7dbcb2f4a32ec4297486403aee5f74, type: 3}
+        m_Texture: {fileID: 2800000, guid: ab0965e599587464e8c81adb25ba2a7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_ef73d82988a4477181a2759945c3cca0:
-        m_Texture: {fileID: 2800000, guid: acffe6e6358c58b4cbd326ecfeab6ba2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 31155749c38eff844a564cf1f71a7416, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Texture:
+        m_Texture: {fileID: 2800000, guid: 31155749c38eff844a564cf1f71a7416, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -73,6 +85,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 2800000, guid: ab0965e599587464e8c81adb25ba2a7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -112,27 +128,33 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - CurrentHeight: 0
+    - Edge_Width: 0
+    - NoiseStrengh: 1
     - Vector1_4ec43d993a3447ec9decc9a79345d07f: 1
     - Vector1_5a05b34fdfe74ed182e1e8c06dda99c3: 0.05
     - Vector1_9557b52dd32b4f19aea663c7c0112760: 0
-    - Vector1_e0bab37b3a6a4809a9ebbcd39ce0ae73: 0.85
-    - Vector1_e5ebe695d01242cb84fb402186dac02f: 6.15
+    - Vector1_e0bab37b3a6a4809a9ebbcd39ce0ae73: 0.284
+    - Vector1_e5ebe695d01242cb84fb402186dac02f: -0.56
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
+    - _CurrentHeight: -2.42
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeWidth: 0.22
+    - _EdgeWidth: 0.03
+    - _Edge_Width: 0.11
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NoiseStrengh: 0.931
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -145,15 +167,22 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - Color_3862c4a6a60746d69663b78529912e1b: {r: 4.2870936, g: 2.4545715, b: 1.5971526, a: 0.7529412}
     - Color_4265b0746ce14dbca10c3976c4b9be24: {r: 0, g: 0, b: 0, a: 0}
     - Color_9e9afade51f3444983de235e18707efc: {r: 440.52353, g: 78.4178, b: 0, a: 1}
     - Color_cfd54960cea94983a63f3ace4cc2aed9: {r: 27.53272, g: 5.045263, b: 0, a: 1}
-    - Vector2_1bbf57994f6247c78541c1314773d036: {r: 3, g: 3.83, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - EdgeColor: {r: 10.7813, g: 3.460664, b: 0, a: 0}
+    - Vector2_1bbf57994f6247c78541c1314773d036: {r: 3.39, g: -1, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 12.844469, g: 4.169409, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Till: {r: -1, g: -3, b: 0, a: 0}
+    - _emssioncolor: {r: 4.3838396, g: 2.3174484, b: 1.7960225, a: 0}
+    - emssioncolor: {r: 1, g: 0.8037105, b: 0.4481132, a: 0}
+    - till: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4276080214578083539
 MonoBehaviour:
