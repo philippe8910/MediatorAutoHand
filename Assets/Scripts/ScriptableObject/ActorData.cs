@@ -14,4 +14,8 @@ public class ActorData : ScriptableObject
     public Vector3 overHeadOffset = new Vector3(0,0.01f ,0);
 
     public LayerMask groundLayerMask;
+
+    public PhysicMaterial airPhysicMaterial;
+    
+    public PhysicMaterial groundPhysicMaterial;
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612e70f49e5124da0a95111a57250300, type: 3}
   m_Name: DistanceFog
   m_EditorClassIdentifier: 
-  raymarchQuality: 3
-  raymarchMinStep: 0.1
+  raymarchQuality: 1
+  raymarchMinStep: 1
   jittering: 0
-  dithering: 1
+  dithering: 0.77
   renderQueue: 3071
   sortingLayerID: 0
   sortingOrder: 0
@@ -27,8 +27,8 @@ MonoBehaviour:
   detailTexture: {fileID: 11700000, guid: 950add8d241c6479bbab1f10e1035d60, type: 2}
   detailScale: 0.01
   detailStrength: 0
-  detailOffset: 14.38
-  density: 1.1
+  detailOffset: 1
+  density: 0.88
   shape: 0
   border: 1
   verticalOffset: -0.88
@@ -41,9 +41,9 @@ MonoBehaviour:
     m_Bits: 4026540021
   terrainFogHeight: 3.01
   terrainFogMinAltitude: 0
-  terrainFogMaxAltitude: 81.58
+  terrainFogMaxAltitude: 1
   albedo: {r: 1, g: 0.9221698, b: 0.8726415, a: 0.77254903}
-  enableDepthGradient: 1
+  enableDepthGradient: 0
   depthGradient:
     serializedVersion: 2
     key0: {r: 14.928529, g: 14.928529, b: 14.928529, a: 1}
@@ -74,7 +74,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 3
   depthGradientMaxDistance: 500
-  enableHeightGradient: 1
+  enableHeightGradient: 0
   heightGradient:
     serializedVersion: 2
     key0: {r: 0.9811321, g: 0.8795502, b: 0.7913849, a: 1}
@@ -112,7 +112,7 @@ MonoBehaviour:
   turbulence: 0.73
   windDirection: {x: -0.02, y: 0, z: 0}
   dayNightCycle: 1
-  lightDiffusionPower: 42.3
+  lightDiffusionPower: 31.5
   lightDiffusionIntensity: 0
   receiveShadows: 1
   shadowIntensity: 1
