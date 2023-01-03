@@ -12,5 +12,16 @@
         StoneSeatGroove,
         BridgeTieRod
     }
+
+    public enum BossStateEnum
+    {
+        Default,
+        BossEnterScene,
+        BossPrepare,
+        BossFloodedGround,
+        BossGroundAttack,
+        BossFire,
+        BossRest,
+    }
     
 }
