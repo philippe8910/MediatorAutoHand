@@ -2114,7 +2114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4295535658379647792
 Transform:
   m_ObjectHideFlags: 0
@@ -2433,6 +2433,7 @@ GameObject:
   - component: {fileID: 4295535659664091344}
   - component: {fileID: 4295535659672793520}
   - component: {fileID: 4295535659667194865}
+  - component: {fileID: 4295535659599176495}
   m_Layer: 0
   m_Name: '[CameraRig]'
   m_TagString: Untagged
@@ -2552,6 +2553,40 @@ MonoBehaviour:
   resetTransform: {fileID: 0}
   player: {fileID: 4295535659667194866}
   playerHead: {fileID: 4313255491588888138}
+--- !u!114 &4295535659599176495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295535659667194866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb2464cc46ef314cb3c1e236516dbc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: 0
+  button:
+    actionPath: /actions/platformer/in/Jump
+    needsReinit: 0
+  Pressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4295535659667194865}
+        m_TargetAssemblyTypeName: PlayerResetPosition, Assembly-CSharp
+        m_MethodName: ResetPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Released:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4295535659667214466
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,7 +8413,7 @@ PrefabInstance:
     - target: {fileID: 8834320319295017360, guid: fdc3ba53f4e81a040b0471bbbafbb10a, type: 3}
       propertyPath: trackingContainer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8516907864003513888}
     - target: {fileID: 8834320319295017361, guid: fdc3ba53f4e81a040b0471bbbafbb10a, type: 3}
       propertyPath: m_UseGravity
       value: 1
