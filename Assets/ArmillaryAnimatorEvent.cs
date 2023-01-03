@@ -7,7 +7,6 @@ public class ArmillaryAnimatorEvent : MonoBehaviour
 {
     public GameObject armillaryGameObject;
     
-
     private void Start()
     {
         TryGetComponent(out Animator animator);
