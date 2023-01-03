@@ -9,6 +9,8 @@ namespace State
             var actions = (AamonAction) action;
             
             actions.SetAnimatorCrossState("OnLanding" , 0.01f);
+            
+            actions.GetComponent<CapsuleCollider>().material = actions.ActorData().groundPhysicMaterial;
 
             if(actions.isStateLog) Debug.Log(this.ToString() + " Enter!!");
         }

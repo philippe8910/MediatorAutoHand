@@ -15,6 +15,8 @@ public class JumpState :  IState
         
         actions.SetAnimatorCrossState("Jump" , 0.01f);
         actions.Rigidbody().AddForce(jumpVector , ForceMode.Impulse);
+        actions.GetComponent<CapsuleCollider>().material = actions.ActorData().airPhysicMaterial;
+
         
         if(actions.isStateLog) Debug.Log("Jump Enter!!");
     }
