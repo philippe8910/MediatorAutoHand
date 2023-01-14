@@ -12,9 +12,20 @@ namespace Valve.VR.InteractionSystem
 	//-------------------------------------------------------------------------
 	public class DontDestroyOnLoad : MonoBehaviour
 	{
+		public static DontDestroyOnLoad instance;
+
 		//-------------------------------------------------
 		void Awake()
 		{
+			if (instance != null)
+			{
+				Destroy(gameObject); return;
+			}
+			else
+			{
+				instance = this;
+			}
+			
 			DontDestroyOnLoad( this );
 		}
 	}

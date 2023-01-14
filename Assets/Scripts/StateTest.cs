@@ -44,4 +44,10 @@ public class StateTest : MonoBehaviour
         action.ChangeState(new LandingState());
     }
     
+    [Button]
+    public void DrownState()
+    {
+        action.ChangeState(new DrownState());
+    }
+    
 }
