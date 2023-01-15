@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using State;
 using UnityEngine;
 
 public class RunState :  IState
@@ -26,7 +27,7 @@ public class RunState :  IState
 
         actions.moveVector = runVector;
         
-        actions.StateListener(new IdleState() , isJoystickInput);
+        actions.StateListener(new StopRunningState() , isJoystickInput);
         actions.StateListener(new JumpState() , isJump);
         actions.StateListener(new FallingState() , isFalling);
         

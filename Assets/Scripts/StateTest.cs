@@ -49,5 +49,11 @@ public class StateTest : MonoBehaviour
     {
         action.ChangeState(new DrownState());
     }
+
+    [Button]
+    public void StopRunningState()
+    {
+        action.ChangeState(new StopRunningState());
+    }
     
 }
