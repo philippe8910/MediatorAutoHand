@@ -16,7 +16,7 @@ public class DrownState : IState
     {
         var actor = (AamonAction) action;
         
-        actor.Rigidbody().velocity = Vector3.down * Time.deltaTime;
+        actor.Rigidbody().velocity = Vector3.down * Time.deltaTime * 10;
     }
 
     public void OnExitState(object action)
