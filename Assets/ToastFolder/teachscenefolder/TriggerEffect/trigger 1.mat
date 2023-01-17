@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JumpStage
-  m_Shader: {fileID: -6465566751694194690, guid: 521bd3f08d3c647458473456cf4ecae8, type: 3}
+  m_Name: trigger 1
+  m_Shader: {fileID: -6465566751694194690, guid: 628e73572c41cdd45b6fa91e5b45aa99, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_4f4bdcbc43c64720868d71a158f6e82f:
-        m_Texture: {fileID: 2800000, guid: 17d562d3783491440b36b9eaab02f777, type: 3}
+        m_Texture: {fileID: 2800000, guid: bd6c28e7e1d54bc41946b880d42681fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5029dab9e78b4a0fb0bdf6ba83331cff:
@@ -360,11 +360,11 @@ Material:
     - Vector1_c3917416f2984566a7c06b15ef540758: 0
     - Vector1_d033ab5b7197464d86e202a8d1e6d3e1: -0.85
     - Vector1_d9929cb298a7484bb7e374e265dffdd3: 0.1
-    - Vector1_dd8e7098d2a64a74b8c544f6ed93c6aa: 0.46
+    - Vector1_dd8e7098d2a64a74b8c544f6ed93c6aa: 0.14
     - Vector1_e1f196182aba4b8f9d2b2916deaeed1a: 1
-    - Vector1_e4ee42363c1c4c85a53c955be14d35b1: 0.32
+    - Vector1_e4ee42363c1c4c85a53c955be14d35b1: 0.06
     - Vector1_e9d79a672e994430b6c3bd8c9cb25887: 0.96
-    - Vector1_f0dff16938964e838140abc50c510bf4: 0
+    - Vector1_f0dff16938964e838140abc50c510bf4: 1.28
     - _AlphaBoostFA: 10
     - _AlphaClip: 0
     - _AlphaMaskMode: 0
@@ -750,20 +750,20 @@ Material:
     - _lilToonVersion: 32
     m_Colors:
     - Color_1027155df6594f33928d1e1a6831ab1a: {r: 0, g: 0, b: 0, a: 0}
-    - Color_18a942dfc5e44ea482997f74c97da957: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+    - Color_18a942dfc5e44ea482997f74c97da957: {r: 0.3041965, g: 0.3041965, b: 0.3041965, a: 1}
     - Color_2afb68fee91e43fd9cec17a7d908de72: {r: 1, g: 1, b: 1, a: 1}
-    - Color_4473503cf0064a30b820bcb53cd0bef9: {r: 1.7207954, g: 1.7207954, b: 1.7207954, a: 0}
+    - Color_4473503cf0064a30b820bcb53cd0bef9: {r: 1.9766746, g: 1.9766746, b: 1.9766746, a: 0}
     - Color_49f27a974fdf4d84a3fecd6dd73f9c79: {r: 0, g: 0, b: 0, a: 0}
     - Color_6499026167ab4f66a6f2e5c461b3a832: {r: 0, g: 0, b: 0, a: 0}
     - Color_900b52c1d7594fb59f2c1f43f0bcdcc5: {r: 48.110817, g: 48.110817, b: 48.110817, a: 0}
     - Color_9e9afade51f3444983de235e18707efc: {r: 1, g: 1, b: 1, a: 0}
     - Color_ebd2890403a040e78c98f6fba754dd23: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
-    - Color_f767b98e46614a8184d309088c775688: {r: 0.65205944, g: 0.65205944, b: 0.65205944, a: 1}
+    - Color_f767b98e46614a8184d309088c775688: {r: 51.377876, g: 51.377876, b: 51.377876, a: 1}
     - Vector2_22afcc0251624c4187ad8e8a48a8dfc6: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_397ef2bd531d4e36bbf0e1b6d68b60ec: {r: 0, g: 0.2, b: 0, a: 0}
-    - Vector2_a01bcb04e2b540d19b1290f771a4e35b: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_a01bcb04e2b540d19b1290f771a4e35b: {r: 0.01, g: 50, b: 0, a: 0}
     - Vector2_a6cf4e1138794bed8ff555f70c865aff: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_c3cf4e7fc7c74710b0eef58de378063f: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_c3cf4e7fc7c74710b0eef58de378063f: {r: 0, g: 0.002, b: 0, a: 0}
     - _AudioLinkDefaultValue: {r: 0, g: 0, b: 2, a: 0.75}
     - _AudioLinkLocalMapParams: {r: 120, g: 1, b: 0, a: 0}
     - _AudioLinkStart: {r: 0, g: 0, b: 0, a: 0}
