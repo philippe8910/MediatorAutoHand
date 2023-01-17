@@ -1,6 +1,8 @@
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using Valve.VR;
 
 public class PlayerResetPosition : MonoBehaviour
 {
@@ -39,5 +41,12 @@ public class PlayerResetPosition : MonoBehaviour
             throw;
         }
 
+    }
+
+    [Button]
+    public void JoystickVibration()
+    {
+        PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.RightHand , 5);
+        PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.LeftHand , 5);
     }
 }

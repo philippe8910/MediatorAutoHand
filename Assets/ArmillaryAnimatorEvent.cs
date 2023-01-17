@@ -19,7 +19,7 @@ public class ArmillaryAnimatorEvent : MonoBehaviour
             
             if (info.normalizedTime < 1)
             {
-                yield return new WaitForSeconds(.1f);
+                yield return new WaitForSeconds(.02f);
                 Debug.Log(info.normalizedTime);
                 StartCoroutine(StartDetected());
             }
