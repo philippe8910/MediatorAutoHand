@@ -28,5 +28,7 @@ namespace Valve.VR.InteractionSystem
 			
 			DontDestroyOnLoad( this );
 		}
+
+		
 	}
 }

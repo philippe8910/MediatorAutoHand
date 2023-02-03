@@ -48,7 +48,7 @@ public class Level_4_Task : MonoBehaviour
         {
             o.SetActive(true);
         });
-
+        
         if (taskGroup[0]?.correctAnswerIndex == 0)
         {
             candleFire[0].SetActive(false);
@@ -68,6 +68,10 @@ public class Level_4_Task : MonoBehaviour
                 }
             }
         }
+
+        /*
+         * 
+         */
     }
     
 }

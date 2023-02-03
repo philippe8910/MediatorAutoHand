@@ -1,4 +1,6 @@
 using System;
+using Event;
+using Project;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -41,6 +43,12 @@ public class PlayerResetPosition : MonoBehaviour
             throw;
         }
 
+    }
+    
+    public void ResetLevel()
+    {
+        EventBus.Post(new ChangeScenesDetected(delegate { UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex); }));
     }
 
     [Button]
