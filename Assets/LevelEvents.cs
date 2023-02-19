@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using Valve.VR;
 
 public class LevelEvents : MonoBehaviour
 {
@@ -152,4 +153,12 @@ public class LevelEvents : MonoBehaviour
             isEnter = false;
         }
     }
+
+    public void PlayerControllerVibration()
+    {
+        PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.RightHand , 5);
+        PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.LeftHand , 5);
+    }
+    
+    
 }
