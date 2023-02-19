@@ -880,7 +880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275630419}
   m_LocalRotation: {x: -0, y: -0.0000043362375, z: -0, w: -1}
-  m_LocalPosition: {x: 3.93, y: 1.08, z: -1.133}
+  m_LocalPosition: {x: 4.945, y: 1.08, z: -1.133}
   m_LocalScale: {x: 0.07510909, y: 0.07510909, z: 0.07510909}
   m_Children:
   - {fileID: 657117374}
@@ -7842,7 +7842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861237204}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.2793397, z: 14.592007}
+  m_LocalPosition: {x: 0, y: 1.2793397, z: 9.339}
   m_LocalScale: {x: 0.13396902, y: 1.6102474, z: 0.213379}
   m_Children:
   - {fileID: 1075579305}
@@ -23622,6 +23622,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.11
       objectReference: {fileID: 0}
+    - target: {fileID: -1255605710908113952, guid: c8c1321dd35a7294d81e3ab47ebaaf0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.23
+      objectReference: {fileID: 0}
     - target: {fileID: -804731622281664130, guid: c8c1321dd35a7294d81e3ab47ebaaf0f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -23783,7 +23787,7 @@ Transform:
   m_GameObject: {fileID: 1304233617}
   m_LocalRotation: {x: -0, y: 0.70893043, z: -0, w: 0.7052785}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08141196, y: 0.49547234, z: 320.7406}
+  m_LocalScale: {x: 0.08141196, y: 0.49547234, z: 10}
   m_Children: []
   m_Father: {fileID: 2004514676}
   m_RootOrder: 0
@@ -36282,7 +36286,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press X ot A button to Jump
+  m_Text: Press X or A button to Jump
 --- !u!222 &2045152818
 CanvasRenderer:
   m_ObjectHideFlags: 0
