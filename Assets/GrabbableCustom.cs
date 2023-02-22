@@ -16,10 +16,14 @@ public class GrabbableCustom : MonoBehaviour
     
     private Grabbable _grabbable;
 
+    private Vector3 defaultPosition;
+
     public List<Transform> robotPoint = new List<Transform>();
     // Start is called before the first frame update
     void Start()
     {
+        defaultPosition = transform.position;
+
         TryGetComponent<Grabbable>(out _grabbable);
         TryGetComponent<DistanceGrabbable>(out var _distanceGrabbable);
         
@@ -42,6 +46,23 @@ public class GrabbableCustom : MonoBehaviour
         {
             OnStartPull();
         });
+        
+        StartCoroutine(StartDetectedFailOutWorld());
+
+
+        IEnumerator StartDetectedFailOutWorld()
+        {
+            if (transform.position.y < -3)
+            {
+                transform.position = defaultPosition;
+                TryGetComponent<Rigidbody>(out var rigidbody);
+                rigidbody.velocity = Vector3.zero;
+            }
+
+            yield return new WaitForFixedUpdate();
+
+            StartCoroutine(StartDetectedFailOutWorld());
+        }
     }
 
     public Transform GetIndexVector(int index)
