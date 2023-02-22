@@ -54,7 +54,7 @@ public class ChangeScenesEffects : MonoBehaviour
             }
             else
             {
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.005f);
                 StartCoroutine(StartDetected());
             }
         }
