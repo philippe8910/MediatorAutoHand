@@ -65,10 +65,7 @@ public class GrabbableCustom : MonoBehaviour
         }
     }
 
-    public Transform GetIndexVector(int index)
-    {
-        return robotPoint[index];
-    }
+    public Transform GetIndexVector(int index) => robotPoint[index];
 
     public void OnStartPull()
     {

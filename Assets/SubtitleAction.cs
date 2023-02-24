@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening; // 使用 DOTween 庫來執行動畫
 using Event;
 using Project;
@@ -9,8 +10,11 @@ using UnityEngine.UI;
 public class SubtitleAction : MonoBehaviour
 {
     [SerializeField] private Text subtitleText; // 文字物件的引用
-    private CanvasGroup canvasGroup; // CanvasGroup 組件的引用
+
+    [SerializeField] private Transform cameraAnchor;
     
+    private CanvasGroup canvasGroup; // CanvasGroup 組件的引用
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +23,14 @@ public class SubtitleAction : MonoBehaviour
         
         // 註冊 OnEnableLevelHintDetected 事件的監聽器
         EventBus.Subscribe<OnEnableLevelHintDetected>(OnHintDetected);
+    }
+
+    private void Update()
+    {
+        var mainCameraTransform = Camera.main.transform;
+        
+        transform.position = Vector3.Lerp(transform.position , cameraAnchor.position ,0.1f);
+        transform.LookAt(new Vector3(mainCameraTransform.position.x , transform.position.y , mainCameraTransform.position.z));
     }
 
     // 當 OnEnableLevelHintDetected 事件觸發時，會執行此方法
