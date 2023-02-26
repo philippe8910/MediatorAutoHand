@@ -41,36 +41,20 @@ public class AamonAction : MonoBehaviour
         Movement(moveVector);
     }
 
-    public Rigidbody Rigidbody()
-    {
-        return rigidbody;
-    }
+    public Rigidbody Rigidbody() => rigidbody;
 
-    public Animator Animator()
-    {
-        return animator;
-    }
 
-    public ActorData ActorData()
-    {
-        return actorData;
-    }
+    public Animator Animator() => animator;
 
-    public bool GetGroundDetected()
-    {
-        return Physics.CheckSphere(transform.position + actorData.groundOffset, actorData.groundTriggerRange, actorData.groundLayerMask);
-    }
+    public ActorData ActorData() => actorData;
 
-    public bool GetOverHeadDetected()
-    {
-        return Physics.CheckSphere(transform.position + actorData.overHeadOffset, actorData.overHeadTriggerRange);
-    }
+    public bool GetGroundDetected() => Physics.CheckSphere(transform.position + actorData.groundOffset, actorData.groundTriggerRange, actorData.groundLayerMask);
+
+
+    public bool GetOverHeadDetected() => Physics.CheckSphere(transform.position + actorData.overHeadOffset, actorData.overHeadTriggerRange);
+
+    public bool GetFallingDetected() => rigidbody.velocity.y < 0.1;
     
-    public bool GetFallingDetected()
-    {
-        return rigidbody.velocity.y < 0.1;
-    }
-
     public void ChangeState(IState newState)
     {
         currentState.OnExitState(this);
@@ -105,6 +89,11 @@ public class AamonAction : MonoBehaviour
         {
             ChangeState(state);
         }
+    }
+
+    public void OnGrabAmmon()
+    {
+        
     }
     
     private void OnDrawGizmos()

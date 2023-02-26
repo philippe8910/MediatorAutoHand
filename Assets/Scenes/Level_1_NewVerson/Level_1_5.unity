@@ -49757,6 +49757,18 @@ MonoBehaviour:
           m_StringArgument: Temple
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7892665653275231378}
+        m_TargetAssemblyTypeName: FlagBurning, Assembly-CSharp
+        m_MethodName: BurnUpFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   candleFire:
   - {fileID: 1225446499}
   - {fileID: 854354296}
@@ -124300,6 +124312,7 @@ GameObject:
   - component: {fileID: 7404957052056231467}
   - component: {fileID: 5867181658286510478}
   - component: {fileID: 8541250313146475844}
+  - component: {fileID: 7892665653275231378}
   m_Layer: 0
   m_Name: flag
   m_TagString: Untagged
@@ -124307,6 +124320,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7892665653275231378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892665653275231377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbd5dda7b0b9e9459283b394d746b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMaterial: {fileID: 2100000, guid: f3e7041d8bc00964ebf0c44771189421, type: 2}
+  speed: 2.23
+  onLevelPassEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &7926689345919629915
 MeshFilter:
   m_ObjectHideFlags: 0

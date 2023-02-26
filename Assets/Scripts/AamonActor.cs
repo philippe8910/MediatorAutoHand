@@ -48,14 +48,9 @@ public class AamonActor
         return animator;
     }
     
-    public bool GetGroundDetected(Transform player)
-    {
-        return Physics.CheckSphere(player.position + groundOffset, GroundTriggerRange(), 128);
-    }
+    public bool GetGroundDetected(Transform player) => Physics.CheckSphere(player.position + groundOffset, GroundTriggerRange(), 128);
 
-    public bool GetFallingDetected()
-    {
-        return Rigidbody().velocity.y < 0.1;
-    }
+    public bool GetFallingDetected() => Rigidbody().velocity.y < 0.1;
+
 
 }
