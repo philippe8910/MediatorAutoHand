@@ -46,7 +46,7 @@ public class SubtitleAction : MonoBehaviour
         canvasGroup.DOFade(1, 0.5f);
         
         // 使用 Task.Delay 來實現延遲
-        await Task.Delay(3000);
+        await Task.Delay(5000);
 
         // 隱藏文字物件，使用 DOTween 庫執行淡出動畫
         canvasGroup.DOFade(0, 0.5f);
