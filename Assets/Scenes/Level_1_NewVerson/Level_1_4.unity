@@ -285,11 +285,11 @@ Material:
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
     - _FogOfWarCenterAdjusted: {r: 0, g: 0, b: 0, a: 1}
     - _FogOfWarSize: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 0.43225, g: 0.34440312, b: 0.2670979, a: 0.77254903}
+    - _LightColor: {r: 0.7421652, g: 0.6956705, b: 0.65464574, a: 0.77254903}
     - _RayMarchSettings: {r: 1, g: 0, b: 0, a: 3.88}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
-    - _SunDir: {r: -0.013778135, g: 0.8587437, b: 0.51221997, a: 0}
-    - _WindDirection: {r: -12.237507, g: 0, b: 0, a: 0}
+    - _SunDir: {r: 0.4833098, g: 0.85874546, b: 0.1702005, a: 0}
+    - _WindDirection: {r: -19.127796, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!117 &363105793
 Texture3D:
@@ -955,8 +955,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.79676837, b: 0.6179246, a: 1}
-  m_Intensity: 0.65
+  m_Color: {r: 0.6603774, g: 0.61900645, b: 0.5825027, a: 1}
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1025,13 +1025,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777081160}
-  m_LocalRotation: {x: 0.06067752, y: 0.8674262, z: -0.4920321, w: 0.04236021}
+  m_LocalRotation: {x: -0.24065284, y: 0.72607607, z: -0.43343395, w: -0.47648177}
   m_LocalPosition: {x: -7.112745, y: 2.525472, z: -8.581723}
   m_LocalScale: {x: 0.99999994, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1152253880}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 59.176, y: 250.6, z: 7.128}
 --- !u!114 &777081164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,7 +1511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &934298049
 MeshRenderer:
   m_ObjectHideFlags: 0
