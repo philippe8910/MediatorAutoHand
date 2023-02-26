@@ -431,7 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enterLayer:
     serializedVersion: 2
-    m_Bits: 8256
+    m_Bits: 8192
   enterObject: []
   useTriggerArea: 1
   isEnter: 0
@@ -15167,7 +15167,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15629,7 +15629,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -15866,17 +15866,17 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0.6461525
-          inSlope: 0.3538475
-          outSlope: 0.3538475
+          inSlope: 0.11060333
+          outSlope: 0.11060333
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 0.3538475
-          outSlope: 0.3538475
+          value: 0.7567558
+          inSlope: 0.11060333
+          outSlope: 0.11060333
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
