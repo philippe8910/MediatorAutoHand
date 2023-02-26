@@ -7,10 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MGcube
-  m_Shader: {fileID: 4800000, guid: 51b2dee0ab07bd84d8147601ff89e511, type: 3}
-  m_ShaderKeywords: EFFECT_BUMP EFFECT_HUE_VARIATION _EMISSION _METALLICGLOSSMAP
-    _NORMALMAP _REQUIRE_UV2
+  m_Name: MGcube 1
+  m_Shader: {fileID: -6465566751694194690, guid: b2b2bf4c88a6d4646b44bd71d14c5775, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -20,6 +19,22 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_0cf50d513ff8440087375635c45ad14c:
+        m_Texture: {fileID: 2800000, guid: 09e9bfb9f1a348a40b6286724be48cab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_31b7d02a8f984b1b86337ba97e303801:
+        m_Texture: {fileID: 2800000, guid: ad50a3adcee435b4f9fed9369c3b8350, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8a9bcd1ee173410d94434716e9da4f24:
+        m_Texture: {fileID: 2800000, guid: 0d3e7e2f6844a5b419fa29fecad75c74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_a7c98fe59c11485fae1597f9f44c205b:
+        m_Texture: {fileID: 2800000, guid: 32eedf9ebdce7bd43a2d35109a283b97, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlphaMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -269,6 +284,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_3a7ac79de1e04db9b44179a180010735: 0.23
+    - Vector1_6b3f4444e81a4d36b5f94d617a366d70: 1.09
+    - Vector1_a37955ad2f9d4918acf64b4142ef0563: -3.75
     - _AlphaBoostFA: 10
     - _AlphaClip: 0
     - _AlphaMaskMode: 0
@@ -321,7 +339,7 @@ Material:
     - _BlendOpFA: 4
     - _Bump2ndMap_UVMode: 0
     - _Bump2ndScale: 4.7
-    - _BumpScale: -3.3
+    - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorMask: 15
@@ -581,7 +599,10 @@ Material:
     - _lilDirectionalLightStrength: 1
     - _lilShadowCasterBias: 0
     - _lilToonVersion: 32
+    - emssion_intensity: 0.67
     m_Colors:
+    - Color_65e4a3d0e4ce433d825a227582e89d9d: {r: 1, g: 0.67196244, b: 0.4575472, a: 1}
+    - Color_c681394bb6814641a78939d8896feee4: {r: 1, g: 1, b: 1, a: 1}
     - _AudioLinkDefaultValue: {r: 0, g: 0, b: 2, a: 0.75}
     - _AudioLinkLocalMapParams: {r: 120, g: 1, b: 0, a: 0}
     - _AudioLinkStart: {r: 0, g: 0, b: 0, a: 0}
@@ -607,7 +628,7 @@ Material:
     - _Emission2ndMap_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionBlendMask_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionBlink: {r: 0, g: 0, b: 3.141593, a: 0}
-    - _EmissionColor: {r: 0.11949343, g: 0.065781735, b: 0.039227642, a: 0.81960785}
+    - _EmissionColor: {r: 1.1486983, g: 0.86972815, b: 0.7748295, a: 1}
     - _EmissionMap_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _GlitterAtras: {r: 1, g: 1, b: 0, a: 0}
     - _GlitterColor: {r: 1, g: 1, b: 1, a: 1}
