@@ -10,6 +10,9 @@
             "m_Id": "d1d081ee87df4896ab0fd6b8edd436bf"
         },
         {
+            "m_Id": "cfb0766448fd4aca8405bc770ed0fbcc"
+        },
+        {
             "m_Id": "94e23ea92e2647e4a095278815cc9d6c"
         },
         {
@@ -194,6 +197,9 @@
         },
         {
             "m_Id": "b7cdd573d26145a8a7a3d3254bca9ab9"
+        },
+        {
+            "m_Id": "30771942743c48a596a10d13bedb5d3b"
         }
     ],
     "m_GroupDatas": [],
@@ -321,6 +327,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "44c452306ae2493f884fbb7fe140ea58"
+                },
+                "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "30771942743c48a596a10d13bedb5d3b"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "e6dfd79c492343c288e4d7900eb45561"
                 },
                 "m_SlotId": 1
             }
@@ -769,20 +789,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "c874de1a8e7c407b9723ea749e5d26d7"
-                },
-                "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "f6b9ef747bd64d9aa70b8eaea4220cbe"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "e6dfd79c492343c288e4d7900eb45561"
                 },
                 "m_SlotId": 1
             }
@@ -1642,6 +1648,31 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "2bf858bb37634839b74d80e76e44fb89",
+    "m_Id": 0,
+    "m_DisplayName": "Sandcolor",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
+}
+
+{
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
     "m_ObjectId": "2e2d9cf18dcf47b2ac77a41ded4e35f5",
@@ -1717,6 +1748,41 @@
     },
     "m_Labels": [],
     "m_Channel": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "30771942743c48a596a10d13bedb5d3b",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 844.0856323242188,
+            "y": 1227.34619140625,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "2bf858bb37634839b74d80e76e44fb89"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "cfb0766448fd4aca8405bc770ed0fbcc"
+    }
 }
 
 {
@@ -5018,6 +5084,30 @@
     "m_Property": {
         "m_Id": "2e2d9cf18dcf47b2ac77a41ded4e35f5"
     }
+}
+
+{
+    "m_SGVersion": 3,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+    "m_ObjectId": "cfb0766448fd4aca8405bc770ed0fbcc",
+    "m_Guid": {
+        "m_GuidSerialized": "e8f20de3-890e-47aa-b76d-0cadf9e12021"
+    },
+    "m_Name": "Sandcolor",
+    "m_DefaultReferenceName": "Color_cfb0766448fd4aca8405bc770ed0fbcc",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+    },
+    "m_ColorMode": 1
 }
 
 {
