@@ -15,6 +15,5 @@ public class ResetPoint : MonoBehaviour
         
         Destroy(cam.gameObject);
         resetPosition.ResetPosition();
-        
     }
 }

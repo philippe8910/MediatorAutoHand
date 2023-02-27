@@ -48,6 +48,10 @@ public class ChangeScenesEffects : MonoBehaviour
 
             if (info.normalizedTime >= 1 && info.IsName("FadeOut"))
             {
+                var resetPosition = FindObjectOfType<PlayerResetPosition>();
+                
+                resetPosition.ResetPosition();
+                
                 endAction?.Invoke();
                 animator.Play("FadeIn");
                 yield return null;

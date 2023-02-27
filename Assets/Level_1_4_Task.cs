@@ -20,7 +20,7 @@ public class Level_1_4_Task : MonoBehaviour
         if (_levelEvents_1 && _levelEvents_2)
         {
             OnLevelPass.Invoke();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
