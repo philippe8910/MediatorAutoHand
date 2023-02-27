@@ -12,9 +12,6 @@ namespace State
             actions.SetAnimatorCrossState("OnLanding" , 0.01f);
             
             actions.GetComponent<CapsuleCollider>().material = actions.ActorData().groundPhysicMaterial;
-            
-            PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.LeftHand , 0.3f);
-            PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.RightHand , 0.3f);
 
             if(actions.isStateLog) Debug.Log(this.ToString() + " Enter!!");
         }
