@@ -11,7 +11,8 @@ public class Level_1_4_Task : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _levelEvents_1 = false;
+        _levelEvents_2 = false;
     }
 
     // Update is called once per frame
