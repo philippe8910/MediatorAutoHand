@@ -20,26 +20,26 @@ MonoBehaviour:
   sortingLayerID: 0
   sortingOrder: 0
   noiseTexture: {fileID: 2800000, guid: 9c79340e1a1054275ba04070a27de306, type: 3}
-  noiseStrength: 1.87
+  noiseStrength: 2.08
   noiseScale: 15
   noiseFinalMultiplier: 1
   useDetailNoise: 1
   detailTexture: {fileID: 11700000, guid: 950add8d241c6479bbab1f10e1035d60, type: 2}
   detailScale: 0.01
-  detailStrength: 0.011
+  detailStrength: 0.01
   detailOffset: 7.23
-  density: 0.88
+  density: 1.13
   shape: 0
   border: 1
   verticalOffset: -0.87
   distance: 0
   distanceFallOff: 1
-  terrainFit: 0
+  terrainFit: 1
   terrainFitResolution: 128
   terrainLayerMask:
     serializedVersion: 2
     m_Bits: 4026539957
-  terrainFogHeight: 1.11
+  terrainFogHeight: 0.77
   terrainFogMinAltitude: 0
   terrainFogMaxAltitude: 1
   albedo: {r: 0.9150943, g: 0.7881897, b: 0.70358664, a: 0.77254903}
@@ -104,7 +104,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 4
-  brightness: 0.5
+  brightness: 1.5
   deepObscurance: 0.806
   specularColor: {r: 0.972549, g: 0.8348432, b: 0.7019608, a: 1}
   specularThreshold: 0.875
