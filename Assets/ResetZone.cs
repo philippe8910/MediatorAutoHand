@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Event;
 using Project;
 using UnityEngine;
@@ -15,10 +16,16 @@ public class ResetZone : MonoBehaviour
         _levelSystem = FindObjectOfType<LevelSystem>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private async void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            var player = FindObjectOfType<AamonAction>();
+            
+            player.ChangeState(new DrownState());
+
+            await Task.Delay(1000);
+            
             EventBus.Post(new ChangeScenesDetected(delegate { UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex); }));
         }

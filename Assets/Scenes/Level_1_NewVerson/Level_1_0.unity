@@ -219,7 +219,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 90}
---- !u!117 &183216781
+--- !u!117 &171835176
 Texture3D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -926,79 +926,6 @@ Transform:
   m_Father: {fileID: 1152253880}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!21 &798372672
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: VolumetricFog2/VolumetricFog2DURP
-  m_Shader: {fileID: 4800000, guid: cd79ad756ee3e4d3f8fe6b417ef8c835, type: 3}
-  m_ShaderKeywords: VF2_DETAIL_NOISE VF2_RECEIVE_SHADOWS VF2_SHAPE_BOX VF2_SURFACE
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3071
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BlueNoise:
-        m_Texture: {fileID: 2800000, guid: 2c6081b2761b64a3d97935b8499064f8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DepthGradientTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailTex:
-        m_Texture: {fileID: 183216781}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _FogOfWar:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _HeightGradientTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2115431902}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _DeepObscurance: 0.96720004
-    - _Density: 1.13
-    - _DetailOffset: 7.23
-    - _LightDiffusionIntensity: 0.576
-    - _LightDiffusionPower: 58.4
-    - _NoiseFinalMultiplier: 1
-    - _NoiseScale: 0.006666667
-    - _NoiseStrength: 1
-    - _ShadowIntensity: 1
-    - _SpecularIntensity: 0
-    - _SpecularThreshold: 0.5
-    m_Colors:
-    - _BoundsBorder: {r: 112.5001, g: 0, b: 112.5001, a: 0}
-    - _BoundsCenter: {r: -14.040999, g: -0.004991351, b: 0.8380008, a: 0}
-    - _BoundsData: {r: -0.87, g: -12.404991, b: 24.8, a: 0}
-    - _BoundsExtents: {r: 112.5, g: 12.4, b: 112.5, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DetailColor: {r: 0.5261792, g: 0.45320907, b: 0.4045623, a: 0}
-    - _DetailData: {r: 0.01, g: 7.23, b: 0.6666667, a: 1}
-    - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
-    - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
-    - _FogOfWarCenterAdjusted: {r: 0, g: 0, b: 0, a: 1}
-    - _FogOfWarSize: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 1.29675, g: 1.0332093, b: 0.8012937, a: 0.77254903}
-    - _RayMarchSettings: {r: 1, g: 0, b: 0, a: 3.88}
-    - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
-    - _SunDir: {r: -0.013778135, g: 0.8587437, b: 0.51221997, a: 0}
-    - _WindDirection: {r: -0.034225166, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &814092144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1207,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 798372672}
+  - {fileID: 1530623005}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1905,6 +1832,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474722411}
   m_CullTransparentMesh: 1
+--- !u!84 &1475513116
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 3
+  m_Width: 128
+  m_Height: 128
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 142
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1493591745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,7 +1895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493591745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.766, y: 0.36, z: 0.854}
+  m_LocalPosition: {x: -0.722, y: 0.36, z: 0.854}
   m_LocalScale: {x: 0.15997477, y: 1, z: 1.3790276}
   m_Children: []
   m_Father: {fileID: 540771489}
@@ -2202,6 +2165,79 @@ Transform:
   m_Father: {fileID: 1152253880}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!21 &1530623005
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VolumetricFog2/VolumetricFog2DURP
+  m_Shader: {fileID: 4800000, guid: cd79ad756ee3e4d3f8fe6b417ef8c835, type: 3}
+  m_ShaderKeywords: VF2_DETAIL_NOISE VF2_RECEIVE_SHADOWS VF2_SHAPE_BOX VF2_SURFACE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3071
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BlueNoise:
+        m_Texture: {fileID: 2800000, guid: 2c6081b2761b64a3d97935b8499064f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DepthGradientTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailTex:
+        m_Texture: {fileID: 171835176}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FogOfWar:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightGradientTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 1639836774}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _DeepObscurance: 0.96720004
+    - _Density: 1.13
+    - _DetailOffset: 7.23
+    - _LightDiffusionIntensity: 0.576
+    - _LightDiffusionPower: 58.4
+    - _NoiseFinalMultiplier: 1
+    - _NoiseScale: 0.006666667
+    - _NoiseStrength: 1
+    - _ShadowIntensity: 1
+    - _SpecularIntensity: 0
+    - _SpecularThreshold: 0.5
+    m_Colors:
+    - _BoundsBorder: {r: 112.5001, g: 0, b: 112.5001, a: 0}
+    - _BoundsCenter: {r: -14.040999, g: -0.004991351, b: 0.8380008, a: 0}
+    - _BoundsData: {r: -0.87, g: -12.404991, b: 24.8, a: 0}
+    - _BoundsExtents: {r: 112.5, g: 12.4, b: 112.5, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailColor: {r: 0.5261792, g: 0.45320907, b: 0.4045623, a: 0}
+    - _DetailData: {r: 0.01, g: 7.23, b: 0.6666667, a: 1}
+    - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
+    - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
+    - _FogOfWarCenterAdjusted: {r: 0, g: 0, b: 0, a: 1}
+    - _FogOfWarSize: {r: 0, g: 0, b: 0, a: 1}
+    - _LightColor: {r: 1.29675, g: 1.0332093, b: 0.8012937, a: 0.77254903}
+    - _RayMarchSettings: {r: 1, g: 0, b: 0, a: 3.88}
+    - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _SunDir: {r: -0.013778135, g: 0.8587437, b: 0.51221997, a: 0}
+    - _WindDirection: {r: -0.12513183, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1556719621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,7 +2832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f482cddf3dfdaa4e96edd5b5c31264a, type: 3}
---- !u!84 &1671605802
+--- !u!84 &1639836774
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2810,12 +2846,12 @@ RenderTexture:
   m_DownscaleFallback: 0
   m_IsAlphaChannelOptional: 0
   serializedVersion: 3
-  m_Width: 128
-  m_Height: 128
+  m_Width: 256
+  m_Height: 256
   m_AntiAliasing: 1
   m_MipCount: -1
-  m_DepthFormat: 2
-  m_ColorFormat: 142
+  m_DepthFormat: 0
+  m_ColorFormat: 8
   m_MipMap: 0
   m_GenerateMips: 1
   m_SRGB: 0
@@ -2827,9 +2863,9 @@ RenderTexture:
     m_FilterMode: 1
     m_Aniso: 1
     m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
   m_Dimension: 2
   m_VolumeDepth: 1
 --- !u!1 &1685762716
@@ -3103,6 +3139,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6040215839132481608, guid: 0a51e539229a4d544921c04f1aca956e, type: 3}
+      propertyPath: hintText
+      value: "\u5411\u8457\u5927\u9580\u524D\u9032\u5427\uFF0C\u8A18\u4F4F\u4F60\u7684\u4F7F\u547D\uFF0C\u671D\u8056\u8005"
+      objectReference: {fileID: 0}
     - target: {fileID: 8403371541319338783, guid: 0a51e539229a4d544921c04f1aca956e, type: 3}
       propertyPath: m_Name
       value: Stele
@@ -8350,7 +8390,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4026539957
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1671605802}
+  m_TargetTexture: {fileID: 1475513116}
   m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 0
@@ -8405,42 +8445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcd06815c47d30489f70df42db56a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!84 &2115431902
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 3
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &2143715968
 GameObject:
   m_ObjectHideFlags: 0
@@ -25358,7 +25362,7 @@ GameObject:
   - component: {fileID: 6357301268585242517}
   - component: {fileID: 4364979964001962417}
   - component: {fileID: 7250642103929635004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Level1-0.1980
   m_TagString: Untagged
   m_Icon: {fileID: 0}
