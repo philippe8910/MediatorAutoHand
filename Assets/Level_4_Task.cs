@@ -38,7 +38,7 @@ public class Level_4_Task : MonoBehaviour
 
         if (taskGroup.Count == 4)
         {
-            if (taskGroup[0].correctAnswerIndex == 0 && taskGroup[1].correctAnswerIndex == 1 && taskGroup[2].correctAnswerIndex == 2 && taskGroup[3].correctAnswerIndex == 3)
+            if (taskGroup[0].correctAnswerIndex == 3 && taskGroup[1].correctAnswerIndex == 2 && taskGroup[2].correctAnswerIndex == 0 && taskGroup[3].correctAnswerIndex == 1)
             {
                 OnLevelPass?.Invoke();
             }
@@ -49,19 +49,19 @@ public class Level_4_Task : MonoBehaviour
             o.SetActive(true);
         });
         
-        if (taskGroup[0]?.correctAnswerIndex == 0)
+        if (taskGroup[0]?.correctAnswerIndex == 3)
         {
             candleFire[0].SetActive(false);
             
-            if (taskGroup[1]?.correctAnswerIndex == 1)
+            if (taskGroup[1]?.correctAnswerIndex == 2)
             {
                 candleFire[1].SetActive(false);
                 
-                if (taskGroup[2]?.correctAnswerIndex == 2)
+                if (taskGroup[2]?.correctAnswerIndex == 0)
                 {
                     candleFire[2].SetActive(false);
                     
-                    if (taskGroup[3]?.correctAnswerIndex == 3)
+                    if (taskGroup[3]?.correctAnswerIndex == 1)
                     {
                         candleFire[3].SetActive(false);
                     }

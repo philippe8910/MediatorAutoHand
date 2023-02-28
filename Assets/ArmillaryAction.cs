@@ -37,7 +37,7 @@ public class ArmillaryAction : MonoBehaviour
     {
         if (isGrab)
         {
-            currentAnimationTime = Mathf.Lerp(currentAnimationTime, nextAnimationTime, 0.01f);
+            currentAnimationTime = Mathf.Lerp(currentAnimationTime, nextAnimationTime, 0.1f);
             
             animator.Play("Rotate");
             animator.SetFloat("Time" , currentAnimationTime);
