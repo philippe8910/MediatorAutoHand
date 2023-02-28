@@ -5,12 +5,15 @@ using Autohand;
 using Event;
 using Project;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody) , typeof(Grabbable) , typeof(DistanceGrabbable))]
 public class GrabbableCustom : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
+    
+    public bool changeScenesDestory;
     
     private bool isGrab;
     
@@ -46,6 +49,14 @@ public class GrabbableCustom : MonoBehaviour
         {
             OnStartPull();
         });
+        
+        UnityEngine.SceneManagement.SceneManager.activeSceneChanged += delegate(Scene arg0, Scene scene)
+        {
+            if (changeScenesDestory)
+            {
+                Destroy(gameObject);
+            }
+        };
         
         StartCoroutine(StartDetectedFailOutWorld());
 
