@@ -56,6 +56,7 @@ public class GrabbableCustom : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+            Destroy(gameObject);
         };
         
         StartCoroutine(StartDetectedFailOutWorld());
