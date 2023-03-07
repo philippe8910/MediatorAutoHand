@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Autohand;
+using Event;
+using Project;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -159,6 +161,10 @@ public class LevelEvents : MonoBehaviour
         PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.RightHand , 5);
         PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.LeftHand , 5);
     }
-    
+
+    public void NextLevel()
+    {
+        EventBus.Post(new ChangeScenesDetected(null));
+    }
     
 }
