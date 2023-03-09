@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
@@ -9,7 +10,13 @@ public class BossLevelStateManager : MonoBehaviour
 
     public string currentStateTag;
 
+    public float hurtRange;
+
     private IState currentState;
+
+    private Animator animator;
+
+    private bool isHurt;
 
 
 
@@ -20,4 +27,14 @@ public class BossLevelStateManager : MonoBehaviour
 
         currentState = newState;
     }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        
+        Gizmos.DrawWireSphere(transform.position , hurtRange);
+    }
+
+    public Animator GetAnimator() => animator;
+    public bool GetHurt() => Physics.CheckSphere(transform.position, hurtRange);
 }
