@@ -1,12 +1,12 @@
 ﻿namespace State.BossState
 {
-    public class BossIdleState : IState
+    public class BossWaterUpState : IState
     {
         public void OnEnterState(object action)
         {
             var actor = (BossLevelStateManager) action;
             
-            actor.GetAnimator().CrossFade("Idle" , 0.1f);
+            actor.GetAnimator().CrossFade("WaterUp_0" , 0.1f);
         }
 
         public void OnStayState(object action)

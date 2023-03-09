@@ -1,6 +1,6 @@
 ﻿namespace State.BossState
 {
-    public class BossIdleState : IState
+    public class BossWaterFloorAttackState : IState
     {
         public void OnEnterState(object action)
         {

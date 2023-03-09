@@ -9543,8 +9543,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651814708723}
-  - component: {fileID: 5866666020019838857}
   - component: {fileID: 919132147828039498}
+  - component: {fileID: 919132147828039500}
   - component: {fileID: 919132147828039499}
   m_Layer: 0
   m_Name: '[Boss]'
@@ -9565,8 +9565,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1362d891b85fa34e89cd17de0bc52dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateEnum: 0
-  currentStateTag: 
+  isHurt: 0
+  hurtRange: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &919132147828039499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9576,9 +9579,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132147828039497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f319e539f8610449b294437b830a2f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 84353174762133c47840675d2a8e33a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &919132147828039500
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147828039497}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: eb93a0cbb73925742b45e5c6907f151f, type: 3}
+  m_Controller: {fileID: 9100000, guid: 25f7fe853170d154481c3bd247da2433, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &919132148475592405
 GameObject:
   m_ObjectHideFlags: 0
@@ -22604,25 +22626,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &5866666020019838857
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147828039497}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: eb93a0cbb73925742b45e5c6907f151f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2d5abc76b341b11498b1f125a72f0c00, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5869824410377294541
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,23 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
+using State.BossState;
 using UnityEngine;
 
 public class BossLevelStateManager : MonoBehaviour
 {
-    public BossStateEnum stateEnum;
+    [SerializeField] private bool isHurt;
+    
+    [SerializeField] private float hurtRange;
 
-    public string currentStateTag;
+    [SerializeField] private LayerMask layerMask;
 
-    public float hurtRange;
+    private IState currentState = new BossIdleState();
 
-    private IState currentState;
+    [SerializeField] private Animator animator;
 
-    private Animator animator;
-
-    private bool isHurt;
-
-
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void ChangeState(IState newState)
     {
@@ -35,6 +37,8 @@ public class BossLevelStateManager : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position , hurtRange);
     }
 
+    
+
     public Animator GetAnimator() => animator;
-    public bool GetHurt() => Physics.CheckSphere(transform.position, hurtRange);
+    public bool GetHurt() => Physics.CheckSphere(transform.position, hurtRange , layerMask);
 }
