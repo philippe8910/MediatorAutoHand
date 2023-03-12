@@ -1,4 +1,7 @@
-﻿namespace State.BossState
+﻿using Enum;
+using UnityEngine;
+
+namespace State.BossState
 {
     public class BossIdleState : IState
     {
@@ -12,11 +15,17 @@
         public void OnStayState(object action)
         {
             var actor = (BossLevelStateManager) action;
+            var stateTime = actor.GetStateDataGroup().CatchTimeData(BossStateEnum.BossIdle);
+
+            actor.StateLoop(stateTime  , new BossWaterUpState());
         }
 
         public void OnExitState(object action)
         {
-            var actor = (BossLevelStateManager) action;
+            var actor = (BossLevelStateManager)action;
+            var nextStateTime = actor.GetStateDataGroup().CatchTimeData(BossStateEnum.BossIdle) - 0.2f;
+            
+            actor.GetStateDataGroup().SetStateTime(nextStateTime , BossStateEnum.BossIdle);
         }
     }
 }

@@ -21,5 +21,7 @@ public class BossBullet : MonoBehaviour
     void Update()
     {
         transform.position -= targetVector3 * Time.deltaTime * 2;
+        
+        Destroy(gameObject , 5);
     }
 }

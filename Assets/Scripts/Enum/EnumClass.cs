@@ -17,11 +17,20 @@
     {
         Default,
         BossEnterScene,
+        BossIdle,
         BossPrepare,
         BossFloodedGround,
         BossGroundAttack,
         BossFire,
+        BossAllAttack,
         BossRest,
+    }
+    
+    public enum BossAttack
+    {
+        WaterFloorAttack,
+        CubeAttack
+            
     }
     
 }
