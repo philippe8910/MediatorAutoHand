@@ -29,8 +29,8 @@
     public enum BossAttack
     {
         WaterFloorAttack,
-        CubeAttack
-            
+        CubeAttack,
+
     }
-    
+
 }

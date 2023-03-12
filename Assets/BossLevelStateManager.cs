@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class BossLevelStateManager : MonoBehaviour
 {
+    [SerializeField] private int hp = 5;
+    
     [SerializeField] private float stateTimer;
 
     [SerializeField] private GamePool gamePool;
@@ -27,6 +29,12 @@ public class BossLevelStateManager : MonoBehaviour
         currentState.OnStayState(this);
 
         stateTimer += Time.deltaTime;
+    }
+
+    public void Hurt()
+    {
+        hp--;
+        ChangeState(new BossHurtState());
     }
 
     public void CreatAttackWater()

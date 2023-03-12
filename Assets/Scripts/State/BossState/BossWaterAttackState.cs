@@ -1,4 +1,6 @@
 ﻿using Enum;
+using Event;
+using Project;
 
 namespace State.BossState
 {
@@ -10,7 +12,8 @@ namespace State.BossState
             var attackLoopTime = actor.GetStateDataGroup().CatchAttackTimeData(BossStateEnum.BossFire);
             
             actor.GetAnimator().CrossFade("Attack_0" , 0.1f);
-            actor.InvokeRepeating("CreatAttackCube" , 0 , attackLoopTime);
+            EventBus.Post(new BossFireDetected(false));
+            //actor.InvokeRepeating("CreatAttackCube" , 0 , attackLoopTime);
         }
 
         public void OnStayState(object action)
@@ -27,7 +30,8 @@ namespace State.BossState
             var nextStateTime = actor.GetStateDataGroup().CatchTimeData(BossStateEnum.BossFire) + 0.3f;
             
             actor.GetStateDataGroup().SetStateTime(nextStateTime , BossStateEnum.BossFire);
-            actor.CancelInvoke("CreatAttackCube");
+            EventBus.Post(new BossFireDetected(true));
+            //actor.CancelInvoke("CreatAttackCube");
         }
     }
 }
