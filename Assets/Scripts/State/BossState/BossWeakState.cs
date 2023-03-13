@@ -9,6 +9,7 @@ namespace State.BossState
         public void OnEnterState(object action)
         {
             actor = (BossLevelStateManager) action;
+            actor.GetAnimator().CrossFade("V_weak_idel_1" , 0.3f);
         }
 
         public void OnStayState(object action)

@@ -20,7 +20,7 @@ public class BossBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= targetVector3 * Time.deltaTime;
+        transform.position -= targetVector3 * Time.deltaTime * 1.5f;
         
         Destroy(gameObject , 5);
     }

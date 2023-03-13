@@ -44,4 +44,10 @@ public class BossStateDebug : MonoBehaviour
         bossLevelState.ChangeState(new BossWaterAllAttackState());
     }
     
+    [Button]
+    public void HurtState()
+    {
+        bossLevelState.ChangeState(new BossHurtState());
+    }
+    
 }

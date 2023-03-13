@@ -12,26 +12,14 @@ public class BossConnonAction : MonoBehaviour
     [SerializeField] private Transform firePoint;
 
     [SerializeField] private GameObject bullet;
+
+    public float repeatTime;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<AamonAction>().transform;
-        
-        EventBus.Subscribe<BossFireDetected>(OnBossFireDetected);
     }
-
-    private void OnBossFireDetected(BossFireDetected obj)
-    {
-        if (obj.isStop)
-        {
-            CancelInvoke("Fire");
-        }
-        else
-        {
-            InvokeRepeating("Fire" , 0 , 0.4f);
-        }
-    }
-
+    
     public void Fire()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);

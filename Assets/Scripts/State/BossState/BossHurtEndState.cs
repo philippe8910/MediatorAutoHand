@@ -1,6 +1,6 @@
 ﻿namespace State.BossState
 {
-    public class BossHurtState : IState
+    public class BossHurtEndState : IState
     {
         private BossLevelStateManager actor;
         
@@ -8,13 +8,12 @@
         {
             actor = (BossLevelStateManager) action;
             
-            actor.GetAnimator().CrossFade("V_weak_hit_1" , 0.4f);
-            
+            actor.GetAnimator().CrossFade("V_weak_end" , 0.3f);
         }
 
         public void OnStayState(object action)
         {
-            actor.StateLoop(5 , new BossHurtEndState());
+            actor.StateLoop(2 , new BossIdleState());
         }
 
         public void OnExitState(object action)

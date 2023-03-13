@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 170503165}
   - component: {fileID: 170503164}
   m_Layer: 0
-  m_Name: BossConnon (10)
+  m_Name: BossConnon6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,6 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 297873772}
   bullet: {fileID: 6107712239588169705, guid: 5046ed13d246418488752ae56e87910a, type: 3}
+  repeatTime: 5
 --- !u!4 &170503165
 Transform:
   m_ObjectHideFlags: 0
@@ -608,14 +609,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170503163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.731, y: 2.118, z: -1.144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1175074811}
   - {fileID: 297873772}
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 1859592488}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &173258371
 GameObject:
@@ -1225,7 +1226,7 @@ GameObject:
   - component: {fileID: 413026004}
   - component: {fileID: 413026003}
   m_Layer: 0
-  m_Name: BossConnon (8)
+  m_Name: BossConnon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1245,6 +1246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 359221185}
   bullet: {fileID: 6107712239588169705, guid: 5046ed13d246418488752ae56e87910a, type: 3}
+  repeatTime: 2
 --- !u!4 &413026004
 Transform:
   m_ObjectHideFlags: 0
@@ -1252,14 +1254,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413026002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.676, y: 2.118, z: 0.763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.407, y: 0, z: 1.9070001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1872407145}
   - {fileID: 359221185}
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1859592488}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508152252
 GameObject:
@@ -3537,7 +3539,7 @@ GameObject:
   - component: {fileID: 1137659060}
   - component: {fileID: 1137659059}
   m_Layer: 0
-  m_Name: BossConnon (7)
+  m_Name: BossConnon5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3557,6 +3559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1713538106}
   bullet: {fileID: 6107712239588169705, guid: 5046ed13d246418488752ae56e87910a, type: 3}
+  repeatTime: 5
 --- !u!4 &1137659060
 Transform:
   m_ObjectHideFlags: 0
@@ -3564,14 +3567,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137659058}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6399, y: 2.118, z: 0.6156}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.09109998, y: 0, z: 1.7596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1748139445}
   - {fileID: 1713538106}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1859592488}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1143320809
 GameObject:
@@ -5034,7 +5037,7 @@ GameObject:
   - component: {fileID: 1594453538}
   - component: {fileID: 1594453537}
   m_Layer: 0
-  m_Name: BossConnon (9)
+  m_Name: BossConnon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5054,6 +5057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 271608813}
   bullet: {fileID: 6107712239588169705, guid: 5046ed13d246418488752ae56e87910a, type: 3}
+  repeatTime: 1
 --- !u!4 &1594453538
 Transform:
   m_ObjectHideFlags: 0
@@ -5061,14 +5065,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594453536}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.676, y: 2.118, z: -1.144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.407, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 949809896}
   - {fileID: 271608813}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 1859592488}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1667637556
 GameObject:
@@ -5634,7 +5638,7 @@ GameObject:
   - component: {fileID: 1794669678}
   - component: {fileID: 1794669677}
   m_Layer: 0
-  m_Name: BossConnon (6)
+  m_Name: BossConnon4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5654,6 +5658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 359775824}
   bullet: {fileID: 6107712239588169705, guid: 5046ed13d246418488752ae56e87910a, type: 3}
+  repeatTime: 4
 --- !u!4 &1794669678
 Transform:
   m_ObjectHideFlags: 0
@@ -5661,14 +5666,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794669676}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.698, y: 2.118, z: 2.173}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.033, y: 0, z: 3.3170002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1481612157}
   - {fileID: 359775824}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1859592488}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820459794
 GameObject:
@@ -5681,7 +5686,7 @@ GameObject:
   - component: {fileID: 1820459796}
   - component: {fileID: 1820459795}
   m_Layer: 0
-  m_Name: BossConnon
+  m_Name: BossConnon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5701,6 +5706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2020562318}
   bullet: {fileID: 6107712239588169705, guid: 5046ed13d246418488752ae56e87910a, type: 3}
+  repeatTime: 3
 --- !u!4 &1820459796
 Transform:
   m_ObjectHideFlags: 0
@@ -5708,12 +5714,69 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820459794}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.568, y: 2.118, z: 2.173}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.299, y: 0, z: 3.3170002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 15678576}
   - {fileID: 2020562318}
+  m_Father: {fileID: 1859592488}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1859592486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859592488}
+  - component: {fileID: 1859592487}
+  m_Layer: 0
+  m_Name: BossConnonFireGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1859592487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859592486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e9977a0c6d38a4995490aa00354caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connonActions:
+  - {fileID: 1594453537}
+  - {fileID: 413026003}
+  - {fileID: 1820459795}
+  - {fileID: 1794669677}
+  - {fileID: 1137659059}
+  - {fileID: 170503164}
+  isStop: 0
+--- !u!4 &1859592488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859592486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.731, y: 2.118, z: -1.144}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1594453538}
+  - {fileID: 413026004}
+  - {fileID: 1820459796}
+  - {fileID: 1794669678}
+  - {fileID: 1137659060}
+  - {fileID: 170503165}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12927,7 +12990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147828039497}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000061094755}
-  m_LocalPosition: {x: 0, y: 0.476, z: 1.68}
+  m_LocalPosition: {x: 0.037, y: 0.461, z: 1.33}
   m_LocalScale: {x: 3.6172192, y: 3.6172192, z: 3.6172192}
   m_Children:
   - {fileID: 8879528568610428269}
@@ -16598,7 +16661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4542009471541366559}
   m_LocalRotation: {x: 0.33737758, y: -0.08613477, z: -0.62163854, w: 0.7016571}
-  m_LocalPosition: {x: -0.064319804, y: 1.9313138, z: 2.7045858}
+  m_LocalPosition: {x: 0.027, y: 1.9313138, z: 2.705}
   m_LocalScale: {x: -0.72296375, y: -0.09079611, z: -0.43356934}
   m_Children: []
   m_Father: {fileID: 543450652130878575}
