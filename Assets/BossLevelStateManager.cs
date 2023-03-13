@@ -34,6 +34,7 @@ public class BossLevelStateManager : MonoBehaviour
     public void Hurt()
     {
         hp--;
+        stateTimer = 0;
         ChangeState(new BossHurtState());
     }
 
