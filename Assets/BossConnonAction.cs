@@ -9,6 +9,8 @@ public class BossConnonAction : MonoBehaviour
 {
     private Transform player;
 
+    [SerializeField] private Transform firePoint;
+
     [SerializeField] private GameObject bullet;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class BossConnonAction : MonoBehaviour
 
     public void Fire()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        Instantiate(bullet, firePoint.position, firePoint.rotation);
     }
 
     // Update is called once per frame
