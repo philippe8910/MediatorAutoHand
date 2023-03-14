@@ -1,6 +1,4 @@
 ﻿using Enum;
-using UnityEditor.Timeline.Actions;
-using UnityEngine;
 
 namespace State.BossState
 {

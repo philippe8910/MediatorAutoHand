@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using Sirenix.OdinInspector;
-using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PrefabPack", menuName = "prefabPack", order = 0)]
@@ -57,16 +54,6 @@ public class GamePool : ScriptableObject
         var prefab = Instantiate(targetObject, targetPos, targetQuaternion);
         
         Destroy(prefab , destroyTime);
-    }
-}
-
-public static class AssetExtension
-{
-    public static T[] FindAllAssets<T>() where T : Object
-    {
-        return AssetDatabase.FindAssets($"t:{typeof(T).Name}")
-            .Select(x => AssetDatabase.LoadAssetAtPath<T>(AssetDatabase.GUIDToAssetPath(x)))
-            .ToArray();
     }
 }
 
