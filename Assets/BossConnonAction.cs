@@ -21,22 +21,22 @@ public class BossConnonAction : MonoBehaviour
     {
         player = FindObjectOfType<AamonAction>().transform;
         
-        fireEffect.Stop();
+        fireEffect?.Stop();
     }
     
     public async void Fire()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
-        fireEffect.Play();
+        fireEffect?.Play();
 
         await Task.Delay(1000);
         
-        fireEffect.Stop();
+        fireEffect?.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(player);
     }
 }
