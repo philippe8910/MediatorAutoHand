@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TornadoShader02_Texture_DarkDust
+  m_Shader: {fileID: -6465566751694194690, guid: f96242ba001e5d54fa63708140e4f994,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_41135DD0:
+        m_Texture: {fileID: 2800000, guid: cbd8f7bfc46a0e7488c4ad5836e6ed6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9191FDAB:
+        m_Texture: {fileID: 2800000, guid: b9e77bc19a4cc5347876bb42eeaf60f7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_A61F019C:
+        m_Texture: {fileID: 2800000, guid: 03e4ee8d0b5f45045bb12e2930ed4058, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_36FFDB45: 7
+    - Vector1_5493FF10: 20
+    - Vector1_6FD920D: 0.2
+    - Vector1_C1B5FF09: 1
+    - Vector1_E167C4D0: 50
+    - Vector1_E8E3FDF5: 1.1
+    - Vector1_ED0F10FE: 1
+    - Vector1_F82D365: 0.99
+    m_Colors:
+    - Color_98BAF229: {r: 1.6619898, g: 1.5734558, b: 1.5314671, a: 1}
+    - Vector2_6208BDB4: {r: -1, g: -0.5, b: 0, a: 0}
+    - Vector2_7E530635: {r: -1, g: 0.5, b: 0, a: 0}
+    - Vector2_BC6F1543: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_C7541919: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_DA9B1676: {r: 0.5, g: 0, b: 0, a: 0}
