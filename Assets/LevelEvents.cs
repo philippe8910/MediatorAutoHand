@@ -164,7 +164,10 @@ public class LevelEvents : MonoBehaviour
 
     public void NextLevel()
     {
-        EventBus.Post(new ChangeScenesDetected(null));
+        EventBus.Post(new ChangeScenesDetected(delegate
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
+        }));
     }
     
 }
