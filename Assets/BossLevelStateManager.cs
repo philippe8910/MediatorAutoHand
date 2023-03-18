@@ -15,6 +15,8 @@ public class BossLevelStateManager : MonoBehaviour
 
     [SerializeField] private BossStateData dataGroup;
 
+    [SerializeField] private List<GameObject> lifeCount = new List<GameObject>();
+
     private IState currentState = new BossIdleState();
 
     private Animator animator;
@@ -35,6 +37,15 @@ public class BossLevelStateManager : MonoBehaviour
     {
         hp--;
         stateTimer = 0;
+        lifeCount.ForEach(delegate(GameObject o)
+        {
+            o.SetActive(false);
+        });
+
+        for (int i = 0; i < hp; i++)
+        {
+            lifeCount[i].SetActive(true);
+        }
         ChangeState(new BossHurtState());
     }
 

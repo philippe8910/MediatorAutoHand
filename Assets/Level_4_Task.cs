@@ -10,7 +10,7 @@ public class Level_4_Task : MonoBehaviour
 {
     [SerializeField] private List<Lamp> taskGroup = new List<Lamp>();
 
-    [SerializeField] private UnityEvent OnLevelPass;
+    [SerializeField] private UnityEvent OnLevelPass , OnLevelWrong;
 
     [SerializeField] private List<GameObject> candleFire = new List<GameObject>();
 
@@ -42,6 +42,15 @@ public class Level_4_Task : MonoBehaviour
             {
                 OnLevelPass?.Invoke();
             }
+            else
+            {
+                taskGroup.ForEach(
+                    delegate(Lamp lamp)
+                    {
+                        OnLevelWrong.Invoke();
+                        lamp.DisLightingTest();
+                    });
+            }
         }
         
         candleFire.ForEach(delegate(GameObject o)
@@ -49,7 +58,10 @@ public class Level_4_Task : MonoBehaviour
             o.SetActive(true);
         });
         
-        if (taskGroup[0]?.correctAnswerIndex == 3)
+        
+
+        /*
+         if (taskGroup[0]?.correctAnswerIndex == 3)
         {
             candleFire[0].SetActive(false);
             
@@ -68,9 +80,6 @@ public class Level_4_Task : MonoBehaviour
                 }
             }
         }
-
-        /*
-         * 
          */
     }
     

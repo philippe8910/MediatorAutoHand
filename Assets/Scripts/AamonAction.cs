@@ -95,6 +95,13 @@ public class AamonAction : MonoBehaviour
     {
         
     }
+
+    public void FootStepSoundCreate(GameObject gameObject)
+    {
+        var g = Instantiate(gameObject, transform.position, transform.rotation);
+        
+        Destroy(g , 1f);
+    }
     
     private void OnDrawGizmos()
     {
