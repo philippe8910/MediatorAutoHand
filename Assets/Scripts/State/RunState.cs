@@ -33,6 +33,7 @@ public class RunState :  IState
         {
             var randomSound = Random.Range(0, actions.ActorData().footStepSound.Length);
             actions.FootStepSoundCreate(actions.ActorData().footStepSound[randomSound]);
+            stepTime = 0;
         }
 
         actions.moveVector = runVector;
