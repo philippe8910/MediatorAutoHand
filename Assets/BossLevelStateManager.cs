@@ -36,6 +36,12 @@ public class BossLevelStateManager : MonoBehaviour
     public void Hurt()
     {
         hp--;
+
+        if (hp <= 0)
+        {
+            ChangeState(new BossDeadState());
+        }
+        
         stateTimer = 0;
         lifeCount.ForEach(delegate(GameObject o)
         {
