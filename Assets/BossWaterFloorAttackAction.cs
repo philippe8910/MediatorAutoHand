@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BossWaterFloorAttackAction : MonoBehaviour
 {
-    //[SerializeField] private Transform player;
+    [SerializeField] private AudioSource startAttackSoundEffect;
     
     // Start is called before the first frame update
     private async void Start()
@@ -17,7 +17,11 @@ public class BossWaterFloorAttackAction : MonoBehaviour
 
         await Task.Delay(1500);
         
-        transform.DOScale(new Vector3(transform.localScale.x, 3, transform.localScale.z), 2f).SetEase(Ease.Linear)
+        transform.DOScale(new Vector3(transform.localScale.x, 3, transform.localScale.z), 2f).SetEase(Ease.Linear).OnStart(
+                delegate
+                {
+                    startAttackSoundEffect.Play();
+                })
             .OnComplete(delegate
             {
                 Destroy(gameObject);

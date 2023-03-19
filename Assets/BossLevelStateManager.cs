@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enum;
+using Event;
+using Project;
 using State.BossState;
 using UnityEngine;
 
@@ -40,19 +42,26 @@ public class BossLevelStateManager : MonoBehaviour
         if (hp <= 0)
         {
             ChangeState(new BossDeadState());
+            
+            EventBus.Post(new ChangeScenesDetected(delegate
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
+            }));
         }
-        
-        stateTimer = 0;
-        lifeCount.ForEach(delegate(GameObject o)
+        else
         {
-            o.SetActive(false);
-        });
+            stateTimer = 0;
+            lifeCount.ForEach(delegate(GameObject o)
+            {
+                o.SetActive(false);
+            });
 
-        for (int i = 0; i < hp; i++)
-        {
-            lifeCount[i].SetActive(true);
+            for (int i = 0; i < hp; i++)
+            {
+                lifeCount[i].SetActive(true);
+            }
+            ChangeState(new BossHurtState());
         }
-        ChangeState(new BossHurtState());
     }
 
     public void CreatAttackWater()

@@ -1,6 +1,7 @@
 using UnityEngine;
 using Event;
 using Project;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(LevelEvents))] // 要求此腳本所在的 GameObject 必須有 LevelEvents 組件
 public class SteleAction : MonoBehaviour
@@ -19,5 +20,11 @@ public class SteleAction : MonoBehaviour
         {
             EventBus.Post(new OnEnableLevelHintDetected(hintText));
         });
+    }
+
+    [Button]
+    public void OnTriggerTest()
+    {
+        levelEvents.OnTieRodTrigger.Invoke();
     }
 }
