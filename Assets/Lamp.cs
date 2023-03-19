@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Event;
 using Project;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -74,6 +75,18 @@ public class Lamp : MonoBehaviour
             
             EventBus.Post(new PlayerLightTheFireDetected(this , false));
         });
+    }
+
+    [Button]
+    public void LightingTest()
+    {
+        OnPlayerLightTheTorch.Invoke();
+    }
+
+    [Button]
+    public void DisLightingTest()
+    {
+        OnPlayerInteractive.Invoke();
     }
 
     private void Update()

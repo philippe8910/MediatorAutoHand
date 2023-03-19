@@ -19,7 +19,7 @@ public class BossWaterFloor : MonoBehaviour
     {
         if (obj.isUp)
         {
-            transform.DOMoveY(0.6f, 3f).SetEase(Ease.Linear);
+            transform.DOMoveY(1f, 4f).SetEase(Ease.Linear);
         }
         else
         {

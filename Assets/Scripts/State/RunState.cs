@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RunState :  IState
 {
+    private float stepTime = 0;
+    
     public void OnEnterState(object action)
     {
         var actions = (AamonAction) action;
@@ -24,6 +26,14 @@ public class RunState :  IState
 
         var runVector = PlayerInputAction.JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
 
+
+        stepTime += Time.deltaTime;
+
+        if (stepTime > 1f)
+        {
+            var randomSound = Random.Range(0, actions.ActorData().footStepSound.Length);
+            actions.FootStepSoundCreate(actions.ActorData().footStepSound[randomSound]);
+        }
 
         actions.moveVector = runVector;
         

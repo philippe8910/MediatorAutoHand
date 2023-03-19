@@ -14,6 +14,8 @@ public class BossConnonAction : MonoBehaviour
 
     [SerializeField] private GameObject bullet;
 
+    [SerializeField] private GameObject fireLine;
+
     [SerializeField] private ParticleSystem fireEffect;
     public float repeatTime;
     // Start is called before the first frame update
@@ -21,22 +23,35 @@ public class BossConnonAction : MonoBehaviour
     {
         player = FindObjectOfType<AamonAction>().transform;
         
-        fireEffect.Stop();
+        fireEffect?.Stop();
+        fireLine.SetActive(false);
     }
     
     public async void Fire()
     {
+        fireLine.SetActive(false);
         Instantiate(bullet, firePoint.position, firePoint.rotation);
-        fireEffect.Play();
+        
+        fireEffect?.Play();
 
         await Task.Delay(1000);
         
-        fireEffect.Stop();
+        fireEffect?.Stop();
+    }
+
+    public void Aim()
+    {
+        fireLine.SetActive(true);
+    }
+
+    public void DisAim()
+    {
+        fireLine.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(player);
     }
 }

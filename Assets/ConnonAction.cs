@@ -10,6 +10,16 @@ public class ConnonAction : MonoBehaviour
 
     [SerializeField] private UnityEvent OnFireTrigger;
 
+    public ParticleSystem fireEffect;
+
+    private void Start()
+    {
+        OnFireTrigger.AddListener(delegate
+        {
+            fireEffect.Play();
+        });
+    }
+
     public void SetLock(bool _isLook)
     {
         isLock = _isLook;

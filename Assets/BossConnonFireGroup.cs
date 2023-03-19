@@ -27,6 +27,13 @@ public class BossConnonFireGroup : MonoBehaviour
         {
             if (!isStop)
             {
+                connonActions.ForEach(delegate(BossConnonAction action)
+                {
+                    action.Aim();
+                });
+
+                yield return new WaitForSeconds(1);
+                
                 for (int i = 0; i < connonActions.Count; i++)
                 {
                     connonActions[i].Fire();
@@ -38,6 +45,10 @@ public class BossConnonFireGroup : MonoBehaviour
             }
             else
             {
+                connonActions.ForEach(delegate(BossConnonAction action)
+                {
+                    action.DisAim();
+                });
                 yield return null;
             }
         }
