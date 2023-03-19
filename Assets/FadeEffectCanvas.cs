@@ -26,13 +26,23 @@ public class FadeEffectCanvas : MonoBehaviour
     public void EnableCanvas()
     {
         canvasGroup.DOKill();
-        canvasGroup.DOFade(1, 0.1f);
+        canvasGroup.DOFade(1, 0.01f);
     }
     
     [Button]
     public void DisableCanvas()
     {
         canvasGroup.DOKill();
-        canvasGroup.DOFade(0, 0.1f);
+        canvasGroup.DOFade(0, 0.01f);
+    }
+
+    [Button]
+    public void FadeInFadeOut()
+    {
+        canvasGroup.DOKill();
+        canvasGroup.DOFade(1, 0.1f).onComplete += delegate
+        {
+            canvasGroup.DOFade(0, 0.1f);
+        };
     }
 }

@@ -10,6 +10,8 @@ public class Level_4_Task : MonoBehaviour
 {
     [SerializeField] private List<Lamp> taskGroup = new List<Lamp>();
 
+    [SerializeField] private List<Lamp> scenesLamps = new List<Lamp>();
+
     [SerializeField] private UnityEvent OnLevelPass , OnLevelWrong;
 
     [SerializeField] private List<GameObject> candleFire = new List<GameObject>();
@@ -44,10 +46,10 @@ public class Level_4_Task : MonoBehaviour
             }
             else
             {
-                taskGroup.ForEach(
+                scenesLamps.ForEach(
                     delegate(Lamp lamp)
                     {
-                        OnLevelWrong.Invoke();
+                        OnLevelWrong?.Invoke();
                         lamp.DisLightingTest();
                     });
             }
