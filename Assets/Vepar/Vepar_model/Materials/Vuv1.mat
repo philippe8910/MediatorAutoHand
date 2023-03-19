@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Vuv1
   m_Shader: {fileID: 4800000, guid: 51b2dee0ab07bd84d8147601ff89e511, type: 3}
-  m_ShaderKeywords: EFFECT_HUE_VARIATION MTOON_OUTLINE_COLOR_FIXED MTOON_OUTLINE_WIDTH_WORLD
-    _EMISSION _METALLICGLOSSMAP _REQUIRE_UV2 _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ShaderKeywords: EFFECT_HUE_VARIATION GEOM_TYPE_LEAF MTOON_OUTLINE_COLOR_FIXED
+    MTOON_OUTLINE_WIDTH_WORLD _EMISSION _METALLICGLOSSMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -351,7 +351,7 @@ Material:
     - _Emission2ndMap_UVMode: 0
     - _Emission2ndParallaxDepth: 0
     - _Emission2ndUseGrad: 0
-    - _EmissionBlend: 0.05
+    - _EmissionBlend: 0.083
     - _EmissionFluorescence: 0.56
     - _EmissionGradSpeed: 1
     - _EmissionMainStrength: 0.44
@@ -501,15 +501,15 @@ Material:
     - _ReflectionNormalStrength: 1
     - _RimApplyTransparency: 1
     - _RimBackfaceMask: 1
-    - _RimBlur: 0.65
-    - _RimBorder: 0.5
-    - _RimDirRange: 0
-    - _RimDirStrength: 0
+    - _RimBlur: 0.204
+    - _RimBorder: 0.29500002
+    - _RimDirRange: -0.04
+    - _RimDirStrength: 1
     - _RimEnableLighting: 1
     - _RimFresnelPower: 1
-    - _RimIndirBlur: 0.1
-    - _RimIndirBorder: 0.5
-    - _RimIndirRange: 0
+    - _RimIndirBlur: 0.243
+    - _RimIndirBorder: 0.499
+    - _RimIndirRange: -0.01
     - _RimLift: 0
     - _RimLightingMix: 0
     - _RimMainStrength: 0
@@ -541,7 +541,7 @@ Material:
     - _ShadowNormalStrength: 1
     - _ShadowPostAO: 0
     - _ShadowReceive: 0
-    - _ShadowStrength: 1
+    - _ShadowStrength: 0
     - _ShadowStrengthMaskLOD: 0
     - _ShiftBackfaceUV: 0
     - _Smoothness: 1
@@ -587,7 +587,7 @@ Material:
     - _UseParallax: 0
     - _UseReflection: 0
     - _UseRim: 1
-    - _UseShadow: 1
+    - _UseShadow: 0
     - _UvAnimRotation: 0
     - _UvAnimScrollX: 0
     - _UvAnimScrollY: 0
@@ -628,7 +628,7 @@ Material:
     - _Emission2ndMap_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionBlendMask_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionBlink: {r: 0, g: 0, b: 3.141593, a: 0}
-    - _EmissionColor: {r: 23.48348, g: 62.416615, b: 118.035385, a: 1}
+    - _EmissionColor: {r: 11.5398855, g: 32.70663, b: 30.993635, a: 1}
     - _EmissionMap_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _GlitterAtras: {r: 1, g: 1, b: 0, a: 0}
     - _GlitterColor: {r: 1, g: 1, b: 1, a: 1}
@@ -650,7 +650,7 @@ Material:
     - _Main3rdDistanceFade: {r: 0.1, g: 0.01, b: 0, a: 0}
     - _Main3rdTexDecalAnimation: {r: 1, g: 1, b: 1, a: 30}
     - _Main3rdTexDecalSubParam: {r: 1, g: 1, b: 0, a: 1}
-    - _MainTexHSVG: {r: 0, g: 1, b: 1.59, a: 0.56}
+    - _MainTexHSVG: {r: 0, g: 1, b: 1.95, a: 0.84}
     - _MainTex_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _MatCap2ndBlendUV1: {r: 0, g: 0, b: 0, a: 0}
     - _MatCap2ndColor: {r: 1, g: 1, b: 1, a: 1}
@@ -662,7 +662,7 @@ Material:
     - _OutlineTex_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectionCubeColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.24038802, g: 0.6759445, b: 0.6981132, a: 1}
+    - _RimColor: {r: 0.24038485, g: 0.67594445, b: 0.6981132, a: 0.402}
     - _RimIndirColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadeColor: {r: 0.25097898, g: 0.3784154, b: 0.4716981, a: 1}
     - _Shadow2ndColor: {r: 0.68, g: 0.65999997, b: 0.78999996, a: 1}
