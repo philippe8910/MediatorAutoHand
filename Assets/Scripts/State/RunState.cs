@@ -14,6 +14,8 @@ public class RunState :  IState
         actions.SetAnimatorCrossState("Run" , 0.1f);
         
         if(actions.isStateLog) Debug.Log("Run Enter!!");
+        
+        actions.FootStepAudio().clip = actions.FootstepAudioData().GetFootstepSound(1);
     }
 
     public void OnStayState(object action)
@@ -25,16 +27,17 @@ public class RunState :  IState
         var isFalling = actions.GetFallingDetected() && !actions.GetGroundDetected();
 
         var runVector = PlayerInputAction.JoystickActionInput() * actions.ActorData().speed * Time.deltaTime;
-
-
+        
         stepTime += Time.deltaTime;
 
-        if (stepTime > 1f)
+        if (stepTime > 0.4f)
         {
-            var randomSound = Random.Range(0, actions.ActorData().footStepSound.Length);
-            actions.FootStepSoundCreate(actions.ActorData().footStepSound[randomSound]);
+            actions.FootStepAudio().clip = actions.FootstepAudioData().GetFootstepSound(1);
+            actions.FootStepAudio().Play();
             stepTime = 0;
         }
+
+        
 
         actions.moveVector = runVector;
         

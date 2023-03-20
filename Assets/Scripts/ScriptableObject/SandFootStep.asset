@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2e485b7726b4e4f9b9f76553115e27, type: 3}
+  m_Name: SandFootStep
+  m_EditorClassIdentifier: 
+  footstepType: 1
+  minSpeed: 1
+  maxSpeed: 10
+  grassFootsteps:
+  - {fileID: 8300000, guid: 51f2e73f5ac595545a0f1590dd1cf628, type: 3}
+  - {fileID: 8300000, guid: 85deb53b71433d94c87e4b6f193e434c, type: 3}
+  - {fileID: 8300000, guid: 81323bd169e119e4e993346b140fdb1d, type: 3}
+  - {fileID: 8300000, guid: 9dd04845af0e32f42a7ab8f1be32d2a1, type: 3}
+  woodFootsteps:
+  - {fileID: 8300000, guid: f30d4c917c2c4154b8400a9027b95328, type: 3}
+  - {fileID: 8300000, guid: 483f36d91ae59434bb4c6784bd5df797, type: 3}
+  - {fileID: 8300000, guid: 03d58098b65a6f34991400e71fa8db08, type: 3}
+  - {fileID: 8300000, guid: eab8f55ab25738149a366e7353d40e22, type: 3}
+  - {fileID: 8300000, guid: c49a112112ff66a419f9eee9c2781934, type: 3}
+  - {fileID: 8300000, guid: b9ea07012f810c64c9d9133dddbd7589, type: 3}
+  concreteFootsteps: []

@@ -10,6 +10,10 @@ public class AamonAction : MonoBehaviour
 
     [InlineEditor] [SerializeField] private ActorData actorData;
 
+    [InlineEditor] [SerializeField] private FootstepAudioData footstepAudioData;
+
+    [SerializeField] private AudioSource footStepAudioSource;
+
     private Rigidbody rigidbody;
 
     private Animator animator;
@@ -48,12 +52,16 @@ public class AamonAction : MonoBehaviour
 
     public ActorData ActorData() => actorData;
 
+    public AudioSource FootStepAudio() => footStepAudioSource;
+
+    public FootstepAudioData FootstepAudioData() => footstepAudioData;
+
     public bool GetGroundDetected() => Physics.CheckSphere(transform.position + actorData.groundOffset, actorData.groundTriggerRange, actorData.groundLayerMask);
-
-
+    
     public bool GetOverHeadDetected() => Physics.CheckSphere(transform.position + actorData.overHeadOffset, actorData.overHeadTriggerRange);
 
     public bool GetFallingDetected() => rigidbody.velocity.y < 0.1;
+    
     
     public void ChangeState(IState newState)
     {
@@ -96,13 +104,6 @@ public class AamonAction : MonoBehaviour
         
     }
 
-    public void FootStepSoundCreate(GameObject gameObject)
-    {
-        var g = Instantiate(gameObject, transform.position, transform.rotation);
-        
-        Destroy(g , 1f);
-    }
-    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

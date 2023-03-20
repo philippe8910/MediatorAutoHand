@@ -9,10 +9,6 @@ public class ActorData : ScriptableObject
 
     public float overHeadTriggerRange = 0.02f;
 
-    public GameObject[] footStepSound;
-
-    public AudioSource jumpSoundEffect;
-    
     public Vector3 groundOffset = new Vector3(0,0.01f ,0);
     
     public Vector3 overHeadOffset = new Vector3(0,0.01f ,0);
