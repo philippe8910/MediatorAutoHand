@@ -49,9 +49,10 @@ public class Level_4_Task : MonoBehaviour
                 scenesLamps.ForEach(
                     delegate(Lamp lamp)
                     {
-                        OnLevelWrong?.Invoke();
                         lamp.DisLightingTest();
                     });
+                
+                OnLevelWrong?.Invoke();
             }
         }
         

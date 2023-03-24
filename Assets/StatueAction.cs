@@ -19,6 +19,8 @@ public class StatueAction : MonoBehaviour
 
         levelEvents.OnTriggerEnterEvent.AddListener(FadeIn);
         levelEvents.OnTriggerExitEvent.AddListener(FadeOut);
+
+        targetMaterial.SetFloat("emssion_intensity" , 0);
     }
 
     [Button]
