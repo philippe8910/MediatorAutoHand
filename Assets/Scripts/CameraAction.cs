@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Autohand;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,6 +20,10 @@ public class CameraAction : MonoBehaviour
     [SerializeField] private Transform createPhotoPos;
 
     [SerializeField] private AudioSource shutterClickSound;
+
+    [SerializeField] private List<GameObject> catchObjects = new List<GameObject>();
+
+    public LayerMask layerMask;
     
     [Button]
     public void TakePhoto()
@@ -32,8 +37,20 @@ public class CameraAction : MonoBehaviour
             var photoImage = photo.transform.GetChild(0).gameObject;
             var photoRig = photo.GetComponent<Rigidbody>();
             var photoGrabbable = photo.GetComponent<Grabbable>();
+            var photoText = photo.transform.GetChild(1).transform.GetChild(1).GetComponent<Text>();
 
             var image = photoImage.GetComponent<MeshRenderer>();
+            
+            var allObjectInRender = FindObjectsOfType<CameraRenderDetecter>();
+
+            for (int i = 0; i < allObjectInRender.Length; i++)
+            {
+                if (allObjectInRender[i].isVisible)
+                {
+                    photoText.text = allObjectInRender[i].introduce;
+                    i = 100;
+                }
+            }
 
             image.material.SetTexture("_BaseMap", takePhoto);
             shutterClickSound.Play();
@@ -54,11 +71,26 @@ public class CameraAction : MonoBehaviour
         RenderTexture.active = currentRT;
         return image;
     }
-    
+
 
 
     public void SetGrabbable(bool _isGrab)
     {
         isGrab = _isGrab;
+    }
+    
+    private bool IsObjectVisibleInCamera(GameObject go, Camera camera)
+    {
+        Renderer renderer = go.GetComponent<Renderer>();
+        
+        if (renderer != null && renderer.isVisible) // 如果該物件有 Renderer 且可見
+        {
+            Vector3 screenPos = camera.WorldToViewportPoint(renderer.bounds.center); // 將物件的中心點轉換為 Viewport 坐標系
+            if (screenPos.z > 0 && screenPos.x > 0 && screenPos.x < 1 && screenPos.y > 0 && screenPos.y < 1) // 如果物件在相機的視野範圍內
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
