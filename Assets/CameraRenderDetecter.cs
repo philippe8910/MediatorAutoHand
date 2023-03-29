@@ -20,10 +20,14 @@ public class CameraRenderDetecter : MonoBehaviour
     private void Start()
     {
         bounds = GetComponent<Collider>().bounds;
+        
     }
 
     private void Update()
     {
+        if (targetCamera == null)
+            targetCamera = GameObject.FindWithTag("PhotoCamera").GetComponent<Camera>();
+            
         cameraFrustum = GeometryUtility.CalculateFrustumPlanes(targetCamera);
 
         if (GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
@@ -35,5 +39,4 @@ public class CameraRenderDetecter : MonoBehaviour
             isVisible = false;
         }
     }
-
 }

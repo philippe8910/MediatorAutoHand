@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 8813416009048903595}
   - component: {fileID: 6778633790017698765}
   - component: {fileID: 6040215839132481608}
+  - component: {fileID: 2609144938253643520}
   m_Layer: 7
   m_Name: Stele
   m_TagString: Untagged
@@ -481,3 +482,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintText: "\u5411\u8457\u5927\u9580\u524D\u9032\u5427 \u671D\u8056\u8005"
+--- !u!114 &2609144938253643520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403371541319338783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u555F\u8499\u4E4B\u77F3\u3001\u6307\u5F15\u671D\u8056\u8005\u5011\u524D\u5F80\u8056\u57DF"
+  targetCamera: {fileID: 0}

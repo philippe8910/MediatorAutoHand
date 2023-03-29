@@ -433,6 +433,10 @@ MonoBehaviour:
   photograph: {fileID: 34719884604952080, guid: ff495c3361b1e5f4c9fded500469c41e, type: 3}
   createPhotoPos: {fileID: 8633386674142462586}
   shutterClickSound: {fileID: 1754412318}
+  catchObjects: []
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4026597311
 --- !u!114 &7779168452426215819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,6 +699,7 @@ GameObject:
   - component: {fileID: 8633386674907739860}
   - component: {fileID: 8633386674907739861}
   - component: {fileID: 8633386674907739862}
+  - component: {fileID: 1254572403}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -710,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8633386674907739816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7779168452426215809}
@@ -800,3 +805,16 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!65 &1254572403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8633386674907739816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.288379, y: 0.4182737, z: 2.3830063}
+  m_Center: {x: -0.012619823, y: 0.024754256, z: 1.2956256}
