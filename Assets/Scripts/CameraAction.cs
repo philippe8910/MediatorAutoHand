@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +20,20 @@ public class CameraAction : MonoBehaviour
 
     [SerializeField] private Transform createPhotoPos;
 
+    [SerializeField] private Transform cameraPos;
+
     [SerializeField] private AudioSource shutterClickSound;
 
     [SerializeField] private List<GameObject> catchObjects = new List<GameObject>();
 
     public LayerMask layerMask;
-    
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+        ResetCamera();
+    }
+
     [Button]
     public void TakePhoto()
     {
@@ -92,5 +101,21 @@ public class CameraAction : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void OnTick()
+    {
+        if (transform.position.y < -10)
+        {
+            ResetCamera();
+        }
+        
+    }
+
+    [Button]
+    public void ResetCamera()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        transform.position = cameraPos.position;
     }
 }

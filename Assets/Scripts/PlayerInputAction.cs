@@ -11,6 +11,7 @@ public class PlayerInputAction
     public static SteamVR_Action_Boolean triggerActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
     public static SteamVR_Action_Boolean jumpActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Brake");
     public static SteamVR_Action_Boolean interactiveActionBoolean =  SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Reset");
+    public static SteamVR_Action_Boolean uiOpenActionBoolean = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("");
     
     public static SteamVR_Action_Boolean resetPositionBoolean =  SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Jump");
 
@@ -45,6 +46,8 @@ public class PlayerInputAction
     {
         return resetPositionBoolean.stateDown;
     }
+
+    public static bool GetUIOpenBoolean() => uiOpenActionBoolean.stateDown;
 
     public static void JoyStickVibration(SteamVR_Input_Sources hand , float tick)
     {
