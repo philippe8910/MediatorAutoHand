@@ -12,8 +12,8 @@ namespace State.BossState
             var actor = (BossLevelStateManager) action;
             
             actor.GetAnimator().CrossFade("WaterUp_0" , 0.1f);
-            
-            EventBus.Post(new BossWaterUpDetected(true));
+            actor.GetBossWaterFloor().OnBossWaterUpDetected(true);
+            //EventBus.Post(new BossWaterUpDetected(true));
         }
 
         public void OnStayState(object action)

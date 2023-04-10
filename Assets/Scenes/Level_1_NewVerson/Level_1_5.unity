@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6079547182324492246, guid: 85edc59aadb41f8478aeccb628947e7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85edc59aadb41f8478aeccb628947e7a, type: 3}
 --- !u!1 &3163875
@@ -118441,6 +118445,7 @@ GameObject:
   - component: {fileID: 8763982265876786469}
   - component: {fileID: 354760779973468018}
   - component: {fileID: 1020317500593133007}
+  - component: {fileID: 1832973732266805248}
   m_Layer: 0
   m_Name: Brazier.007
   m_TagString: Untagged
@@ -118448,6 +118453,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1832973732266805248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832973732266805247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u796D\u58C7\u4E4B\u706B\uFF0C\u53EA\u6709\u8056\u58C7\u4E4B\u7130\u53EF\u4EE5\u9EDE\u71C3\uFF0C\u7576\u5168\u90E8\u9EDE\u71C3\u4E4B\u6642\uFF0C\u771F\u7406\u5C07\u6703\u88AB\u77E5\u66C9"
+  targetCamera: {fileID: 0}
 --- !u!23 &1853465081267997012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118689,6 +118709,7 @@ GameObject:
   - component: {fileID: 2598998274623554603}
   - component: {fileID: 8726083813718183101}
   - component: {fileID: 2118299962649351406}
+  - component: {fileID: 2118299962649351407}
   m_Layer: 7
   m_Name: Brazier.006
   m_TagString: Untagged
@@ -118710,6 +118731,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5943398763213293898, guid: f5d7cb23c712e0648a3827d6220ec1d5, type: 3}
+--- !u!114 &2118299962649351407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118299962649351405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u796D\u58C7\u4E4B\u706B\uFF0C\u53EA\u6709\u8056\u58C7\u4E4B\u7130\u53EF\u4EE5\u9EDE\u71C3\uFF0C\u7576\u5168\u90E8\u9EDE\u71C3\u4E4B\u6642\uFF0C\u771F\u7406\u5C07\u6703\u88AB\u77E5\u66C9"
+  targetCamera: {fileID: 0}
 --- !u!1 &2226256451040868006
 GameObject:
   m_ObjectHideFlags: 0
@@ -119446,6 +119482,7 @@ GameObject:
   - component: {fileID: 8471511297071069796}
   - component: {fileID: 3060243150475886692}
   - component: {fileID: 3157942424266293548}
+  - component: {fileID: 3157942424266293549}
   m_Layer: 7
   m_Name: Brazier.009
   m_TagString: Untagged
@@ -119467,6 +119504,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7154258724683715402, guid: f5d7cb23c712e0648a3827d6220ec1d5, type: 3}
+--- !u!114 &3157942424266293549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157942424266293547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u796D\u58C7\u4E4B\u706B\uFF0C\u53EA\u6709\u8056\u58C7\u4E4B\u7130\u53EF\u4EE5\u9EDE\u71C3\uFF0C\u7576\u5168\u90E8\u9EDE\u71C3\u4E4B\u6642\uFF0C\u771F\u7406\u5C07\u6703\u88AB\u77E5\u66C9"
+  targetCamera: {fileID: 0}
 --- !u!1 &3248955777727738509
 GameObject:
   m_ObjectHideFlags: 0
@@ -120248,6 +120300,7 @@ GameObject:
   - component: {fileID: 3977158554183392187}
   - component: {fileID: 3391406433130580557}
   - component: {fileID: 4030799622328600668}
+  - component: {fileID: 4030799622328600669}
   m_Layer: 7
   m_Name: Brazier
   m_TagString: Untagged
@@ -120269,6 +120322,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2503579894941517308, guid: f5d7cb23c712e0648a3827d6220ec1d5, type: 3}
+--- !u!114 &4030799622328600669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030799622328600667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u796D\u58C7\u4E4B\u706B\uFF0C\u53EA\u6709\u8056\u58C7\u4E4B\u7130\u53EF\u4EE5\u9EDE\u71C3\uFF0C\u7576\u5168\u90E8\u9EDE\u71C3\u4E4B\u6642\uFF0C\u771F\u7406\u5C07\u6703\u88AB\u77E5\u66C9"
+  targetCamera: {fileID: 0}
 --- !u!1 &4050363318965397027
 GameObject:
   m_ObjectHideFlags: 0
@@ -120788,6 +120856,7 @@ GameObject:
   - component: {fileID: 4657202161163716797}
   - component: {fileID: 4657202161163716792}
   - component: {fileID: 4657202161163716798}
+  - component: {fileID: 4657202161163716799}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Torch
@@ -121084,6 +121153,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4657202161163716799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657202161163716791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u8056\u58C7\u4E4B\u7130\uFF0C\u5DF2\u7D93\u767E\u5E74\u6C92\u6709\u88AB\u9EDE\u71C3\u4E86\uFF0C\u4ED6\u66FE\u662F\u5C6C\u65BC\u706B\u795E\u7684"
+  targetCamera: {fileID: 0}
 --- !u!4 &4702834522474244843
 Transform:
   m_ObjectHideFlags: 0
@@ -121169,6 +121253,7 @@ GameObject:
   - component: {fileID: 2862043215090973041}
   - component: {fileID: 8215935985077526201}
   - component: {fileID: 4834659698146758645}
+  - component: {fileID: 4834659698146758646}
   m_Layer: 7
   m_Name: Level1-5.042
   m_TagString: Untagged
@@ -121190,6 +121275,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -842530460966033975, guid: f5d7cb23c712e0648a3827d6220ec1d5, type: 3}
+--- !u!114 &4834659698146758646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834659698146758644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u6642\u6B0A\u795E\u50CF\uFF0C\u671D\u8056\u8005\u5011\u66FE\u7D93\u5D07\u62DC\u7684\u5C0D\u8C61"
+  targetCamera: {fileID: 0}
 --- !u!4 &4856249739245285759
 Transform:
   m_ObjectHideFlags: 0
@@ -121560,6 +121660,7 @@ GameObject:
   - component: {fileID: 7574632516451928791}
   - component: {fileID: 1311736783285795582}
   - component: {fileID: 2317062626931737292}
+  - component: {fileID: 5382525609544230912}
   m_Layer: 0
   m_Name: Brazier.008
   m_TagString: Untagged
@@ -121567,6 +121668,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5382525609544230912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5382525609544230911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u796D\u58C7\u4E4B\u706B\uFF0C\u53EA\u6709\u8056\u58C7\u4E4B\u7130\u53EF\u4EE5\u9EDE\u71C3\uFF0C\u7576\u5168\u90E8\u9EDE\u71C3\u4E4B\u6642\uFF0C\u771F\u7406\u5C07\u6703\u88AB\u77E5\u66C9"
+  targetCamera: {fileID: 0}
 --- !u!4 &5394732522466801413
 Transform:
   m_ObjectHideFlags: 0
@@ -122949,6 +123065,7 @@ GameObject:
   - component: {fileID: 123496195383729186}
   - component: {fileID: 6046705154773872286}
   - component: {fileID: 6624403612074097932}
+  - component: {fileID: 7022321929731783194}
   m_Layer: 0
   m_Name: Brazier.005
   m_TagString: Untagged
@@ -122956,6 +123073,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7022321929731783194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022321929731783193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u796D\u58C7\u4E4B\u706B\uFF0C\u53EA\u6709\u8056\u58C7\u4E4B\u7130\u53EF\u4EE5\u9EDE\u71C3\uFF0C\u7576\u5168\u90E8\u9EDE\u71C3\u4E4B\u6642\uFF0C\u771F\u7406\u5C07\u6703\u88AB\u77E5\u66C9"
+  targetCamera: {fileID: 0}
 --- !u!4 &7033609171979287298
 Transform:
   m_ObjectHideFlags: 0
@@ -123757,6 +123889,7 @@ GameObject:
   - component: {fileID: 5867181658286510478}
   - component: {fileID: 8541250313146475844}
   - component: {fileID: 7892665653275231378}
+  - component: {fileID: 7892665653275231379}
   m_Layer: 0
   m_Name: flag
   m_TagString: Untagged
@@ -123781,6 +123914,21 @@ MonoBehaviour:
   onLevelPassEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7892665653275231379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892665653275231377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u523B\u5370\u8457\u7121\u4E0A\u4E4B\u795E\u7B26\u865F\u7684\u65D7\u5E5F"
+  targetCamera: {fileID: 0}
 --- !u!33 &7926689345919629915
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -34,6 +34,12 @@ public class CameraAction : MonoBehaviour
         ResetCamera();
     }
 
+    public void Update()
+    {
+        if(!isGrab)
+            ResetCamera();
+    }
+
     [Button]
     public void TakePhoto()
     {

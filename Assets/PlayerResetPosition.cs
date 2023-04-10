@@ -39,8 +39,6 @@ public class PlayerResetPosition : MonoBehaviour
             var distanceDiff = resetTransform.position - playerHead.transform.position;
         
             player.transform.position += distanceDiff;
-            
-            throw;
         }
         
         try
@@ -64,8 +62,7 @@ public class PlayerResetPosition : MonoBehaviour
             var distanceDiff = resetTransform.position - playerHead.transform.position;
         
             player.transform.position += distanceDiff;
-            
-            throw;
+
         }
 
     }

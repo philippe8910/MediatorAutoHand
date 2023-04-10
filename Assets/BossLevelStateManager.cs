@@ -13,6 +13,10 @@ public class BossLevelStateManager : MonoBehaviour
     
     [SerializeField] private float stateTimer;
 
+    [SerializeField] private BossWaterFloor bossWaterFloor;
+
+    [SerializeField] private BossConnonFireGroup bossConnonFireGroup;
+
     [SerializeField] private GamePool gamePool;
 
     [SerializeField] private BossStateData dataGroup;
@@ -26,6 +30,8 @@ public class BossLevelStateManager : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        bossWaterFloor = FindObjectOfType<BossWaterFloor>();
+        bossConnonFireGroup = FindObjectOfType<BossConnonFireGroup>();
     }
 
     private void Update()
@@ -109,4 +115,6 @@ public class BossLevelStateManager : MonoBehaviour
     }
     public BossStateData GetStateDataGroup() => dataGroup;
     public Animator GetAnimator() => animator;
+    public BossWaterFloor GetBossWaterFloor() => bossWaterFloor;
+    public BossConnonFireGroup GetBossConnonFireGroup() => bossConnonFireGroup;
 }

@@ -25,20 +25,19 @@ public class UIAction : MonoBehaviour
         OnUIDisable();
     }
 
-    private void Update()
-    {
-        if (PlayerInputAction.GetUIOpenBoolean())
-        {
-            isOpen = !isOpen;
 
-            if (isOpen)
-            {
-                OnUIEnable();
-            }
-            else
-            {
-                OnUIDisable();
-            }
+    [Button]
+    public void OpenUI()
+    {
+        isOpen = !isOpen;
+
+        if (isOpen)
+        {
+            OnUIEnable();
+        }
+        else
+        {
+            OnUIDisable();
         }
     }
     

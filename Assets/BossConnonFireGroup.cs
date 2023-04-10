@@ -13,13 +13,11 @@ public class BossConnonFireGroup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventBus.Subscribe<BossFireDetected>(OnBossFireDetected);
+        
     }
 
-    private void OnBossFireDetected(BossFireDetected obj)
+    public void OnBossFireDetected(bool isStop)
     {
-        isStop = obj.isStop;
-        
         StopAllCoroutines();
         StartCoroutine(StartFire());
 

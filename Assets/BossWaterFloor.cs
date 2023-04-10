@@ -10,14 +10,12 @@ public class BossWaterFloor : MonoBehaviour
     private float defautPosY;
     void Start()
     {
-        EventBus.Subscribe<BossWaterUpDetected>(OnBossWaterUpDetected);
-
         defautPosY = transform.position.y;
     }
 
-    private void OnBossWaterUpDetected(BossWaterUpDetected obj)
+    public void OnBossWaterUpDetected(bool isUp)
     {
-        if (obj.isUp)
+        if (isUp)
         {
             transform.DOMoveY(0.65f, 4f).SetEase(Ease.Linear);
         }

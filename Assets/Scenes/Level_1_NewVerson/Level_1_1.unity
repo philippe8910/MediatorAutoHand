@@ -3714,6 +3714,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09350019fc286b14cbda63a969ee097b, type: 3}
+--- !u!1 &1690197951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2334575513139094782, guid: 09350019fc286b14cbda63a969ee097b, type: 3}
+  m_PrefabInstance: {fileID: 1690197950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1690197952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690197951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u88AB\u6642\u9593\u88C2\u9699\u5E72\u64FE\u7684\u77F3\u584A\uFF0C\u4E5F\u53EA\u6709\u795E\u53EF\u4EE5\u64CD\u4F5C\u88C2\u9699"
+  targetCamera: {fileID: 0}
 --- !u!1 &1709141729
 GameObject:
   m_ObjectHideFlags: 0
@@ -13624,6 +13644,7 @@ GameObject:
   - component: {fileID: 990732251672613604}
   - component: {fileID: 5224501705341965956}
   - component: {fileID: 590193600981637234}
+  - component: {fileID: 590193600981637235}
   m_Layer: 7
   m_Name: Level1-0.1921
   m_TagString: Untagged
@@ -13645,6 +13666,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -945582369439239852, guid: ba798fe2af739124bb9539338eaf8952, type: 3}
+--- !u!114 &590193600981637235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590193600981637233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661b5212a330ec34dbabbf46cf104c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisible: 0
+  introduce: "\u4E0D\u77E5\u9053\u662F\u8AB0\u7559\u5728\u6B64\u7684\u6CD5\u9663\uFF0C\u76EE\u7684\u662F\u4EC0\u9EBC..."
+  targetCamera: {fileID: 0}
 --- !u!23 &591139996145000392
 MeshRenderer:
   m_ObjectHideFlags: 0
