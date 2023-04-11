@@ -14,6 +14,8 @@ public class CameraAction : MonoBehaviour
     
     [SerializeField] private bool isGrab;
 
+    [SerializeField] private int grabCount;
+
     //[SerializeField] private Image photograph;
 
     [SerializeField] private GameObject photograph;
@@ -91,7 +93,17 @@ public class CameraAction : MonoBehaviour
 
     public void SetGrabbable(bool _isGrab)
     {
-        isGrab = _isGrab;
+        if (_isGrab)
+        {
+            grabCount++;
+        }
+        else
+        {
+            grabCount--;
+        }
+
+        if (grabCount <= 0) isGrab = false;
+        if (grabCount > 0) isGrab = true;
     }
     
     private bool IsObjectVisibleInCamera(GameObject go, Camera camera)
