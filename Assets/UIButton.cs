@@ -42,4 +42,9 @@ public class UIButton : MonoBehaviour
     {
         
     }
+
+    public void SkipTutorial()
+    {
+        EventBus.Post(new ChangeScenesDetected(delegate { UnityEngine.SceneManagement.SceneManager.LoadScene(10); }));
+    }
 }
