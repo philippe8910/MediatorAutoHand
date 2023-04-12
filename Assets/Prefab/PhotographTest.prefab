@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 34719884604952086}
   - component: {fileID: 34719884604952085}
   - component: {fileID: 6213723574234291541}
+  - component: {fileID: 7983743622546189643}
   m_Layer: 0
   m_Name: PhotographTest
   m_TagString: Untagged
@@ -373,6 +374,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
         m_MethodName: set_useGravity
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7983743622546189643}
+        m_TargetAssemblyTypeName: Photograph, Assembly-CSharp
+        m_MethodName: OnGrab
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -578,6 +591,18 @@ MonoBehaviour:
   minRange: 0
   testAngle: 0
   testRange: 0
+--- !u!114 &7983743622546189643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34719884604952080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2507d64f4de246648ac6fe2208092e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &34719886038958981
 GameObject:
   m_ObjectHideFlags: 0

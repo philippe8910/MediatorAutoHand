@@ -50,13 +50,22 @@ public class GrabbableCustom : MonoBehaviour
             OnStartPull();
         });
         
-        UnityEngine.SceneManagement.SceneManager.activeSceneChanged += delegate(Scene arg0, Scene scene)
+        
+        SceneManager.activeSceneChanged += delegate(Scene arg0, Scene scene)
         {
-            if (changeScenesDestory)
+            try
             {
+                if (changeScenesDestory)
+                {
+                    Destroy(gameObject);
+                }
                 Destroy(gameObject);
             }
-            Destroy(gameObject);
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
         };
         
         StartCoroutine(StartDetectedFailOutWorld());
@@ -107,7 +116,11 @@ public class GrabbableCustom : MonoBehaviour
         }
     }
     
+    
+    
 }
+
+    
 
 /*
                 var material = g.GetComponent<MeshRenderer>().material;

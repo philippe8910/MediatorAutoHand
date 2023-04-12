@@ -31,9 +31,13 @@ public class Lamp : MonoBehaviour
     
     [SerializeField] private UnityEvent OnPlayerLightTheTorch; //當玩家點燃提示區域
 
+    [SerializeField] private Level_4_Task task;
+
     [SerializeField] private bool isEnter;
     private void Start()
     {
+        task = FindObjectOfType<Level_4_Task>();
+        
         fireEffect.Stop();
         fireLight.Stop();
         
@@ -59,7 +63,7 @@ public class Lamp : MonoBehaviour
             
             hintText.gameObject.SetActive(true);
 
-            EventBus.Post(new PlayerLightTheFireDetected(this , true));
+            task.OnPlayerLightTheFireDetected(true , this);
         });
         
         OnPlayerInteractive.AddListener(delegate
@@ -73,7 +77,7 @@ public class Lamp : MonoBehaviour
             
             hintText.gameObject.SetActive(false);
             
-            EventBus.Post(new PlayerLightTheFireDetected(this , false));
+            task.OnPlayerLightTheFireDetected(false , this);
         });
     }
 

@@ -18,13 +18,13 @@ public class Level_4_Task : MonoBehaviour
 
     void Start()
     {
-        EventBus.Subscribe<PlayerLightTheFireDetected>(OnPlayerLightTheFireDetected);
+        
     }
 
-    private void OnPlayerLightTheFireDetected(PlayerLightTheFireDetected obj)
+    public void OnPlayerLightTheFireDetected(bool _isLight , Lamp lamp)
     {
-        var isLight = obj.isLight;
-        var task = obj.lamp;
+        var isLight = _isLight;
+        var task = lamp;
 
         if (isLight)
         {
