@@ -55,21 +55,12 @@ public class GrabbableCustom : MonoBehaviour
         {
             try
             {
-                if (changeScenesDestory)
-                {
-                    Destroy(gameObject);
-                }
                 Destroy(gameObject);
             }
             catch (Exception e)
             {
-                if (changeScenesDestory)
-                {
-                    Destroy(gameObject);
-                }
                 Destroy(gameObject);
             }
-            
         };
         
         StartCoroutine(StartDetectedFailOutWorld());

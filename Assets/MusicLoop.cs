@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicLoop : MonoBehaviour
 {
@@ -18,11 +19,13 @@ public class MusicLoop : MonoBehaviour
         musicSource.Play();
         musicSource.PlayOneShot(musicStart);
         musicSource.PlayScheduled(AudioSettings.dspTime + musicStart.length);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        
+        SceneManager.sceneLoaded += delegate(Scene arg0, LoadSceneMode mode)
+        {
+            if (arg0.buildIndex == 16)
+            {
+                Destroy(gameObject);
+            }
+        };
     }
 }

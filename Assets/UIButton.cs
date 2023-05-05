@@ -17,15 +17,8 @@ public class UIButton : MonoBehaviour
 {
     public bool isClick = false;
 
-    public bool rightHandPose
-    {
-        get { return grabPose[SteamVR_Input_Sources.RightHand].stateDown; }
-    }
-    
-    public bool leftHandPose
-    {
-        get { return grabPose[SteamVR_Input_Sources.LeftHand].stateDown; }
-    }
+    public bool rightHandPose;
+    public bool leftHandPose;
 
     public AudioSource buttonSound;
 
@@ -45,6 +38,12 @@ public class UIButton : MonoBehaviour
         buttonSound = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        rightHandPose = grabPose[SteamVR_Input_Sources.RightHand].stateDown;
+        leftHandPose = grabPose[SteamVR_Input_Sources.LeftHand].stateDown;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hand") && other.GetComponent<SteamVRHandControllerLink>().handType == SteamVR_Input_Sources.LeftHand && leftHandPose)
@@ -60,6 +59,8 @@ public class UIButton : MonoBehaviour
             OnClick.Invoke();
             buttonSound.Play();
         }
+        
+        buttonSound.Play();
     }
 
     [Button]
