@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class CameraAction : MonoBehaviour
 {
     [SerializeField] private Camera photoCamera;
+
+    [SerializeField] private Rigidbody rigidbody;
     
     [SerializeField] private bool isGrab;
 
@@ -32,6 +34,7 @@ public class CameraAction : MonoBehaviour
 
     private void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
         DontDestroyOnLoad(this);
         ResetCamera();
     }
@@ -133,7 +136,8 @@ public class CameraAction : MonoBehaviour
     [Button]
     public void ResetCamera()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rigidbody.velocity = Vector3.zero;
         transform.position = cameraPos.position;
     }
+    
 }

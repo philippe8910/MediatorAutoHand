@@ -22,8 +22,6 @@ public class UIButton : MonoBehaviour
 
     public AudioSource buttonSound;
 
-    public SteamVR_Action_Boolean grabPose;
-
     public UIButton[] uiButton;
     
     public UnityEvent OnClick;
@@ -37,20 +35,23 @@ public class UIButton : MonoBehaviour
         uiButton = FindObjectsOfType<UIButton>();
         buttonSound = GetComponent<AudioSource>();
     }
-
-    private void Update()
-    {
-        rightHandPose = grabPose[SteamVR_Input_Sources.RightHand].stateDown;
-        leftHandPose = grabPose[SteamVR_Input_Sources.LeftHand].stateDown;
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand") && other.GetComponent<SteamVRHandControllerLink>().handType == SteamVR_Input_Sources.LeftHand && leftHandPose)
+        if (other.CompareTag("Hand")  )
         {
-            PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.LeftHand , 0.2f);
-            OnClick.Invoke();
-            buttonSound.Play();
+            if (other.GetComponent<SteamVRHandControllerLink>().handType == SteamVR_Input_Sources.LeftHand)
+            {
+                if (leftHandPose)
+                {
+                    PlayerInputAction.JoyStickVibration(SteamVR_Input_Sources.LeftHand , 0.2f);
+                    OnClick.Invoke();
+                    buttonSound.Play();
+                    Debug.Log("Press Left and Grab");
+                }
+                Debug.Log("Press Left Hand");
+            }
+            Debug.Log("Press Hand");
         }
         
         if (other.CompareTag("Hand") && other.GetComponent<SteamVRHandControllerLink>().handType == SteamVR_Input_Sources.RightHand && rightHandPose)
@@ -59,7 +60,8 @@ public class UIButton : MonoBehaviour
             OnClick.Invoke();
             buttonSound.Play();
         }
-        
+
+       
         buttonSound.Play();
     }
 
@@ -136,6 +138,16 @@ public class UIButton : MonoBehaviour
         {
             button.isClick = false;
         });
+    }
+
+    public void SetLeftPose(bool value)
+    {
+        leftHandPose = value;
+    }
+
+    public void SetRightPose(bool value)
+    {
+        rightHandPose = value;
     }
 
 }
