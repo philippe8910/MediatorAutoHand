@@ -15,7 +15,7 @@ public class Photograph : MonoBehaviour
             Destroy(gameObject);
         };
         
-        await Task.Delay(3000);
+        await Task.Delay(5000);
         
         if(isGrab == false)
             Destroy(gameObject);

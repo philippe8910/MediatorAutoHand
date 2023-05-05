@@ -63,7 +63,11 @@ public class GrabbableCustom : MonoBehaviour
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                if (changeScenesDestory)
+                {
+                    Destroy(gameObject);
+                }
+                Destroy(gameObject);
             }
             
         };

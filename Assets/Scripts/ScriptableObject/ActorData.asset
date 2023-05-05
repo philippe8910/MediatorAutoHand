@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: ActorData
   m_EditorClassIdentifier: 
   speed: 45
-  groundTriggerRange: 0.045
+  groundTriggerRange: 0.041
   overHeadTriggerRange: 0.02
-  footStepSound:
-  - {fileID: 5344700902022300379, guid: 49d9fd73e7287e848b7c0e4cce5de13f, type: 3}
-  jumpSoundEffect: {fileID: 0}
-  groundOffset: {x: 0, y: 0.04, z: 0}
+  groundOffset: {x: 0, y: 0.038, z: 0}
   overHeadOffset: {x: 0, y: 0.2, z: 0}
   groundLayerMask:
     serializedVersion: 2

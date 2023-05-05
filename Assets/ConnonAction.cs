@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,11 +14,18 @@ public class ConnonAction : MonoBehaviour
 
     public ParticleSystem fireEffect;
 
-    private void Start()
+    private async void Start()
     {
         OnFireTrigger.AddListener(delegate
         {
-            fireEffect.Play();
+            IEnumerator StartFireEffect()
+            {
+                fireEffect.Play();
+                yield return new WaitForSeconds(0.5f);
+                fireEffect.Stop();
+            }
+
+            StartCoroutine(StartFireEffect());
         });
     }
 
