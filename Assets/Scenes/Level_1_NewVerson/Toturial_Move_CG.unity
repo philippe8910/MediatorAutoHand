@@ -631,7 +631,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129705656
 GameObject:
@@ -18963,6 +18963,10 @@ PrefabInstance:
     - target: {fileID: 8585316541748972679, guid: 8b83bab2d896c434ba1e95c91587e3d7, type: 3}
       propertyPath: m_Name
       value: XR_Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585316541748972679, guid: 8b83bab2d896c434ba1e95c91587e3d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b83bab2d896c434ba1e95c91587e3d7, type: 3}

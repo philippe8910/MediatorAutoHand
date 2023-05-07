@@ -63,6 +63,11 @@ public class GrabbableCustom : MonoBehaviour
             }
         };
         
+        SceneManager.sceneLoaded += delegate(Scene arg0, LoadSceneMode mode)
+        {
+            Destroy(gameObject);
+        };
+        
         StartCoroutine(StartDetectedFailOutWorld());
 
 
