@@ -28,6 +28,10 @@
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/6Jq17VpJY7o/0.jpg)](https://www.youtube.com/watch?v=6Jq17VpJY7o "Unity Snake Game")
 
+## 關於我們
+
+此專案為南台科技大學 102屆畢業生 南同俱樂部成員共同製作的畢業專題
+
 ## 免責聲明
 
 可以使用本專案的程式碼，但禁止使用所有美術資源進行二創或是修改
