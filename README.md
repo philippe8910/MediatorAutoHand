@@ -26,7 +26,7 @@
 
 ## 遊玩影片
 
-https://www.youtube.com/watch?v=6Jq17VpJY7o
+<iframe src="https://www.youtube.com/embed/6Jq17VpJY7o" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 
 ## 免責聲明
 
